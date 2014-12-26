@@ -1,0 +1,3 @@
+[submodule "submodules/AR.Drone"]
+	path = submodules/AR.Drone
+	url = https://github.com/Ruslan-B/AR.Drone.git

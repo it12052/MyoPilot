@@ -52,6 +52,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -94,6 +97,10 @@
     <ProjectReference Include="..\AR.Drone\AR.Drone.Video\AR.Drone.Video.csproj">
       <Project>{36c63293-4c2d-41ec-b231-faf55845c014}</Project>
       <Name>AR.Drone.Video</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AR.Drone\AR.Drone.WinApp\AR.Drone.WinApp.csproj">
+      <Project>{78c83708-bf89-4a5d-b823-21d06eed6a6b}</Project>
+      <Name>AR.Drone.WinApp</Name>
     </ProjectReference>
     <ProjectReference Include="..\AR.Drone\FFmpeg.AutoGen\FFmpeg.AutoGen\FFmpeg.AutoGen.csproj">
       <Project>{a536b02a-b0b1-4753-8328-17369ef09976}</Project>

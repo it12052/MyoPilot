@@ -13,52 +13,52 @@ namespace MyoPilot.Input
     public abstract class Input
     {
         // Events correspond to available actions in AR.Drone.Client.DroneClient
-        event NoArgs Emergency;
-        //event NoArgs ResetEmergency; // This can be done in the MainForm
-        event NoArgs Land;
-        event NoArgs Takeoff;
-        event NoArgs FlatTrim;
-        event NoArgs Hover;
-        event FlightCommand Progress;
+        public event NoArgs Emergency;
+        //public event NoArgs ResetEmergency; // This can be done in the MainForm
+        public event NoArgs Land;
+        public event NoArgs Takeoff;
+        public event NoArgs FlatTrim;
+        public event NoArgs Hover;
+        public event FlightCommand Progress;
 
         /// <summary>
         /// Implementors of this Class should process the state of the
         /// peripheral (e.g. keyboard, mouse) and raise events to trigger 
         /// actions. This method schould be invoked periodically via a Timer
         /// </summary>
-        abstract void processInput();
+        public abstract void processInput();
 
-        void OnEmergency()
+        protected void OnEmergency()
         {
             if (Emergency != null)
                 Emergency();
         }
 
-        void OnLand()
+        protected void OnLand()
         {
             if (Land != null)
                 Land();
         }
 
-        void OnTakeoff()
+        protected void OnTakeoff()
         {
             if (Takeoff != null)
                 Takeoff();
         }
 
-        void OnFlatTrim()
+        protected void OnFlatTrim()
         {
             if (FlatTrim != null)
                 FlatTrim();
         }
 
-        void OnHover()
+        protected void OnHover()
         {
             if (Hover != null)
                 Hover();
         }
 
-        void OnProgress(FlightMode mode, float roll = 0, float pitch = 0, float yaw = 0, float gaz = 0)
+        protected void OnProgress(FlightMode mode, float roll = 0, float pitch = 0, float yaw = 0, float gaz = 0)
         {
             if (Emergency != null)
                 Progress(mode, roll, pitch, yaw, gaz);

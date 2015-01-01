@@ -46,12 +46,21 @@ namespace MyoPilot
 
             KeyboardInput keyboardInput = new KeyboardInput();
             inputManager = new InputManager();
+            // Add UI Listeners
             inputManager.Emergency += inputManager_Emergency;
             inputManager.FlatTrim += inputManager_FlatTrim;
             inputManager.Hover += inputManager_Hover;
             inputManager.Land += inputManager_Land;
             inputManager.Progress += inputManager_Progress;
             inputManager.Takeoff += inputManager_Takeoff;
+            // Add droneClient listeners
+            inputManager.Emergency += droneClient.Emergency;
+            inputManager.FlatTrim += droneClient.FlatTrim;
+            inputManager.Hover += droneClient.Hover;
+            inputManager.Land += droneClient.Land;
+            inputManager.Progress += droneClient.Progress;
+            inputManager.Takeoff += droneClient.Takeoff;
+
             inputManager.addControl(keyboardInput);
 
             timerVideoUpdate.Enabled = true;

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.timerVideoUpdate = new System.Windows.Forms.Timer(this.components);
             this.videoFrame = new System.Windows.Forms.PictureBox();
             this.timerInput = new System.Windows.Forms.Timer(this.components);
@@ -70,6 +71,7 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.videoFrame);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "MyoPilot";

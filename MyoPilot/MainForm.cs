@@ -45,6 +45,9 @@ namespace MyoPilot
             droneClient.Start();
 
             KeyboardInput keyboardInput = new KeyboardInput();
+            this.GotFocus += (sender, e) => keyboardInput.Active = true;
+            this.LostFocus += (sender, e) => keyboardInput.Active = false;
+
             inputManager = new InputManager();
             // Add UI Listeners
             inputManager.Emergency += inputManager_Emergency;

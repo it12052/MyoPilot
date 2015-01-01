@@ -35,7 +35,7 @@
     <Setting Name="Emergency" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">6</Value>
     </Setting>
-    <Setting Name="Trim" Type="System.Int32" Scope="User">
+    <Setting Name="FlatTrim" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">63</Value>
     </Setting>
   </Settings>

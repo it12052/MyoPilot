@@ -60,7 +60,7 @@ namespace MyoPilot.Input
             if (Keyboard.IsKeyDown((Key)KeyboardSettings.Default.Emergency))
                 OnEmergency();
 
-            if (Keyboard.IsKeyDown((Key)KeyboardSettings.Default.Trim))
+            if (Keyboard.IsKeyDown((Key)KeyboardSettings.Default.FlatTrim))
                 OnFlatTrim();
         }
     }

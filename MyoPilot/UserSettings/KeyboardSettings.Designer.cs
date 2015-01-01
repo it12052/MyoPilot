@@ -158,12 +158,12 @@ namespace MyoPilot.UserSettings {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("63")]
-        public int Trim {
+        public int FlatTrim {
             get {
-                return ((int)(this["Trim"]));
+                return ((int)(this["FlatTrim"]));
             }
             set {
-                this["Trim"] = value;
+                this["FlatTrim"] = value;
             }
         }
     }

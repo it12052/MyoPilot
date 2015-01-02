@@ -46,7 +46,7 @@ namespace MyoPilot.Input
 
             if (commandWasSent == false)
             {
-                //OnHover();
+                OnHover();
             }
             commandWasSent = false;
         }

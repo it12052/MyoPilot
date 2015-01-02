@@ -62,6 +62,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>KeyboardSettings.settings</DependentUpon>
     </Compile>
+    <Compile Include="UserSettings\UISettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>UISettings.settings</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,6 +95,10 @@
     <None Include="UserSettings\KeyboardSettings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>KeyboardSettings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="UserSettings\UISettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>UISettings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

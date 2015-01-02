@@ -19,6 +19,7 @@ using AR.Drone.WinApp;
 using MyoPilot.Input;
 using System.Drawing.Text;
 using System.IO;
+using MyoPilot.UserSettings;
 
 namespace MyoPilot
 {
@@ -82,7 +83,14 @@ namespace MyoPilot
                 }
             }
 
-            //label1.Font = fontAwesome;
+            labelRotateLeft.Font = fontAwesome;
+            labelRotateRight.Font = fontAwesome;
+            labelForward.Font = fontAwesome;
+            labelBackward.Font = fontAwesome;
+            labelLeft.Font = fontAwesome;
+            labelRight.Font = fontAwesome;
+            labelUp.Font = fontAwesome;
+            labelDown.Font = fontAwesome;
         }
 
         private void InitInput()
@@ -94,11 +102,11 @@ namespace MyoPilot
             inputManager = new InputManager();
             // Add UI Listeners
             inputManager.Emergency += inputManager_Emergency;
-            inputManager.FlatTrim += inputManager_FlatTrim;
+            //inputManager.FlatTrim += inputManager_FlatTrim;
             inputManager.Hover += inputManager_Hover;
-            inputManager.Land += inputManager_Land;
+            //inputManager.Land += inputManager_Land;
             inputManager.Progress += inputManager_Progress;
-            inputManager.Takeoff += inputManager_Takeoff;
+            //inputManager.Takeoff += inputManager_Takeoff;
             // Add droneClient listeners
             inputManager.Emergency += droneClient.Emergency;
             inputManager.FlatTrim += droneClient.FlatTrim;
@@ -111,34 +119,44 @@ namespace MyoPilot
         }
 
         #region Input handling
-        void inputManager_Takeoff()
-        {
-            throw new NotImplementedException();
-        }
 
         void inputManager_Progress(FlightMode mode, float roll = 0, float pitch = 0, float yaw = 0, float gaz = 0)
         {
-            throw new NotImplementedException();
-        }
+            if (mode == FlightMode.Hover)
+            {
+                inputManager_Hover();
+                return;
+            }
 
-        void inputManager_Land()
-        {
-            throw new NotImplementedException();
+            labelRotateLeft.ForeColor = yaw < 0 ? UISettings.Default.IconHighlightColor : UISettings.Default.IconDefaultColor;
+            labelRotateRight.ForeColor = yaw > 0 ? UISettings.Default.IconHighlightColor : UISettings.Default.IconDefaultColor;
+            labelForward.ForeColor = pitch < 0 ? UISettings.Default.IconHighlightColor : UISettings.Default.IconDefaultColor;
+            labelBackward.ForeColor = pitch > 0 ? UISettings.Default.IconHighlightColor : UISettings.Default.IconDefaultColor;
+            labelLeft.ForeColor = roll < 0 ? UISettings.Default.IconHighlightColor : UISettings.Default.IconDefaultColor;
+            labelRight.ForeColor = roll > 0 ? UISettings.Default.IconHighlightColor : UISettings.Default.IconDefaultColor;
+            labelUp.ForeColor = gaz > 0 ? UISettings.Default.IconHighlightColor : UISettings.Default.IconDefaultColor;
+            labelDown.ForeColor = gaz < 0 ? UISettings.Default.IconHighlightColor : UISettings.Default.IconDefaultColor;
         }
 
         void inputManager_Hover()
         {
-            throw new NotImplementedException();
-        }
-
-        void inputManager_FlatTrim()
-        {
-            throw new NotImplementedException();
+            labelRotateLeft.ForeColor = UISettings.Default.IconDefaultColor;
+            labelRotateRight.ForeColor = UISettings.Default.IconDefaultColor;
+            labelForward.ForeColor = UISettings.Default.IconDefaultColor;
+            labelBackward.ForeColor = UISettings.Default.IconDefaultColor;
+            labelLeft.ForeColor = UISettings.Default.IconDefaultColor;
+            labelRight.ForeColor = UISettings.Default.IconDefaultColor;
+            labelUp.ForeColor = UISettings.Default.IconDefaultColor;
+            labelDown.ForeColor = UISettings.Default.IconDefaultColor;
         }
 
         void inputManager_Emergency()
         {
-            throw new NotImplementedException();
+            DialogResult res = MessageBox.Show("Press OK to reset emergency", "Emergency", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            if (res == DialogResult.OK)
+            {
+                droneClient.ResetEmergency();
+            }
         }
         
         private void timerInput_Tick(object sender, EventArgs e)

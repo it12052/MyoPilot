@@ -17,6 +17,8 @@ using AR.Drone.Media;
 using AR.Drone.Video;
 using AR.Drone.WinApp;
 using MyoPilot.Input;
+using System.Drawing.Text;
+using System.IO;
 
 namespace MyoPilot
 {
@@ -30,6 +32,7 @@ namespace MyoPilot
         private uint frameNumber;
         private NavigationData navigationData;
         private InputManager inputManager;
+        private PrivateFontCollection privateFontCollection;
 
         public MainForm()
         {
@@ -44,6 +47,46 @@ namespace MyoPilot
             droneClient.NavigationDataAcquired += data => navigationData = data;
             droneClient.Start();
 
+            LoadFontAwesome();
+            InitInput();
+
+            timerVideoUpdate.Enabled = true;
+            timerInput.Enabled = true;
+        }
+
+        private void LoadFontAwesome()
+        {
+            string fontName = "FontAwesome";
+            string fontFileName = "FontAwesome.otf";
+            float fontSize = 16;
+            Font fontAwesome = new Font(fontName, fontSize);
+            // If the font is not installed, it will be substituted with Microsoft Sans Serif
+            if (fontAwesome.Name != fontName)
+            {
+                // try loading the font from file
+                string fontFile = Path.Combine(Environment.CurrentDirectory, fontFileName);
+                if (File.Exists(fontFile))
+                {
+                    // privateFontCollection needs to be in scope while the font is used
+                    // this is why it is a class variable
+                    privateFontCollection = new PrivateFontCollection();
+                    privateFontCollection.AddFontFile(fontFile);
+                    FontFamily family = privateFontCollection.Families[0];
+                    fontAwesome = new Font(family, fontSize);
+                }
+                else
+                {
+                    MessageBox.Show("Font Awesome by Dave Gandy not found. The application might not work correctly. Please download " + fontFileName + 
+                        " from http://fontawesome.io and either install it or drop it in the application folder (" + Environment.CurrentDirectory + ")",
+                        "Cannot load FontAwesome", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            //label1.Font = fontAwesome;
+        }
+
+        private void InitInput()
+        {
             KeyboardInput keyboardInput = new KeyboardInput();
             this.GotFocus += (sender, e) => keyboardInput.Active = true;
             this.LostFocus += (sender, e) => keyboardInput.Active = false;
@@ -65,9 +108,6 @@ namespace MyoPilot
             inputManager.Takeoff += droneClient.Takeoff;
 
             inputManager.addControl(keyboardInput);
-
-            timerVideoUpdate.Enabled = true;
-            timerInput.Enabled = true;
         }
 
         #region Input handling

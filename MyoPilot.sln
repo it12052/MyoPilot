@@ -24,7 +24,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XInputDotNet", "XInputDotNet", "{3D3310E8-025F-41D0-8B14-13D9194E7269}"
 	ProjectSection(SolutionItems) = preProject
 		XInputDotNet\XInputDotNetPure.dll = XInputDotNet\XInputDotNetPure.dll
-		XInputDotNet\XInputInterface.dll = XInputDotNet\XInputInterface.dll
 	EndProjectSection
 EndProject
 Global

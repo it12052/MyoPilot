@@ -44,10 +44,15 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
+    <Reference Include="XInputDotNetPure, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\XInputDotNet\XInputDotNetPure.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Input\Input.cs" />
     <Compile Include="Input\InputManager.cs" />
+    <Compile Include="Input\XBoxInput.cs" />
     <Compile Include="Input\KeyboardInput.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -67,6 +72,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>UISettings.settings</DependentUpon>
     </Compile>
+    <Content Include="XInputInterface.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

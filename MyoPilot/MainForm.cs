@@ -98,6 +98,7 @@ namespace MyoPilot
             KeyboardInput keyboardInput = new KeyboardInput();
             this.GotFocus += (sender, e) => keyboardInput.Active = true;
             this.LostFocus += (sender, e) => keyboardInput.Active = false;
+            XBoxInput xBoxInput = new XBoxInput();
 
             inputManager = new InputManager();
             // Add UI Listeners
@@ -116,6 +117,7 @@ namespace MyoPilot
             inputManager.Takeoff += droneClient.Takeoff;
 
             inputManager.addControl(keyboardInput);
+            inputManager.addControl(xBoxInput);
         }
 
         #region Input handling

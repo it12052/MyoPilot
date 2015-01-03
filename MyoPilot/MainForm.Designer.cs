@@ -36,14 +36,14 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelForward = new System.Windows.Forms.Label();
-            this.labelRotateLeft = new System.Windows.Forms.Label();
-            this.labelRotateRight = new System.Windows.Forms.Label();
-            this.labelUp = new System.Windows.Forms.Label();
-            this.labelLeft = new System.Windows.Forms.Label();
-            this.labelRight = new System.Windows.Forms.Label();
-            this.labelBackward = new System.Windows.Forms.Label();
             this.labelDown = new System.Windows.Forms.Label();
+            this.labelBackward = new System.Windows.Forms.Label();
+            this.labelRight = new System.Windows.Forms.Label();
+            this.labelLeft = new System.Windows.Forms.Label();
+            this.labelUp = new System.Windows.Forms.Label();
+            this.labelRotateRight = new System.Windows.Forms.Label();
+            this.labelRotateLeft = new System.Windows.Forms.Label();
+            this.labelForward = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.videoFrame)).BeginInit();
             this.menuStrip.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -82,6 +82,7 @@
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -108,77 +109,17 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 100);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // labelForward
+            // labelDown
             // 
-            this.labelForward.AutoSize = true;
-            this.labelForward.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelForward.ForeColor = System.Drawing.Color.Black;
-            this.labelForward.Location = new System.Drawing.Point(53, 0);
-            this.labelForward.Name = "labelForward";
-            this.labelForward.Size = new System.Drawing.Size(44, 33);
-            this.labelForward.TabIndex = 0;
-            this.labelForward.Text = "";
-            this.labelForward.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelRotateLeft
-            // 
-            this.labelRotateLeft.AutoSize = true;
-            this.labelRotateLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelRotateLeft.ForeColor = System.Drawing.Color.Black;
-            this.labelRotateLeft.Location = new System.Drawing.Point(3, 0);
-            this.labelRotateLeft.Name = "labelRotateLeft";
-            this.labelRotateLeft.Size = new System.Drawing.Size(44, 33);
-            this.labelRotateLeft.TabIndex = 1;
-            this.labelRotateLeft.Text = "";
-            this.labelRotateLeft.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelRotateRight
-            // 
-            this.labelRotateRight.AutoSize = true;
-            this.labelRotateRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelRotateRight.ForeColor = System.Drawing.Color.Black;
-            this.labelRotateRight.Location = new System.Drawing.Point(103, 0);
-            this.labelRotateRight.Name = "labelRotateRight";
-            this.labelRotateRight.Size = new System.Drawing.Size(44, 33);
-            this.labelRotateRight.TabIndex = 2;
-            this.labelRotateRight.Text = "";
-            this.labelRotateRight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelUp
-            // 
-            this.labelUp.AutoSize = true;
-            this.labelUp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelUp.ForeColor = System.Drawing.Color.Black;
-            this.labelUp.Location = new System.Drawing.Point(153, 0);
-            this.labelUp.Name = "labelUp";
-            this.labelUp.Size = new System.Drawing.Size(44, 33);
-            this.labelUp.TabIndex = 3;
-            this.labelUp.Text = "";
-            this.labelUp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelLeft
-            // 
-            this.labelLeft.AutoSize = true;
-            this.labelLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelLeft.ForeColor = System.Drawing.Color.Black;
-            this.labelLeft.Location = new System.Drawing.Point(3, 33);
-            this.labelLeft.Name = "labelLeft";
-            this.labelLeft.Size = new System.Drawing.Size(44, 33);
-            this.labelLeft.TabIndex = 4;
-            this.labelLeft.Text = "";
-            this.labelLeft.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelRight
-            // 
-            this.labelRight.AutoSize = true;
-            this.labelRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelRight.ForeColor = System.Drawing.Color.Black;
-            this.labelRight.Location = new System.Drawing.Point(103, 33);
-            this.labelRight.Name = "labelRight";
-            this.labelRight.Size = new System.Drawing.Size(44, 33);
-            this.labelRight.TabIndex = 6;
-            this.labelRight.Text = "";
-            this.labelRight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelDown.AutoSize = true;
+            this.labelDown.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelDown.ForeColor = System.Drawing.Color.Black;
+            this.labelDown.Location = new System.Drawing.Point(153, 66);
+            this.labelDown.Name = "labelDown";
+            this.labelDown.Size = new System.Drawing.Size(44, 34);
+            this.labelDown.TabIndex = 11;
+            this.labelDown.Text = "";
+            this.labelDown.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelBackward
             // 
@@ -192,17 +133,77 @@
             this.labelBackward.Text = "";
             this.labelBackward.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelDown
+            // labelRight
             // 
-            this.labelDown.AutoSize = true;
-            this.labelDown.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelDown.ForeColor = System.Drawing.Color.Black;
-            this.labelDown.Location = new System.Drawing.Point(153, 66);
-            this.labelDown.Name = "labelDown";
-            this.labelDown.Size = new System.Drawing.Size(44, 34);
-            this.labelDown.TabIndex = 11;
-            this.labelDown.Text = "";
-            this.labelDown.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelRight.AutoSize = true;
+            this.labelRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelRight.ForeColor = System.Drawing.Color.Black;
+            this.labelRight.Location = new System.Drawing.Point(103, 33);
+            this.labelRight.Name = "labelRight";
+            this.labelRight.Size = new System.Drawing.Size(44, 33);
+            this.labelRight.TabIndex = 6;
+            this.labelRight.Text = "";
+            this.labelRight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelLeft
+            // 
+            this.labelLeft.AutoSize = true;
+            this.labelLeft.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelLeft.ForeColor = System.Drawing.Color.Black;
+            this.labelLeft.Location = new System.Drawing.Point(3, 33);
+            this.labelLeft.Name = "labelLeft";
+            this.labelLeft.Size = new System.Drawing.Size(44, 33);
+            this.labelLeft.TabIndex = 4;
+            this.labelLeft.Text = "";
+            this.labelLeft.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelUp
+            // 
+            this.labelUp.AutoSize = true;
+            this.labelUp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelUp.ForeColor = System.Drawing.Color.Black;
+            this.labelUp.Location = new System.Drawing.Point(153, 0);
+            this.labelUp.Name = "labelUp";
+            this.labelUp.Size = new System.Drawing.Size(44, 33);
+            this.labelUp.TabIndex = 3;
+            this.labelUp.Text = "";
+            this.labelUp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelRotateRight
+            // 
+            this.labelRotateRight.AutoSize = true;
+            this.labelRotateRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelRotateRight.ForeColor = System.Drawing.Color.Black;
+            this.labelRotateRight.Location = new System.Drawing.Point(103, 0);
+            this.labelRotateRight.Name = "labelRotateRight";
+            this.labelRotateRight.Size = new System.Drawing.Size(44, 33);
+            this.labelRotateRight.TabIndex = 2;
+            this.labelRotateRight.Text = "";
+            this.labelRotateRight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelRotateLeft
+            // 
+            this.labelRotateLeft.AutoSize = true;
+            this.labelRotateLeft.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelRotateLeft.ForeColor = System.Drawing.Color.Black;
+            this.labelRotateLeft.Location = new System.Drawing.Point(3, 0);
+            this.labelRotateLeft.Name = "labelRotateLeft";
+            this.labelRotateLeft.Size = new System.Drawing.Size(44, 33);
+            this.labelRotateLeft.TabIndex = 1;
+            this.labelRotateLeft.Text = "";
+            this.labelRotateLeft.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelForward
+            // 
+            this.labelForward.AutoSize = true;
+            this.labelForward.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelForward.ForeColor = System.Drawing.Color.Black;
+            this.labelForward.Location = new System.Drawing.Point(53, 0);
+            this.labelForward.Name = "labelForward";
+            this.labelForward.Size = new System.Drawing.Size(44, 33);
+            this.labelForward.TabIndex = 0;
+            this.labelForward.Text = "";
+            this.labelForward.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 

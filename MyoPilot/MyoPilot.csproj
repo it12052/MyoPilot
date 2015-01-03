@@ -67,6 +67,18 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>KeyboardSettings.settings</DependentUpon>
     </Compile>
+    <Compile Include="UserSettings\KeyBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserSettings\KeyBox.Designer.cs">
+      <DependentUpon>KeyBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserSettings\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserSettings\SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserSettings\UISettings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -88,6 +100,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserSettings\KeyBox.resx">
+      <DependentUpon>KeyBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserSettings\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\MyoPilot.UserSettings.KeyboardSettings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

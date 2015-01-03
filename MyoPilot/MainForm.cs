@@ -27,7 +27,6 @@ namespace MyoPilot
     {
         private readonly DroneClient droneClient;
         private readonly VideoPacketDecoderWorker videoPacketDecoderWorker;
-        private Settings settings;
         private VideoFrame frame;
         private Bitmap frameBitmap;
         private uint frameNumber;
@@ -212,6 +211,11 @@ namespace MyoPilot
             videoPacketDecoderWorker.Dispose();
 
             base.OnClosed(e);
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new SettingsForm(droneClient).ShowDialog();
         }
                 
     }

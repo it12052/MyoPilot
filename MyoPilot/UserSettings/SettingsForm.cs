@@ -55,6 +55,12 @@ namespace MyoPilot.UserSettings
             controlSectionBindingSource.Clear();
             controlSectionBindingSource.Add(settings.Control);
             groupBoxControl.Enabled = true;
+
+            // Update Controlls which are not bound
+            numericUpDownRotationMax.Value = (int)convertRadToDeg(settings.Control.ControlYaw);
+            trackBarRotationMax.Value = (int)convertRadToDeg(settings.Control.ControlYaw);
+            numericUpDownTiltAngleMax.Value = (int)convertRadToDeg(settings.Control.EulerAngleMax);
+            trackBarTiltAngleMax.Value = (int)convertRadToDeg(settings.Control.EulerAngleMax);
         }
 
 
@@ -143,6 +149,13 @@ namespace MyoPilot.UserSettings
         {
             float result = value / 360f;
             result = result * 2f * (float)Math.PI;
+            return result;
+        }
+
+        private float convertRadToDeg(float value)
+        {
+            float result = value / (2f * (float)Math.PI);
+            result = result * 360f;
             return result;
         }
 

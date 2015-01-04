@@ -43,13 +43,20 @@ namespace MyoPilot.UserSettings
                     }
 
                     settings = task.Result;
-                    controlSectionBindingSource.Clear();
-                    controlSectionBindingSource.Add(settings.Control);
-                    groupBoxControl.Enabled = true;
+                    this.Invoke(new SettingsReceived(OnSettingsReceived));
                 });
                 configurationTask.Start();
             }
         }
+
+        delegate void SettingsReceived();
+        private void OnSettingsReceived()
+        {
+            controlSectionBindingSource.Clear();
+            controlSectionBindingSource.Add(settings.Control);
+            groupBoxControl.Enabled = true;
+        }
+
 
         private void SendDroneConfig()
         {

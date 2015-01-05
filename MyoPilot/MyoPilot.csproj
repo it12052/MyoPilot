@@ -84,6 +84,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>UISettings.settings</DependentUpon>
     </Compile>
+    <None Include="Resources\drone[32x32].png" />
+    <None Include="Resources\drone-wo-hull[32x32].png" />
     <Content Include="XInputInterface.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

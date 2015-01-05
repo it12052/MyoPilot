@@ -55,12 +55,18 @@ namespace MyoPilot.UserSettings
             controlSectionBindingSource.Clear();
             controlSectionBindingSource.Add(settings.Control);
             groupBoxControl.Enabled = true;
+            groupBoxOutdoor.Enabled = true;
 
             // Update Controlls which are not bound
             numericUpDownRotationMax.Value = (int)convertRadToDeg(settings.Control.ControlYaw);
             trackBarRotationMax.Value = (int)convertRadToDeg(settings.Control.ControlYaw);
             numericUpDownTiltAngleMax.Value = (int)convertRadToDeg(settings.Control.EulerAngleMax);
             trackBarTiltAngleMax.Value = (int)convertRadToDeg(settings.Control.EulerAngleMax);
+
+            if (!settings.Control.Outdoor)
+                radioButtonIndoors.Checked = true;
+            if (!settings.Control.FlightWithoutShell)
+                radioButtonIndoorHull.Checked = true;
         }
 
 
@@ -184,7 +190,6 @@ namespace MyoPilot.UserSettings
         {
             SendDroneConfig();
         }
-
 
     }
 }

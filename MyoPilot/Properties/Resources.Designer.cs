@@ -59,5 +59,25 @@ namespace MyoPilot.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap drone_32x32_ {
+            get {
+                object obj = ResourceManager.GetObject("drone[32x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap drone_wo_hull_32x32_ {
+            get {
+                object obj = ResourceManager.GetObject("drone-wo-hull[32x32]", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

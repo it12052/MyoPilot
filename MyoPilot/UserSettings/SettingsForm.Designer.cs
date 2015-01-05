@@ -31,23 +31,33 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageDrone = new System.Windows.Forms.TabPage();
+            this.buttonSendConfig = new System.Windows.Forms.Button();
+            this.buttonLoadConfig = new System.Windows.Forms.Button();
             this.groupBoxControl = new System.Windows.Forms.GroupBox();
+            this.numericUpDownTiltAngleMax = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.trackBarTiltAngleMax = new System.Windows.Forms.TrackBar();
             this.numericUpDownRotationMax = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.trackBarRotationMax = new System.Windows.Forms.TrackBar();
             this.numericUpDownVerticalMax = new System.Windows.Forms.NumericUpDown();
-            this.controlSectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.trackBarVerticalMax = new System.Windows.Forms.TrackBar();
             this.numericUpDownAltitudeMax = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.trackBarAltitudeMax = new System.Windows.Forms.TrackBar();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.keyboardSettingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonOk = new System.Windows.Forms.Button();
-            this.numericUpDownTiltAngleMax = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.trackBarTiltAngleMax = new System.Windows.Forms.TrackBar();
+            this.groupBoxOutdoor = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.radioButtonOutdoors = new System.Windows.Forms.RadioButton();
+            this.radioButtonIndoors = new System.Windows.Forms.RadioButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.radioButtonOutdoorHull = new System.Windows.Forms.RadioButton();
+            this.controlSectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.keyboardSettingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.radioButtonIndoorHull = new System.Windows.Forms.RadioButton();
             this.keyBox7 = new MyoPilot.UserSettings.KeyBox();
             this.keyBox8 = new MyoPilot.UserSettings.KeyBox();
             this.keyBox9 = new MyoPilot.UserSettings.KeyBox();
@@ -60,22 +70,22 @@
             this.keyBox3 = new MyoPilot.UserSettings.KeyBox();
             this.keyBox2 = new MyoPilot.UserSettings.KeyBox();
             this.keyBox1 = new MyoPilot.UserSettings.KeyBox();
-            this.buttonLoadConfig = new System.Windows.Forms.Button();
-            this.buttonSendConfig = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPageDrone.SuspendLayout();
             this.groupBoxControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTiltAngleMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarTiltAngleMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRotationMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRotationMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVerticalMax)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.controlSectionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarVerticalMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAltitudeMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarAltitudeMax)).BeginInit();
             this.tabPage1.SuspendLayout();
+            this.groupBoxOutdoor.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.controlSectionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.keyboardSettingsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTiltAngleMax)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarTiltAngleMax)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -94,6 +104,7 @@
             // tabPageDrone
             // 
             this.tabPageDrone.AutoScroll = true;
+            this.tabPageDrone.Controls.Add(this.groupBoxOutdoor);
             this.tabPageDrone.Controls.Add(this.buttonSendConfig);
             this.tabPageDrone.Controls.Add(this.buttonLoadConfig);
             this.tabPageDrone.Controls.Add(this.groupBoxControl);
@@ -104,6 +115,26 @@
             this.tabPageDrone.TabIndex = 0;
             this.tabPageDrone.Text = "Drone";
             this.tabPageDrone.UseVisualStyleBackColor = true;
+            // 
+            // buttonSendConfig
+            // 
+            this.buttonSendConfig.Location = new System.Drawing.Point(279, 7);
+            this.buttonSendConfig.Name = "buttonSendConfig";
+            this.buttonSendConfig.Size = new System.Drawing.Size(114, 23);
+            this.buttonSendConfig.TabIndex = 3;
+            this.buttonSendConfig.Text = "Send Configuration";
+            this.buttonSendConfig.UseVisualStyleBackColor = true;
+            this.buttonSendConfig.Click += new System.EventHandler(this.buttonSendConfig_Click);
+            // 
+            // buttonLoadConfig
+            // 
+            this.buttonLoadConfig.Location = new System.Drawing.Point(159, 7);
+            this.buttonLoadConfig.Name = "buttonLoadConfig";
+            this.buttonLoadConfig.Size = new System.Drawing.Size(114, 23);
+            this.buttonLoadConfig.TabIndex = 2;
+            this.buttonLoadConfig.Text = "Load Configuration";
+            this.buttonLoadConfig.UseVisualStyleBackColor = true;
+            this.buttonLoadConfig.Click += new System.EventHandler(this.buttonLoadConfig_Click);
             // 
             // groupBoxControl
             // 
@@ -120,12 +151,57 @@
             this.groupBoxControl.Controls.Add(this.label1);
             this.groupBoxControl.Controls.Add(this.trackBarAltitudeMax);
             this.groupBoxControl.Enabled = false;
-            this.groupBoxControl.Location = new System.Drawing.Point(6, 37);
+            this.groupBoxControl.Location = new System.Drawing.Point(6, 36);
             this.groupBoxControl.Name = "groupBoxControl";
-            this.groupBoxControl.Size = new System.Drawing.Size(414, 296);
+            this.groupBoxControl.Size = new System.Drawing.Size(361, 227);
             this.groupBoxControl.TabIndex = 1;
             this.groupBoxControl.TabStop = false;
             this.groupBoxControl.Text = "Control";
+            // 
+            // numericUpDownTiltAngleMax
+            // 
+            this.numericUpDownTiltAngleMax.Location = new System.Drawing.Point(289, 172);
+            this.numericUpDownTiltAngleMax.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.numericUpDownTiltAngleMax.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numericUpDownTiltAngleMax.Name = "numericUpDownTiltAngleMax";
+            this.numericUpDownTiltAngleMax.Size = new System.Drawing.Size(63, 20);
+            this.numericUpDownTiltAngleMax.TabIndex = 11;
+            this.numericUpDownTiltAngleMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDownTiltAngleMax.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numericUpDownTiltAngleMax.ValueChanged += new System.EventHandler(this.numericUpDownTiltAngleMax_ValueChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 172);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 26);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Tilt Angle\r\n[degrees]";
+            // 
+            // trackBarTiltAngleMax
+            // 
+            this.trackBarTiltAngleMax.Location = new System.Drawing.Point(101, 172);
+            this.trackBarTiltAngleMax.Maximum = 30;
+            this.trackBarTiltAngleMax.Minimum = 5;
+            this.trackBarTiltAngleMax.Name = "trackBarTiltAngleMax";
+            this.trackBarTiltAngleMax.Size = new System.Drawing.Size(182, 45);
+            this.trackBarTiltAngleMax.TabIndex = 9;
+            this.trackBarTiltAngleMax.TickFrequency = 5;
+            this.trackBarTiltAngleMax.Value = 5;
+            this.trackBarTiltAngleMax.Scroll += new System.EventHandler(this.trackBarTiltAngleMax_Scroll);
             // 
             // numericUpDownRotationMax
             // 
@@ -134,7 +210,7 @@
             0,
             0,
             0});
-            this.numericUpDownRotationMax.Location = new System.Drawing.Point(318, 122);
+            this.numericUpDownRotationMax.Location = new System.Drawing.Point(289, 122);
             this.numericUpDownRotationMax.Maximum = new decimal(new int[] {
             350,
             0,
@@ -167,7 +243,7 @@
             // 
             // trackBarRotationMax
             // 
-            this.trackBarRotationMax.Location = new System.Drawing.Point(129, 121);
+            this.trackBarRotationMax.Location = new System.Drawing.Point(101, 122);
             this.trackBarRotationMax.Maximum = 350;
             this.trackBarRotationMax.Minimum = 40;
             this.trackBarRotationMax.Name = "trackBarRotationMax";
@@ -185,7 +261,7 @@
             0,
             0,
             0});
-            this.numericUpDownVerticalMax.Location = new System.Drawing.Point(318, 71);
+            this.numericUpDownVerticalMax.Location = new System.Drawing.Point(289, 70);
             this.numericUpDownVerticalMax.Maximum = new decimal(new int[] {
             2000,
             0,
@@ -207,10 +283,6 @@
             0,
             0});
             // 
-            // controlSectionBindingSource
-            // 
-            this.controlSectionBindingSource.DataSource = typeof(AR.Drone.Client.Configuration.ControlSection);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -224,7 +296,7 @@
             // 
             this.trackBarVerticalMax.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.controlSectionBindingSource, "ControlVzMax", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.trackBarVerticalMax.LargeChange = 100;
-            this.trackBarVerticalMax.Location = new System.Drawing.Point(129, 70);
+            this.trackBarVerticalMax.Location = new System.Drawing.Point(101, 70);
             this.trackBarVerticalMax.Maximum = 2000;
             this.trackBarVerticalMax.Minimum = 200;
             this.trackBarVerticalMax.Name = "trackBarVerticalMax";
@@ -242,7 +314,7 @@
             0,
             0,
             0});
-            this.numericUpDownAltitudeMax.Location = new System.Drawing.Point(318, 20);
+            this.numericUpDownAltitudeMax.Location = new System.Drawing.Point(289, 19);
             this.numericUpDownAltitudeMax.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -277,7 +349,7 @@
             // 
             this.trackBarAltitudeMax.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.controlSectionBindingSource, "AltitudeMax", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.trackBarAltitudeMax.LargeChange = 5000;
-            this.trackBarAltitudeMax.Location = new System.Drawing.Point(129, 19);
+            this.trackBarAltitudeMax.Location = new System.Drawing.Point(101, 19);
             this.trackBarAltitudeMax.Maximum = 100000;
             this.trackBarAltitudeMax.Minimum = 3000;
             this.trackBarAltitudeMax.Name = "trackBarAltitudeMax";
@@ -310,10 +382,6 @@
             this.tabPage1.Text = "Keyboard";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // keyboardSettingsBindingSource
-            // 
-            this.keyboardSettingsBindingSource.DataSource = typeof(MyoPilot.UserSettings.KeyboardSettings);
-            // 
             // buttonOk
             // 
             this.buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -325,50 +393,106 @@
             this.buttonOk.Text = "OK";
             this.buttonOk.UseVisualStyleBackColor = true;
             // 
-            // numericUpDownTiltAngleMax
+            // groupBoxOutdoor
             // 
-            this.numericUpDownTiltAngleMax.Location = new System.Drawing.Point(318, 173);
-            this.numericUpDownTiltAngleMax.Maximum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-            this.numericUpDownTiltAngleMax.Minimum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.numericUpDownTiltAngleMax.Name = "numericUpDownTiltAngleMax";
-            this.numericUpDownTiltAngleMax.Size = new System.Drawing.Size(63, 20);
-            this.numericUpDownTiltAngleMax.TabIndex = 11;
-            this.numericUpDownTiltAngleMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDownTiltAngleMax.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.numericUpDownTiltAngleMax.ValueChanged += new System.EventHandler(this.numericUpDownTiltAngleMax_ValueChanged);
+            this.groupBoxOutdoor.Controls.Add(this.radioButtonIndoorHull);
+            this.groupBoxOutdoor.Controls.Add(this.radioButtonOutdoorHull);
+            this.groupBoxOutdoor.Controls.Add(this.label6);
+            this.groupBoxOutdoor.Controls.Add(this.panel1);
+            this.groupBoxOutdoor.Enabled = false;
+            this.groupBoxOutdoor.Location = new System.Drawing.Point(6, 270);
+            this.groupBoxOutdoor.Name = "groupBoxOutdoor";
+            this.groupBoxOutdoor.Size = new System.Drawing.Size(361, 110);
+            this.groupBoxOutdoor.TabIndex = 4;
+            this.groupBoxOutdoor.TabStop = false;
+            this.groupBoxOutdoor.Text = "Outdoor";
             // 
-            // label4
+            // label5
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 172);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 26);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Tilt Angle\r\n[degrees]";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Flight";
             // 
-            // trackBarTiltAngleMax
+            // panel1
             // 
-            this.trackBarTiltAngleMax.Location = new System.Drawing.Point(129, 172);
-            this.trackBarTiltAngleMax.Maximum = 30;
-            this.trackBarTiltAngleMax.Minimum = 5;
-            this.trackBarTiltAngleMax.Name = "trackBarTiltAngleMax";
-            this.trackBarTiltAngleMax.Size = new System.Drawing.Size(182, 45);
-            this.trackBarTiltAngleMax.TabIndex = 9;
-            this.trackBarTiltAngleMax.TickFrequency = 5;
-            this.trackBarTiltAngleMax.Value = 5;
-            this.trackBarTiltAngleMax.Scroll += new System.EventHandler(this.trackBarTiltAngleMax_Scroll);
+            this.panel1.Controls.Add(this.radioButtonIndoors);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.radioButtonOutdoors);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(3, 16);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(355, 19);
+            this.panel1.TabIndex = 1;
+            // 
+            // radioButtonOutdoors
+            // 
+            this.radioButtonOutdoors.AutoSize = true;
+            this.radioButtonOutdoors.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.controlSectionBindingSource, "Outdoor", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.radioButtonOutdoors.Location = new System.Drawing.Point(98, -2);
+            this.radioButtonOutdoors.Name = "radioButtonOutdoors";
+            this.radioButtonOutdoors.Size = new System.Drawing.Size(68, 17);
+            this.radioButtonOutdoors.TabIndex = 0;
+            this.radioButtonOutdoors.TabStop = true;
+            this.radioButtonOutdoors.Text = "Outdoors";
+            this.radioButtonOutdoors.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonIndoors
+            // 
+            this.radioButtonIndoors.AutoSize = true;
+            this.radioButtonIndoors.Location = new System.Drawing.Point(196, -2);
+            this.radioButtonIndoors.Name = "radioButtonIndoors";
+            this.radioButtonIndoors.Size = new System.Drawing.Size(60, 17);
+            this.radioButtonIndoors.TabIndex = 1;
+            this.radioButtonIndoors.TabStop = true;
+            this.radioButtonIndoors.Text = "Indoors";
+            this.radioButtonIndoors.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 69);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(25, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Hull";
+            // 
+            // radioButtonOutdoorHull
+            // 
+            this.radioButtonOutdoorHull.AutoSize = true;
+            this.radioButtonOutdoorHull.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.controlSectionBindingSource, "FlightWithoutShell", true));
+            this.radioButtonOutdoorHull.Image = global::MyoPilot.Properties.Resources.drone_wo_hull_32x32_;
+            this.radioButtonOutdoorHull.Location = new System.Drawing.Point(101, 53);
+            this.radioButtonOutdoorHull.Name = "radioButtonOutdoorHull";
+            this.radioButtonOutdoorHull.Size = new System.Drawing.Size(63, 49);
+            this.radioButtonOutdoorHull.TabIndex = 3;
+            this.radioButtonOutdoorHull.TabStop = true;
+            this.radioButtonOutdoorHull.Text = "Outdoor";
+            this.radioButtonOutdoorHull.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.radioButtonOutdoorHull.UseVisualStyleBackColor = true;
+            // 
+            // controlSectionBindingSource
+            // 
+            this.controlSectionBindingSource.DataSource = typeof(AR.Drone.Client.Configuration.ControlSection);
+            // 
+            // keyboardSettingsBindingSource
+            // 
+            this.keyboardSettingsBindingSource.DataSource = typeof(MyoPilot.UserSettings.KeyboardSettings);
+            // 
+            // radioButtonIndoorHull
+            // 
+            this.radioButtonIndoorHull.AutoSize = true;
+            this.radioButtonIndoorHull.Image = global::MyoPilot.Properties.Resources.drone_32x32_;
+            this.radioButtonIndoorHull.Location = new System.Drawing.Point(199, 53);
+            this.radioButtonIndoorHull.Name = "radioButtonIndoorHull";
+            this.radioButtonIndoorHull.Size = new System.Drawing.Size(55, 49);
+            this.radioButtonIndoorHull.TabIndex = 4;
+            this.radioButtonIndoorHull.TabStop = true;
+            this.radioButtonIndoorHull.Text = "Indoor";
+            this.radioButtonIndoorHull.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.radioButtonIndoorHull.UseVisualStyleBackColor = true;
             // 
             // keyBox7
             // 
@@ -490,26 +614,6 @@
             this.keyBox1.TabIndex = 0;
             this.keyBox1.Value = 0;
             // 
-            // buttonLoadConfig
-            // 
-            this.buttonLoadConfig.Location = new System.Drawing.Point(159, 8);
-            this.buttonLoadConfig.Name = "buttonLoadConfig";
-            this.buttonLoadConfig.Size = new System.Drawing.Size(114, 23);
-            this.buttonLoadConfig.TabIndex = 2;
-            this.buttonLoadConfig.Text = "Load Configuration";
-            this.buttonLoadConfig.UseVisualStyleBackColor = true;
-            this.buttonLoadConfig.Click += new System.EventHandler(this.buttonLoadConfig_Click);
-            // 
-            // buttonSendConfig
-            // 
-            this.buttonSendConfig.Location = new System.Drawing.Point(279, 8);
-            this.buttonSendConfig.Name = "buttonSendConfig";
-            this.buttonSendConfig.Size = new System.Drawing.Size(114, 23);
-            this.buttonSendConfig.TabIndex = 3;
-            this.buttonSendConfig.Text = "Send Configuration";
-            this.buttonSendConfig.UseVisualStyleBackColor = true;
-            this.buttonSendConfig.Click += new System.EventHandler(this.buttonSendConfig_Click);
-            // 
             // SettingsForm
             // 
             this.AcceptButton = this.buttonOk;
@@ -525,17 +629,21 @@
             this.tabPageDrone.ResumeLayout(false);
             this.groupBoxControl.ResumeLayout(false);
             this.groupBoxControl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTiltAngleMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarTiltAngleMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRotationMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRotationMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVerticalMax)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.controlSectionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarVerticalMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAltitudeMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarAltitudeMax)).EndInit();
             this.tabPage1.ResumeLayout(false);
+            this.groupBoxOutdoor.ResumeLayout(false);
+            this.groupBoxOutdoor.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.controlSectionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.keyboardSettingsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTiltAngleMax)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarTiltAngleMax)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -575,5 +683,13 @@
         private System.Windows.Forms.TrackBar trackBarTiltAngleMax;
         private System.Windows.Forms.Button buttonLoadConfig;
         private System.Windows.Forms.Button buttonSendConfig;
+        private System.Windows.Forms.GroupBox groupBoxOutdoor;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton radioButtonIndoors;
+        private System.Windows.Forms.RadioButton radioButtonOutdoors;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RadioButton radioButtonOutdoorHull;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RadioButton radioButtonIndoorHull;
     }
 }

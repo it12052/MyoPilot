@@ -52,6 +52,7 @@ namespace MyoPilot
 
             timerVideoUpdate.Enabled = true;
             timerInput.Enabled = true;
+            timerGuiUpdate.Enabled = true;
         }
 
         private void LoadFontAwesome()
@@ -216,6 +217,17 @@ namespace MyoPilot
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new SettingsForm(droneClient).ShowDialog();
+        }
+
+        private void timerGuiUpdate_Tick(object sender, EventArgs e)
+        {
+            string status = string.Format("{0}\nBattery: {1}%\nWifi: {2}\nDronestate: {3}",
+                droneClient.IsConnected ? "Connected\n" : "Disconnected\n",
+                navigationData != null ? navigationData.Battery.Percentage.ToString() : "",
+                navigationData != null ? navigationData.Wifi.LinkQuality : 0f,
+                navigationData != null ? navigationData.State.ToString() : "");
+
+            labelDroneStatus.Text = status;
         }
                 
     }

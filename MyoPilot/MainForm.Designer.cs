@@ -44,6 +44,8 @@
             this.labelRotateRight = new System.Windows.Forms.Label();
             this.labelRotateLeft = new System.Windows.Forms.Label();
             this.labelForward = new System.Windows.Forms.Label();
+            this.timerGuiUpdate = new System.Windows.Forms.Timer(this.components);
+            this.labelDroneStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.videoFrame)).BeginInit();
             this.menuStrip.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -56,10 +58,9 @@
             // 
             // videoFrame
             // 
-            this.videoFrame.Dock = System.Windows.Forms.DockStyle.Fill;
             this.videoFrame.Location = new System.Drawing.Point(0, 24);
             this.videoFrame.Name = "videoFrame";
-            this.videoFrame.Size = new System.Drawing.Size(784, 537);
+            this.videoFrame.Size = new System.Drawing.Size(640, 360);
             this.videoFrame.TabIndex = 0;
             this.videoFrame.TabStop = false;
             // 
@@ -74,7 +75,7 @@
             this.settingsToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(784, 24);
+            this.menuStrip.Size = new System.Drawing.Size(906, 24);
             this.menuStrip.TabIndex = 1;
             // 
             // settingsToolStripMenuItem
@@ -100,7 +101,7 @@
             this.tableLayoutPanel1.Controls.Add(this.labelRotateRight, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelRotateLeft, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelForward, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 461);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 384);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -205,11 +206,26 @@
             this.labelForward.Text = "";
             this.labelForward.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // timerGuiUpdate
+            // 
+            this.timerGuiUpdate.Interval = 500;
+            this.timerGuiUpdate.Tick += new System.EventHandler(this.timerGuiUpdate_Tick);
+            // 
+            // labelDroneStatus
+            // 
+            this.labelDroneStatus.AutoSize = true;
+            this.labelDroneStatus.Location = new System.Drawing.Point(647, 28);
+            this.labelDroneStatus.Name = "labelDroneStatus";
+            this.labelDroneStatus.Size = new System.Drawing.Size(73, 13);
+            this.labelDroneStatus.TabIndex = 3;
+            this.labelDroneStatus.Text = "Disconnected";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(906, 484);
+            this.Controls.Add(this.labelDroneStatus);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.videoFrame);
             this.Controls.Add(this.menuStrip);
@@ -243,6 +259,8 @@
         private System.Windows.Forms.Label labelRotateRight;
         private System.Windows.Forms.Label labelRotateLeft;
         private System.Windows.Forms.Label labelForward;
+        private System.Windows.Forms.Timer timerGuiUpdate;
+        private System.Windows.Forms.Label labelDroneStatus;
     }
 }
 

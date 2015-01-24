@@ -1,25 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using AR.Drone.Client;
+﻿using AR.Drone.Client;
 using AR.Drone.Client.Command;
-using AR.Drone.Client.Configuration;
 using AR.Drone.Data;
 using AR.Drone.Data.Navigation;
-using AR.Drone.Data.Navigation.Native;
-using AR.Drone.Media;
 using AR.Drone.Video;
 using AR.Drone.WinApp;
 using MyoPilot.Input;
+using MyoPilot.UserSettings;
+using System;
+using System.Drawing;
 using System.Drawing.Text;
 using System.IO;
-using MyoPilot.UserSettings;
+using System.Windows.Forms;
 
 namespace MyoPilot
 {
@@ -55,6 +46,10 @@ namespace MyoPilot
             timerGuiUpdate.Enabled = true;
         }
 
+        /// <summary>
+        /// Load "FontAwesome" from C:\System\Fonts or from the application directory
+        /// Assigns the Font to every control which needs it
+        /// </summary>
         private void LoadFontAwesome()
         {
             string fontName = "FontAwesome";
@@ -69,7 +64,7 @@ namespace MyoPilot
                 if (File.Exists(fontFile))
                 {
                     // privateFontCollection needs to be in scope while the font is used
-                    // this is why it is a class variable
+                    // this is why it is a class variable and not a local one
                     privateFontCollection = new PrivateFontCollection();
                     privateFontCollection.AddFontFile(fontFile);
                     FontFamily family = privateFontCollection.Families[0];
@@ -93,11 +88,17 @@ namespace MyoPilot
             labelDown.Font = fontAwesome;
         }
 
+        /// <summary>
+        /// Initialize Classes for Input handling 
+        /// Add event listeners for everyone who wants to process incomming drone-commands (UI and Drone itself)
+        /// </summary>
         private void InitInput()
         {
             KeyboardInput keyboardInput = new KeyboardInput();
+            // Prevents input through keyboard when the app is not focused
             this.GotFocus += (sender, e) => keyboardInput.Active = true;
             this.LostFocus += (sender, e) => keyboardInput.Active = false;
+
             XBoxInput xBoxInput = new XBoxInput();
 
             inputManager = new InputManager();
@@ -122,6 +123,9 @@ namespace MyoPilot
 
         #region Input handling
 
+        /// <summary>
+        /// Highlight the direction in which the drone move
+        /// </summary>
         void inputManager_Progress(FlightMode mode, float roll = 0, float pitch = 0, float yaw = 0, float gaz = 0)
         {
             if (mode == FlightMode.Hover)
@@ -140,6 +144,9 @@ namespace MyoPilot
             labelDown.ForeColor = gaz < 0 ? UISettings.Default.IconHighlightColor : UISettings.Default.IconDefaultColor;
         }
 
+        /// <summary>
+        /// Reset all highlights in the UI
+        /// </summary>
         void inputManager_Hover()
         {
             labelRotateLeft.ForeColor = UISettings.Default.IconDefaultColor;
@@ -152,6 +159,9 @@ namespace MyoPilot
             labelDown.ForeColor = UISettings.Default.IconDefaultColor;
         }
 
+        /// <summary>
+        /// TODO: Use the dronestate to reset the emergency
+        /// </summary>
         void inputManager_Emergency()
         {
             DialogResult res = MessageBox.Show("Press OK to reset emergency", "Emergency", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -161,6 +171,9 @@ namespace MyoPilot
             }
         }
         
+        /// <summary>
+        /// Trigger input processing
+        /// </summary>
         private void timerInput_Tick(object sender, EventArgs e)
         {
             inputManager.processInput();
@@ -168,17 +181,30 @@ namespace MyoPilot
         #endregion
 
         #region Videostreaming
+        /// <summary>
+        /// Queue Videopacket for encoding
+        /// </summary>
+        /// <param name="packet">VideoPacket</param>
         private void OnVideoPacketAcquired(VideoPacket packet)
         {
             if (videoPacketDecoderWorker.IsAlive)
                 videoPacketDecoderWorker.EnqueuePacket(packet);
         }
 
+        /// <summary>
+        /// Save the current frame for the next render
+        /// </summary>
+        /// <param name="frame"></param>
         private void OnVideoPacketDecoded(VideoFrame frame)
         {
             this.frame = frame;
         }
         
+        /// <summary>
+        /// Render the latest video frame to the vidoeFrame PictureBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timerVideoUpdate_Tick(object sender, EventArgs e)
         {
             if (frame == null || frameNumber == frame.Number)
@@ -219,6 +245,9 @@ namespace MyoPilot
             new SettingsForm(droneClient).ShowDialog();
         }
 
+        /// <summary>
+        /// Render status information
+        /// </summary>
         private void timerGuiUpdate_Tick(object sender, EventArgs e)
         {
             string status = string.Format("{0}\nBattery: {1}%\nWifi: {2}\nDronestate: {3}",

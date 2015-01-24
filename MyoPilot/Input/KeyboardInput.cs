@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using AR.Drone.Client.Command;
 using MyoPilot.UserSettings;
-using AR.Drone.Client.Command;
+using System.Windows.Input;
 
 namespace MyoPilot.Input
 {
     public class KeyboardInput : Input
     {
+        /// <summary>
+        /// Set to false to disable processing of the KeyboardState. 
+        /// Useful when the application is minimized/not focused
+        /// </summary>
         public bool Active { get; set; }
 
         public override void processInput()
@@ -22,6 +21,9 @@ namespace MyoPilot.Input
             }
         }
 
+        /// <summary>
+        /// Process movement of the drone
+        /// </summary>
         private void processMovement()
         {
             float roll = 0.0f;
@@ -54,6 +56,9 @@ namespace MyoPilot.Input
                 OnProgress(FlightMode.Progressive, roll, pitch, yaw, gaz);
         }
         
+        /// <summary>
+        /// Process every command that is not movement
+        /// </summary>
         private void processActions()
         {
             if (Keyboard.IsKeyDown((Key)KeyboardSettings.Default.Takeoff))

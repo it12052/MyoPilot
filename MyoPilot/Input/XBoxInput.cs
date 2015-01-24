@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using MyoPilot.UserSettings;
-using AR.Drone.Client.Command;
+﻿using AR.Drone.Client.Command;
+using System;
 using XInputDotNetPure;
 
 namespace MyoPilot.Input
@@ -22,6 +16,10 @@ namespace MyoPilot.Input
             }
         }
 
+        /// <summary>
+        /// Process movement of the drone
+        /// </summary>
+        /// <param name="state">GamePadState</param>
         private void processMovement(GamePadState state)
         {
             float roll = state.ThumbSticks.Left.X;
@@ -40,6 +38,10 @@ namespace MyoPilot.Input
                 OnProgress(FlightMode.Progressive, roll, pitch, yaw, gaz);
         }
         
+        /// <summary>
+        /// Process every command that is not movement
+        /// </summary>
+        /// <param name="state">GamePadState</param>
         private void processActions(GamePadState state)
         {
             if (state.Buttons.A == ButtonState.Pressed)

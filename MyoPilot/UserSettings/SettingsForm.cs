@@ -1,13 +1,7 @@
 ﻿using AR.Drone.Client;
 using AR.Drone.Client.Configuration;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -29,8 +23,15 @@ namespace MyoPilot.UserSettings
             keyboardSettingsBindingSource.Add(KeyboardSettings.Default);
         }
 
+        /// <summary>
+        /// Requests the current configuration from the drone asynchronously.
+        /// Triggers OnSettingsReceived when completed
+        /// Settings/Results are loaded to the settings variale
+        /// </summary>
         private void ReadDroneConfig()
         {
+            // If the drone is not connected, droneClient will throw an exception 
+            // although there is some exeption handling
             if (droneClient.IsConnected)
             {
                 Task<Settings> configurationTask = droneClient.GetConfigurationTask();
@@ -50,6 +51,9 @@ namespace MyoPilot.UserSettings
         }
 
         delegate void SettingsReceived();
+        /// <summary>
+        /// Updates the UI with the received settings
+        /// </summary>
         private void OnSettingsReceived()
         {
             controlSectionBindingSource.Clear();
@@ -69,7 +73,9 @@ namespace MyoPilot.UserSettings
                 radioButtonIndoorHull.Checked = true;
         }
 
-
+        /// <summary>
+        /// Sends the changed settings from the UI to the drone
+        /// </summary>
         private void SendDroneConfig()
         {
             if (droneClient.IsConnected)
@@ -135,6 +141,14 @@ namespace MyoPilot.UserSettings
             base.OnClosed(e);
         }
 
+        #region .Manual Databinding.
+        /*
+         * The controlls use databinding to synchronize the value between the trackBar and the numericUpDown.
+         * However, this approach is not possible for rotation and tiltAngle, because they are displayed in
+         * degrees (trackBars don't allow decimal values, and it is more meaningful) but are saved in radians,
+         * therefore they have to be converted.
+         */
+
         private void trackBarRotationMax_Scroll(object sender, EventArgs e)
         {
             settings.Control.ControlYaw = convertDegToRad(trackBarRotationMax.Value);
@@ -149,20 +163,6 @@ namespace MyoPilot.UserSettings
             controlSectionBindingSource.ResetCurrentItem();
 
             trackBarRotationMax.Value = (int)numericUpDownRotationMax.Value;
-        }
-
-        private float convertDegToRad(float value)
-        {
-            float result = value / 360f;
-            result = result * 2f * (float)Math.PI;
-            return result;
-        }
-
-        private float convertRadToDeg(float value)
-        {
-            float result = value / (2f * (float)Math.PI);
-            result = result * 360f;
-            return result;
         }
 
         private void trackBarTiltAngleMax_Scroll(object sender, EventArgs e)
@@ -181,6 +181,31 @@ namespace MyoPilot.UserSettings
             trackBarTiltAngleMax.Value = (int)numericUpDownTiltAngleMax.Value;
         }
 
+        /// <summary>
+        /// Convert angles in degrees to radians
+        /// </summary>
+        /// <param name="value">angle [degrees]</param>
+        /// <returns>angle [radians]</returns>
+        private float convertDegToRad(float value)
+        {
+            float result = value / 360f;
+            result = result * 2f * (float)Math.PI;
+            return result;
+        }
+
+        /// <summary>
+        /// Convert angles in radians to degrees
+        /// </summary>
+        /// <param name="value">angle [radians]</param>
+        /// <returns>angle [degrees]</returns>
+        private float convertRadToDeg(float value)
+        {
+            float result = value / (2f * (float)Math.PI);
+            result = result * 360f;
+            return result;
+        }
+        #endregion
+        
         private void buttonLoadConfig_Click(object sender, EventArgs e)
         {
             ReadDroneConfig();

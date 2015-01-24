@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AR.Drone.Client.Command;
+﻿using AR.Drone.Client.Command;
 
 namespace MyoPilot.Input
 {
@@ -24,10 +19,11 @@ namespace MyoPilot.Input
         /// <summary>
         /// Implementors of this Class should process the state of the
         /// peripheral (e.g. keyboard, mouse) and raise events to trigger 
-        /// actions. This method schould be invoked periodically via a Timer
+        /// actions. This method schould be invoked periodically via a Timer in the main Form
         /// </summary>
         public abstract void processInput();
 
+        #region .Methods for Triggering the events.
         protected void OnEmergency()
         {
             if (Emergency != null)
@@ -63,5 +59,6 @@ namespace MyoPilot.Input
             if (Emergency != null)
                 Progress(mode, roll, pitch, yaw, gaz);
         }
+        #endregion
     }
 }

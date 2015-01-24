@@ -15,6 +15,7 @@ namespace MyoPilot
         [STAThread]
         static void Main()
         {
+            // Loading the FFmpeg libraries
             switch (Environment.OSVersion.Platform)
             {
                 case PlatformID.Win32NT:

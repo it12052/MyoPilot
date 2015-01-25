@@ -1,14 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Input;
 
 namespace MyoPilot.UserSettings
 {
+    /// <summary>
+    /// A button-like controll to capture and save a keypress as System.Windows.Input.Key value. 
+    /// Does not capture [ALT] and [Escape]
+    /// </summary>
     public class KeyBox : Button
     {
         // The following Windows message value is defined in Winuser.h. 
@@ -24,6 +24,9 @@ namespace MyoPilot.UserSettings
             keyConverter = new KeyConverter();
         }
 
+        /// <summary>
+        /// The Key-Code as integer
+        /// </summary>
         [Category("Appearance")]
         [Description("Value of the key")]
         [Bindable(true)]
@@ -67,7 +70,6 @@ namespace MyoPilot.UserSettings
         {
             if (waitingForNewKey == true)
             {
-                this.Text = keyConverter.ConvertToString(_value);
                 waitingForNewKey = false;
             }
         }
@@ -94,6 +96,9 @@ namespace MyoPilot.UserSettings
             return base.ProcessDialogKey(keyData);
         }
 
+        /// <summary>
+        /// Check which key is currently down. Save the pressed key to Value
+        /// </summary>
         private void extractPressedKey()
         {
             // It is possible to click a button witch Space or Return
@@ -111,7 +116,7 @@ namespace MyoPilot.UserSettings
             {
                 // Handling special Keys
                 if (k == Key.None)
-                    continue;
+                    continue; // Calling Keyboard.IsKeyDown(Key.None) would trigger an exception
                 else if (k == Key.Return || k == Key.Space)
                 {
                     if (!wasClickKeyUp)
@@ -123,7 +128,7 @@ namespace MyoPilot.UserSettings
                 if (Keyboard.IsKeyDown(k))
                 {
                     if (k != Key.Escape)
-                        _value = k;
+                        Value = (int)k;
                     EndEdit();
                 }
             }

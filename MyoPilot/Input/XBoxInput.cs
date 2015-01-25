@@ -28,7 +28,7 @@ namespace MyoPilot.Input
             float pitch = -state.ThumbSticks.Left.Y;
             pitch = Math.Sign(pitch) * pitch * pitch;
 
-            float yaw = -state.Triggers.Left + state.Triggers.Right;
+            float yaw = state.ThumbSticks.Right.X;
             yaw = Math.Sign(yaw) * yaw * yaw;
 
             float gaz = state.ThumbSticks.Right.Y;

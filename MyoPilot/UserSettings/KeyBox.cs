@@ -1,11 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Input;
 
 namespace MyoPilot.UserSettings
 {
-    public partial class KeyBox : UserControl
+    public class KeyBox : Button
     {
         // The following Windows message value is defined in Winuser.h. 
         private const int WM_KEYDOWN = 0x100;
@@ -17,24 +21,7 @@ namespace MyoPilot.UserSettings
 
         public KeyBox()
         {
-            InitializeComponent();
             keyConverter = new KeyConverter();
-        }
-
-        [Category("Appearance")]
-        [Description("Action associated with a keyboard key")]
-        [Bindable(true)]
-        [SettingsBindable(true)]
-        public string ActionText
-        {
-            get
-            {
-                return labelName.Text;
-            }
-            set
-            {
-                labelName.Text = value;
-            }
         }
 
         [Category("Appearance")]
@@ -50,25 +37,27 @@ namespace MyoPilot.UserSettings
             set
             {
                 _value = (Key)value;
-                labelValue.Text = keyConverter.ConvertToString(_value);
+                this.Text = keyConverter.ConvertToString(_value);
             }
         }
 
-        private void KeyBox_Leave(object sender, EventArgs e)
+        protected override void OnLeave(EventArgs e)
         {
             EndEdit();
+            base.OnLeave(e);
         }
 
-        private void buttonEdit_Click(object sender, EventArgs e)
+        protected override void OnClick(EventArgs e)
         {
             StartEdit();
+            base.OnClick(e);
         }
 
         private void StartEdit()
         {
             if (waitingForNewKey == false)
             {
-                labelValue.Text = "(Press a key)";
+                this.Text = "(Press a key)";
                 waitingForNewKey = true;
                 wasClickKeyUp = false;
             }
@@ -78,7 +67,7 @@ namespace MyoPilot.UserSettings
         {
             if (waitingForNewKey == true)
             {
-                labelValue.Text = keyConverter.ConvertToString(_value);
+                this.Text = keyConverter.ConvertToString(_value);
                 waitingForNewKey = false;
             }
         }
@@ -95,11 +84,13 @@ namespace MyoPilot.UserSettings
 
         protected override bool ProcessDialogKey(Keys keyData)
         {
-            if (waitingForNewKey)
+            // This would capture the ALT-key, but it conflicts with the menu-bar,
+            // so we don't capture it
+            /*if (waitingForNewKey)
             {
                 extractPressedKey();
                 return true;
-            }
+            }*/
             return base.ProcessDialogKey(keyData);
         }
 
@@ -131,7 +122,8 @@ namespace MyoPilot.UserSettings
 
                 if (Keyboard.IsKeyDown(k))
                 {
-                    _value = k;
+                    if (k != Key.Escape)
+                        _value = k;
                     EndEdit();
                 }
             }

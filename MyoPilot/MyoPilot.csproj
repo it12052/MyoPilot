@@ -68,10 +68,7 @@
       <DependentUpon>KeyboardSettings.settings</DependentUpon>
     </Compile>
     <Compile Include="UserSettings\KeyBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserSettings\KeyBox.Designer.cs">
-      <DependentUpon>KeyBox.cs</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="UserSettings\SettingsForm.cs">
       <SubType>Form</SubType>
@@ -102,9 +99,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserSettings\KeyBox.resx">
-      <DependentUpon>KeyBox.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserSettings\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>

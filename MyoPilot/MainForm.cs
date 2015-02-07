@@ -43,7 +43,7 @@ namespace MyoPilot
 
             timerVideoUpdate.Enabled = true;
             timerInput.Enabled = true;
-            timerGuiUpdate.Enabled = true;
+            timerStatusUpdate.Enabled = true;
         }
 
         /// <summary>
@@ -248,7 +248,7 @@ namespace MyoPilot
         /// <summary>
         /// Render status information
         /// </summary>
-        private void timerGuiUpdate_Tick(object sender, EventArgs e)
+        private void timerStatusUpdate_Tick(object sender, EventArgs e)
         {
             string status = string.Format("{0}\nBattery: {1}%\nWifi: {2}\nDronestate: {3}",
                 droneClient.IsConnected ? "Connected\n" : "Disconnected\n",

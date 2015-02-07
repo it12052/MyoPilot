@@ -44,7 +44,7 @@
             this.labelRotateRight = new System.Windows.Forms.Label();
             this.labelRotateLeft = new System.Windows.Forms.Label();
             this.labelForward = new System.Windows.Forms.Label();
-            this.timerGuiUpdate = new System.Windows.Forms.Timer(this.components);
+            this.timerStatusUpdate = new System.Windows.Forms.Timer(this.components);
             this.labelDroneStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.videoFrame)).BeginInit();
             this.menuStrip.SuspendLayout();
@@ -206,10 +206,10 @@
             this.labelForward.Text = "";
             this.labelForward.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // timerGuiUpdate
+            // timerStatusUpdate
             // 
-            this.timerGuiUpdate.Interval = 500;
-            this.timerGuiUpdate.Tick += new System.EventHandler(this.timerGuiUpdate_Tick);
+            this.timerStatusUpdate.Interval = 500;
+            this.timerStatusUpdate.Tick += new System.EventHandler(this.timerStatusUpdate_Tick);
             // 
             // labelDroneStatus
             // 
@@ -259,7 +259,7 @@
         private System.Windows.Forms.Label labelRotateRight;
         private System.Windows.Forms.Label labelRotateLeft;
         private System.Windows.Forms.Label labelForward;
-        private System.Windows.Forms.Timer timerGuiUpdate;
+        private System.Windows.Forms.Timer timerStatusUpdate;
         private System.Windows.Forms.Label labelDroneStatus;
     }
 }

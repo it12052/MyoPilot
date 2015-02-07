@@ -32,9 +32,6 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageDrone = new System.Windows.Forms.TabPage();
             this.groupBoxOutdoor = new System.Windows.Forms.GroupBox();
-            this.radioButtonIndoorHull = new System.Windows.Forms.RadioButton();
-            this.radioButtonOutdoorHull = new System.Windows.Forms.RadioButton();
-            this.controlSectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.radioButtonIndoors = new System.Windows.Forms.RadioButton();
@@ -55,7 +52,7 @@
             this.numericUpDownAltitudeMax = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.trackBarAltitudeMax = new System.Windows.Forms.TrackBar();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPageKeyboard = new System.Windows.Forms.TabPage();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -69,7 +66,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.keyBoxFlatTrim = new MyoPilot.UserSettings.KeyBox();
-            this.keyboardSettingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.keyBoxEmergency = new MyoPilot.UserSettings.KeyBox();
             this.keyBoxLand = new MyoPilot.UserSettings.KeyBox();
             this.keyBoxTakeoff = new MyoPilot.UserSettings.KeyBox();
@@ -82,10 +78,15 @@
             this.keyBoxBackward = new MyoPilot.UserSettings.KeyBox();
             this.keyBoxForward = new MyoPilot.UserSettings.KeyBox();
             this.buttonOk = new System.Windows.Forms.Button();
+            this.tabPageController = new System.Windows.Forms.TabPage();
+            this.radioButtonIndoorHull = new System.Windows.Forms.RadioButton();
+            this.radioButtonOutdoorHull = new System.Windows.Forms.RadioButton();
+            this.controlSectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.keyboardSettingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl.SuspendLayout();
             this.tabPageDrone.SuspendLayout();
             this.groupBoxOutdoor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.controlSectionBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBoxControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTiltAngleMax)).BeginInit();
@@ -96,8 +97,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarVerticalMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAltitudeMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarAltitudeMax)).BeginInit();
-            this.tabPage1.SuspendLayout();
+            this.tabPageKeyboard.SuspendLayout();
+            this.tabPageController.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.controlSectionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.keyboardSettingsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -106,11 +110,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl.Controls.Add(this.tabPageDrone);
-            this.tabControl.Controls.Add(this.tabPage1);
+            this.tabControl.Controls.Add(this.tabPageKeyboard);
+            this.tabControl.Controls.Add(this.tabPageController);
             this.tabControl.Location = new System.Drawing.Point(12, 12);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(621, 389);
+            this.tabControl.Size = new System.Drawing.Size(620, 388);
             this.tabControl.TabIndex = 0;
             // 
             // tabPageDrone
@@ -123,7 +128,7 @@
             this.tabPageDrone.Location = new System.Drawing.Point(4, 22);
             this.tabPageDrone.Name = "tabPageDrone";
             this.tabPageDrone.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageDrone.Size = new System.Drawing.Size(613, 363);
+            this.tabPageDrone.Size = new System.Drawing.Size(612, 362);
             this.tabPageDrone.TabIndex = 0;
             this.tabPageDrone.Text = "Drone";
             this.tabPageDrone.UseVisualStyleBackColor = true;
@@ -135,43 +140,12 @@
             this.groupBoxOutdoor.Controls.Add(this.label6);
             this.groupBoxOutdoor.Controls.Add(this.panel1);
             this.groupBoxOutdoor.Enabled = false;
-            this.groupBoxOutdoor.Location = new System.Drawing.Point(6, 270);
+            this.groupBoxOutdoor.Location = new System.Drawing.Point(6, 277);
             this.groupBoxOutdoor.Name = "groupBoxOutdoor";
             this.groupBoxOutdoor.Size = new System.Drawing.Size(361, 110);
             this.groupBoxOutdoor.TabIndex = 4;
             this.groupBoxOutdoor.TabStop = false;
             this.groupBoxOutdoor.Text = "Outdoor";
-            // 
-            // radioButtonIndoorHull
-            // 
-            this.radioButtonIndoorHull.AutoSize = true;
-            this.radioButtonIndoorHull.Image = global::MyoPilot.Properties.Resources.drone_32x32_;
-            this.radioButtonIndoorHull.Location = new System.Drawing.Point(199, 53);
-            this.radioButtonIndoorHull.Name = "radioButtonIndoorHull";
-            this.radioButtonIndoorHull.Size = new System.Drawing.Size(55, 49);
-            this.radioButtonIndoorHull.TabIndex = 4;
-            this.radioButtonIndoorHull.TabStop = true;
-            this.radioButtonIndoorHull.Text = "Indoor";
-            this.radioButtonIndoorHull.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.radioButtonIndoorHull.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonOutdoorHull
-            // 
-            this.radioButtonOutdoorHull.AutoSize = true;
-            this.radioButtonOutdoorHull.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.controlSectionBindingSource, "FlightWithoutShell", true));
-            this.radioButtonOutdoorHull.Image = global::MyoPilot.Properties.Resources.drone_wo_hull_32x32_;
-            this.radioButtonOutdoorHull.Location = new System.Drawing.Point(101, 53);
-            this.radioButtonOutdoorHull.Name = "radioButtonOutdoorHull";
-            this.radioButtonOutdoorHull.Size = new System.Drawing.Size(63, 49);
-            this.radioButtonOutdoorHull.TabIndex = 3;
-            this.radioButtonOutdoorHull.TabStop = true;
-            this.radioButtonOutdoorHull.Text = "Outdoor";
-            this.radioButtonOutdoorHull.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.radioButtonOutdoorHull.UseVisualStyleBackColor = true;
-            // 
-            // controlSectionBindingSource
-            // 
-            this.controlSectionBindingSource.DataSource = typeof(AR.Drone.Client.Configuration.ControlSection);
             // 
             // label6
             // 
@@ -227,7 +201,7 @@
             // 
             // buttonSendConfig
             // 
-            this.buttonSendConfig.Location = new System.Drawing.Point(279, 7);
+            this.buttonSendConfig.Location = new System.Drawing.Point(279, 14);
             this.buttonSendConfig.Name = "buttonSendConfig";
             this.buttonSendConfig.Size = new System.Drawing.Size(114, 23);
             this.buttonSendConfig.TabIndex = 3;
@@ -237,7 +211,7 @@
             // 
             // buttonLoadConfig
             // 
-            this.buttonLoadConfig.Location = new System.Drawing.Point(159, 7);
+            this.buttonLoadConfig.Location = new System.Drawing.Point(159, 14);
             this.buttonLoadConfig.Name = "buttonLoadConfig";
             this.buttonLoadConfig.Size = new System.Drawing.Size(114, 23);
             this.buttonLoadConfig.TabIndex = 2;
@@ -260,7 +234,7 @@
             this.groupBoxControl.Controls.Add(this.label1);
             this.groupBoxControl.Controls.Add(this.trackBarAltitudeMax);
             this.groupBoxControl.Enabled = false;
-            this.groupBoxControl.Location = new System.Drawing.Point(6, 36);
+            this.groupBoxControl.Location = new System.Drawing.Point(6, 43);
             this.groupBoxControl.Name = "groupBoxControl";
             this.groupBoxControl.Size = new System.Drawing.Size(361, 227);
             this.groupBoxControl.TabIndex = 1;
@@ -468,40 +442,40 @@
             this.trackBarAltitudeMax.TickFrequency = 5000;
             this.trackBarAltitudeMax.Value = 3000;
             // 
-            // tabPage1
+            // tabPageKeyboard
             // 
-            this.tabPage1.AutoScroll = true;
-            this.tabPage1.Controls.Add(this.label18);
-            this.tabPage1.Controls.Add(this.label17);
-            this.tabPage1.Controls.Add(this.label16);
-            this.tabPage1.Controls.Add(this.label15);
-            this.tabPage1.Controls.Add(this.label14);
-            this.tabPage1.Controls.Add(this.label13);
-            this.tabPage1.Controls.Add(this.label12);
-            this.tabPage1.Controls.Add(this.label11);
-            this.tabPage1.Controls.Add(this.label10);
-            this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.keyBoxFlatTrim);
-            this.tabPage1.Controls.Add(this.keyBoxEmergency);
-            this.tabPage1.Controls.Add(this.keyBoxLand);
-            this.tabPage1.Controls.Add(this.keyBoxTakeoff);
-            this.tabPage1.Controls.Add(this.keyBoxTurnRight);
-            this.tabPage1.Controls.Add(this.keyBoxTurnLeft);
-            this.tabPage1.Controls.Add(this.keyBoxDown);
-            this.tabPage1.Controls.Add(this.keyBoxUp);
-            this.tabPage1.Controls.Add(this.keyBoxRight);
-            this.tabPage1.Controls.Add(this.keyBoxLeft);
-            this.tabPage1.Controls.Add(this.keyBoxBackward);
-            this.tabPage1.Controls.Add(this.keyBoxForward);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(613, 363);
-            this.tabPage1.TabIndex = 1;
-            this.tabPage1.Text = "Keyboard";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPageKeyboard.AutoScroll = true;
+            this.tabPageKeyboard.Controls.Add(this.label18);
+            this.tabPageKeyboard.Controls.Add(this.label17);
+            this.tabPageKeyboard.Controls.Add(this.label16);
+            this.tabPageKeyboard.Controls.Add(this.label15);
+            this.tabPageKeyboard.Controls.Add(this.label14);
+            this.tabPageKeyboard.Controls.Add(this.label13);
+            this.tabPageKeyboard.Controls.Add(this.label12);
+            this.tabPageKeyboard.Controls.Add(this.label11);
+            this.tabPageKeyboard.Controls.Add(this.label10);
+            this.tabPageKeyboard.Controls.Add(this.label9);
+            this.tabPageKeyboard.Controls.Add(this.label8);
+            this.tabPageKeyboard.Controls.Add(this.label7);
+            this.tabPageKeyboard.Controls.Add(this.keyBoxFlatTrim);
+            this.tabPageKeyboard.Controls.Add(this.keyBoxEmergency);
+            this.tabPageKeyboard.Controls.Add(this.keyBoxLand);
+            this.tabPageKeyboard.Controls.Add(this.keyBoxTakeoff);
+            this.tabPageKeyboard.Controls.Add(this.keyBoxTurnRight);
+            this.tabPageKeyboard.Controls.Add(this.keyBoxTurnLeft);
+            this.tabPageKeyboard.Controls.Add(this.keyBoxDown);
+            this.tabPageKeyboard.Controls.Add(this.keyBoxUp);
+            this.tabPageKeyboard.Controls.Add(this.keyBoxRight);
+            this.tabPageKeyboard.Controls.Add(this.keyBoxLeft);
+            this.tabPageKeyboard.Controls.Add(this.keyBoxBackward);
+            this.tabPageKeyboard.Controls.Add(this.keyBoxForward);
+            this.tabPageKeyboard.Location = new System.Drawing.Point(4, 22);
+            this.tabPageKeyboard.Name = "tabPageKeyboard";
+            this.tabPageKeyboard.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageKeyboard.Size = new System.Drawing.Size(612, 362);
+            this.tabPageKeyboard.TabIndex = 1;
+            this.tabPageKeyboard.Text = "Keyboard";
+            this.tabPageKeyboard.UseVisualStyleBackColor = true;
             // 
             // label18
             // 
@@ -620,10 +594,6 @@
             this.keyBoxFlatTrim.TabIndex = 11;
             this.keyBoxFlatTrim.Value = 0;
             // 
-            // keyboardSettingsBindingSource
-            // 
-            this.keyboardSettingsBindingSource.DataSource = typeof(MyoPilot.UserSettings.KeyboardSettings);
-            // 
             // keyBoxEmergency
             // 
             this.keyBoxEmergency.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "Emergency", true));
@@ -727,19 +697,76 @@
             // 
             this.buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.buttonOk.Location = new System.Drawing.Point(558, 407);
+            this.buttonOk.Location = new System.Drawing.Point(557, 406);
             this.buttonOk.Name = "buttonOk";
             this.buttonOk.Size = new System.Drawing.Size(75, 23);
             this.buttonOk.TabIndex = 1;
             this.buttonOk.Text = "OK";
             this.buttonOk.UseVisualStyleBackColor = true;
             // 
+            // tabPageController
+            // 
+            this.tabPageController.Controls.Add(this.pictureBox1);
+            this.tabPageController.Location = new System.Drawing.Point(4, 22);
+            this.tabPageController.Name = "tabPageController";
+            this.tabPageController.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageController.Size = new System.Drawing.Size(612, 362);
+            this.tabPageController.TabIndex = 2;
+            this.tabPageController.Text = "Controller";
+            this.tabPageController.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonIndoorHull
+            // 
+            this.radioButtonIndoorHull.AutoSize = true;
+            this.radioButtonIndoorHull.Image = global::MyoPilot.Properties.Resources.drone_32x32_;
+            this.radioButtonIndoorHull.Location = new System.Drawing.Point(199, 53);
+            this.radioButtonIndoorHull.Name = "radioButtonIndoorHull";
+            this.radioButtonIndoorHull.Size = new System.Drawing.Size(55, 49);
+            this.radioButtonIndoorHull.TabIndex = 4;
+            this.radioButtonIndoorHull.TabStop = true;
+            this.radioButtonIndoorHull.Text = "Indoor";
+            this.radioButtonIndoorHull.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.radioButtonIndoorHull.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonOutdoorHull
+            // 
+            this.radioButtonOutdoorHull.AutoSize = true;
+            this.radioButtonOutdoorHull.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.controlSectionBindingSource, "FlightWithoutShell", true));
+            this.radioButtonOutdoorHull.Image = global::MyoPilot.Properties.Resources.drone_wo_hull_32x32_;
+            this.radioButtonOutdoorHull.Location = new System.Drawing.Point(101, 53);
+            this.radioButtonOutdoorHull.Name = "radioButtonOutdoorHull";
+            this.radioButtonOutdoorHull.Size = new System.Drawing.Size(63, 49);
+            this.radioButtonOutdoorHull.TabIndex = 3;
+            this.radioButtonOutdoorHull.TabStop = true;
+            this.radioButtonOutdoorHull.Text = "Outdoor";
+            this.radioButtonOutdoorHull.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.radioButtonOutdoorHull.UseVisualStyleBackColor = true;
+            // 
+            // controlSectionBindingSource
+            // 
+            this.controlSectionBindingSource.DataSource = typeof(AR.Drone.Client.Configuration.ControlSection);
+            // 
+            // keyboardSettingsBindingSource
+            // 
+            this.keyboardSettingsBindingSource.DataSource = typeof(MyoPilot.UserSettings.KeyboardSettings);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::MyoPilot.Properties.Resources.xbox360_controller;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(606, 356);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // SettingsForm
             // 
             this.AcceptButton = this.buttonOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 442);
+            this.ClientSize = new System.Drawing.Size(644, 441);
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.tabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -749,7 +776,6 @@
             this.tabPageDrone.ResumeLayout(false);
             this.groupBoxOutdoor.ResumeLayout(false);
             this.groupBoxOutdoor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.controlSectionBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBoxControl.ResumeLayout(false);
@@ -762,9 +788,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarVerticalMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAltitudeMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarAltitudeMax)).EndInit();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tabPageKeyboard.ResumeLayout(false);
+            this.tabPageKeyboard.PerformLayout();
+            this.tabPageController.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.controlSectionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.keyboardSettingsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -774,7 +803,7 @@
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPageDrone;
         private System.Windows.Forms.Button buttonOk;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPageKeyboard;
         private KeyBox keyBoxForward;
         private KeyBox keyBoxFlatTrim;
         private KeyBox keyBoxEmergency;
@@ -824,5 +853,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TabPage tabPageController;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

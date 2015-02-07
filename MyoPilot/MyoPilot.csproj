@@ -83,6 +83,7 @@
     </Compile>
     <None Include="Resources\drone[32x32].png" />
     <None Include="Resources\drone-wo-hull[32x32].png" />
+    <None Include="Resources\xbox360-controller.png" />
     <Content Include="XInputInterface.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -58,9 +58,13 @@
             // 
             // videoFrame
             // 
+            this.videoFrame.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.videoFrame.Location = new System.Drawing.Point(0, 24);
             this.videoFrame.Name = "videoFrame";
             this.videoFrame.Size = new System.Drawing.Size(640, 360);
+            this.videoFrame.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.videoFrame.TabIndex = 0;
             this.videoFrame.TabStop = false;
             // 
@@ -75,7 +79,7 @@
             this.settingsToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(906, 24);
+            this.menuStrip.Size = new System.Drawing.Size(640, 24);
             this.menuStrip.TabIndex = 1;
             // 
             // settingsToolStripMenuItem
@@ -213,8 +217,9 @@
             // 
             // labelDroneStatus
             // 
+            this.labelDroneStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelDroneStatus.AutoSize = true;
-            this.labelDroneStatus.Location = new System.Drawing.Point(647, 28);
+            this.labelDroneStatus.Location = new System.Drawing.Point(206, 387);
             this.labelDroneStatus.Name = "labelDroneStatus";
             this.labelDroneStatus.Size = new System.Drawing.Size(73, 13);
             this.labelDroneStatus.TabIndex = 3;
@@ -224,7 +229,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(906, 484);
+            this.ClientSize = new System.Drawing.Size(640, 484);
             this.Controls.Add(this.labelDroneStatus);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.videoFrame);

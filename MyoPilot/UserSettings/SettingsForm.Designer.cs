@@ -31,7 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageDrone = new System.Windows.Forms.TabPage();
+            this.groupBoxVideo = new System.Windows.Forms.GroupBox();
+            this.radioButtonVideo720p = new System.Windows.Forms.RadioButton();
+            this.radioButtonVideo360p = new System.Windows.Forms.RadioButton();
+            this.label19 = new System.Windows.Forms.Label();
             this.groupBoxOutdoor = new System.Windows.Forms.GroupBox();
+            this.radioButtonIndoorHull = new System.Windows.Forms.RadioButton();
+            this.radioButtonOutdoorHull = new System.Windows.Forms.RadioButton();
+            this.controlSectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.radioButtonIndoors = new System.Windows.Forms.RadioButton();
@@ -66,6 +73,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.keyBoxFlatTrim = new MyoPilot.UserSettings.KeyBox();
+            this.keyboardSettingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.keyBoxEmergency = new MyoPilot.UserSettings.KeyBox();
             this.keyBoxLand = new MyoPilot.UserSettings.KeyBox();
             this.keyBoxTakeoff = new MyoPilot.UserSettings.KeyBox();
@@ -77,16 +85,14 @@
             this.keyBoxLeft = new MyoPilot.UserSettings.KeyBox();
             this.keyBoxBackward = new MyoPilot.UserSettings.KeyBox();
             this.keyBoxForward = new MyoPilot.UserSettings.KeyBox();
-            this.buttonOk = new System.Windows.Forms.Button();
             this.tabPageController = new System.Windows.Forms.TabPage();
-            this.radioButtonIndoorHull = new System.Windows.Forms.RadioButton();
-            this.radioButtonOutdoorHull = new System.Windows.Forms.RadioButton();
-            this.controlSectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.keyboardSettingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonOk = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPageDrone.SuspendLayout();
+            this.groupBoxVideo.SuspendLayout();
             this.groupBoxOutdoor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.controlSectionBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBoxControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTiltAngleMax)).BeginInit();
@@ -98,9 +104,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAltitudeMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarAltitudeMax)).BeginInit();
             this.tabPageKeyboard.SuspendLayout();
-            this.tabPageController.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.controlSectionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.keyboardSettingsBindingSource)).BeginInit();
+            this.tabPageController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,6 +126,7 @@
             // tabPageDrone
             // 
             this.tabPageDrone.AutoScroll = true;
+            this.tabPageDrone.Controls.Add(this.groupBoxVideo);
             this.tabPageDrone.Controls.Add(this.groupBoxOutdoor);
             this.tabPageDrone.Controls.Add(this.buttonSendConfig);
             this.tabPageDrone.Controls.Add(this.buttonLoadConfig);
@@ -133,6 +139,52 @@
             this.tabPageDrone.Text = "Drone";
             this.tabPageDrone.UseVisualStyleBackColor = true;
             // 
+            // groupBoxVideo
+            // 
+            this.groupBoxVideo.Controls.Add(this.radioButtonVideo720p);
+            this.groupBoxVideo.Controls.Add(this.radioButtonVideo360p);
+            this.groupBoxVideo.Controls.Add(this.label19);
+            this.groupBoxVideo.Enabled = false;
+            this.groupBoxVideo.Location = new System.Drawing.Point(6, 385);
+            this.groupBoxVideo.Name = "groupBoxVideo";
+            this.groupBoxVideo.Size = new System.Drawing.Size(361, 43);
+            this.groupBoxVideo.TabIndex = 5;
+            this.groupBoxVideo.TabStop = false;
+            this.groupBoxVideo.Text = "Video";
+            // 
+            // radioButtonVideo720p
+            // 
+            this.radioButtonVideo720p.AutoSize = true;
+            this.radioButtonVideo720p.Location = new System.Drawing.Point(199, 16);
+            this.radioButtonVideo720p.Name = "radioButtonVideo720p";
+            this.radioButtonVideo720p.Size = new System.Drawing.Size(49, 17);
+            this.radioButtonVideo720p.TabIndex = 4;
+            this.radioButtonVideo720p.TabStop = true;
+            this.radioButtonVideo720p.Text = "720p";
+            this.radioButtonVideo720p.UseVisualStyleBackColor = true;
+            this.radioButtonVideo720p.CheckedChanged += new System.EventHandler(this.radioButtonVideo720p_CheckedChanged);
+            // 
+            // radioButtonVideo360p
+            // 
+            this.radioButtonVideo360p.AutoSize = true;
+            this.radioButtonVideo360p.Location = new System.Drawing.Point(101, 16);
+            this.radioButtonVideo360p.Name = "radioButtonVideo360p";
+            this.radioButtonVideo360p.Size = new System.Drawing.Size(49, 17);
+            this.radioButtonVideo360p.TabIndex = 3;
+            this.radioButtonVideo360p.TabStop = true;
+            this.radioButtonVideo360p.Text = "360p";
+            this.radioButtonVideo360p.UseVisualStyleBackColor = true;
+            this.radioButtonVideo360p.CheckedChanged += new System.EventHandler(this.radioButtonVideo360p_CheckedChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(6, 16);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(34, 13);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "Video";
+            // 
             // groupBoxOutdoor
             // 
             this.groupBoxOutdoor.Controls.Add(this.radioButtonIndoorHull);
@@ -140,12 +192,43 @@
             this.groupBoxOutdoor.Controls.Add(this.label6);
             this.groupBoxOutdoor.Controls.Add(this.panel1);
             this.groupBoxOutdoor.Enabled = false;
-            this.groupBoxOutdoor.Location = new System.Drawing.Point(6, 277);
+            this.groupBoxOutdoor.Location = new System.Drawing.Point(6, 269);
             this.groupBoxOutdoor.Name = "groupBoxOutdoor";
             this.groupBoxOutdoor.Size = new System.Drawing.Size(361, 110);
             this.groupBoxOutdoor.TabIndex = 4;
             this.groupBoxOutdoor.TabStop = false;
             this.groupBoxOutdoor.Text = "Outdoor";
+            // 
+            // radioButtonIndoorHull
+            // 
+            this.radioButtonIndoorHull.AutoSize = true;
+            this.radioButtonIndoorHull.Image = global::MyoPilot.Properties.Resources.drone_32x32_;
+            this.radioButtonIndoorHull.Location = new System.Drawing.Point(199, 53);
+            this.radioButtonIndoorHull.Name = "radioButtonIndoorHull";
+            this.radioButtonIndoorHull.Size = new System.Drawing.Size(55, 49);
+            this.radioButtonIndoorHull.TabIndex = 4;
+            this.radioButtonIndoorHull.TabStop = true;
+            this.radioButtonIndoorHull.Text = "Indoor";
+            this.radioButtonIndoorHull.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.radioButtonIndoorHull.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonOutdoorHull
+            // 
+            this.radioButtonOutdoorHull.AutoSize = true;
+            this.radioButtonOutdoorHull.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.controlSectionBindingSource, "FlightWithoutShell", true));
+            this.radioButtonOutdoorHull.Image = global::MyoPilot.Properties.Resources.drone_wo_hull_32x32_;
+            this.radioButtonOutdoorHull.Location = new System.Drawing.Point(101, 53);
+            this.radioButtonOutdoorHull.Name = "radioButtonOutdoorHull";
+            this.radioButtonOutdoorHull.Size = new System.Drawing.Size(63, 49);
+            this.radioButtonOutdoorHull.TabIndex = 3;
+            this.radioButtonOutdoorHull.TabStop = true;
+            this.radioButtonOutdoorHull.Text = "Outdoor";
+            this.radioButtonOutdoorHull.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.radioButtonOutdoorHull.UseVisualStyleBackColor = true;
+            // 
+            // controlSectionBindingSource
+            // 
+            this.controlSectionBindingSource.DataSource = typeof(AR.Drone.Client.Configuration.ControlSection);
             // 
             // label6
             // 
@@ -201,7 +284,7 @@
             // 
             // buttonSendConfig
             // 
-            this.buttonSendConfig.Location = new System.Drawing.Point(279, 14);
+            this.buttonSendConfig.Location = new System.Drawing.Point(279, 6);
             this.buttonSendConfig.Name = "buttonSendConfig";
             this.buttonSendConfig.Size = new System.Drawing.Size(114, 23);
             this.buttonSendConfig.TabIndex = 3;
@@ -211,7 +294,7 @@
             // 
             // buttonLoadConfig
             // 
-            this.buttonLoadConfig.Location = new System.Drawing.Point(159, 14);
+            this.buttonLoadConfig.Location = new System.Drawing.Point(159, 6);
             this.buttonLoadConfig.Name = "buttonLoadConfig";
             this.buttonLoadConfig.Size = new System.Drawing.Size(114, 23);
             this.buttonLoadConfig.TabIndex = 2;
@@ -234,7 +317,7 @@
             this.groupBoxControl.Controls.Add(this.label1);
             this.groupBoxControl.Controls.Add(this.trackBarAltitudeMax);
             this.groupBoxControl.Enabled = false;
-            this.groupBoxControl.Location = new System.Drawing.Point(6, 43);
+            this.groupBoxControl.Location = new System.Drawing.Point(6, 35);
             this.groupBoxControl.Name = "groupBoxControl";
             this.groupBoxControl.Size = new System.Drawing.Size(361, 227);
             this.groupBoxControl.TabIndex = 1;
@@ -594,6 +677,10 @@
             this.keyBoxFlatTrim.TabIndex = 11;
             this.keyBoxFlatTrim.Value = 0;
             // 
+            // keyboardSettingsBindingSource
+            // 
+            this.keyboardSettingsBindingSource.DataSource = typeof(MyoPilot.UserSettings.KeyboardSettings);
+            // 
             // keyBoxEmergency
             // 
             this.keyBoxEmergency.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "Emergency", true));
@@ -693,17 +780,6 @@
             this.keyBoxForward.TabIndex = 0;
             this.keyBoxForward.Value = 0;
             // 
-            // buttonOk
-            // 
-            this.buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.buttonOk.Location = new System.Drawing.Point(557, 406);
-            this.buttonOk.Name = "buttonOk";
-            this.buttonOk.Size = new System.Drawing.Size(75, 23);
-            this.buttonOk.TabIndex = 1;
-            this.buttonOk.Text = "OK";
-            this.buttonOk.UseVisualStyleBackColor = true;
-            // 
             // tabPageController
             // 
             this.tabPageController.Controls.Add(this.pictureBox1);
@@ -715,41 +791,6 @@
             this.tabPageController.Text = "Controller";
             this.tabPageController.UseVisualStyleBackColor = true;
             // 
-            // radioButtonIndoorHull
-            // 
-            this.radioButtonIndoorHull.AutoSize = true;
-            this.radioButtonIndoorHull.Image = global::MyoPilot.Properties.Resources.drone_32x32_;
-            this.radioButtonIndoorHull.Location = new System.Drawing.Point(199, 53);
-            this.radioButtonIndoorHull.Name = "radioButtonIndoorHull";
-            this.radioButtonIndoorHull.Size = new System.Drawing.Size(55, 49);
-            this.radioButtonIndoorHull.TabIndex = 4;
-            this.radioButtonIndoorHull.TabStop = true;
-            this.radioButtonIndoorHull.Text = "Indoor";
-            this.radioButtonIndoorHull.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.radioButtonIndoorHull.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonOutdoorHull
-            // 
-            this.radioButtonOutdoorHull.AutoSize = true;
-            this.radioButtonOutdoorHull.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.controlSectionBindingSource, "FlightWithoutShell", true));
-            this.radioButtonOutdoorHull.Image = global::MyoPilot.Properties.Resources.drone_wo_hull_32x32_;
-            this.radioButtonOutdoorHull.Location = new System.Drawing.Point(101, 53);
-            this.radioButtonOutdoorHull.Name = "radioButtonOutdoorHull";
-            this.radioButtonOutdoorHull.Size = new System.Drawing.Size(63, 49);
-            this.radioButtonOutdoorHull.TabIndex = 3;
-            this.radioButtonOutdoorHull.TabStop = true;
-            this.radioButtonOutdoorHull.Text = "Outdoor";
-            this.radioButtonOutdoorHull.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.radioButtonOutdoorHull.UseVisualStyleBackColor = true;
-            // 
-            // controlSectionBindingSource
-            // 
-            this.controlSectionBindingSource.DataSource = typeof(AR.Drone.Client.Configuration.ControlSection);
-            // 
-            // keyboardSettingsBindingSource
-            // 
-            this.keyboardSettingsBindingSource.DataSource = typeof(MyoPilot.UserSettings.KeyboardSettings);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -760,6 +801,17 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // buttonOk
+            // 
+            this.buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.buttonOk.Location = new System.Drawing.Point(557, 406);
+            this.buttonOk.Name = "buttonOk";
+            this.buttonOk.Size = new System.Drawing.Size(75, 23);
+            this.buttonOk.TabIndex = 1;
+            this.buttonOk.Text = "OK";
+            this.buttonOk.UseVisualStyleBackColor = true;
             // 
             // SettingsForm
             // 
@@ -774,8 +826,11 @@
             this.Text = "Settings";
             this.tabControl.ResumeLayout(false);
             this.tabPageDrone.ResumeLayout(false);
+            this.groupBoxVideo.ResumeLayout(false);
+            this.groupBoxVideo.PerformLayout();
             this.groupBoxOutdoor.ResumeLayout(false);
             this.groupBoxOutdoor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.controlSectionBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBoxControl.ResumeLayout(false);
@@ -790,9 +845,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarAltitudeMax)).EndInit();
             this.tabPageKeyboard.ResumeLayout(false);
             this.tabPageKeyboard.PerformLayout();
-            this.tabPageController.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.controlSectionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.keyboardSettingsBindingSource)).EndInit();
+            this.tabPageController.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -855,5 +909,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabPage tabPageController;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBoxVideo;
+        private System.Windows.Forms.RadioButton radioButtonVideo720p;
+        private System.Windows.Forms.RadioButton radioButtonVideo360p;
+        private System.Windows.Forms.Label label19;
     }
 }

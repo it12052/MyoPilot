@@ -9,6 +9,26 @@ namespace MyoPilot.UserSettings
 {
     public partial class SettingsForm : Form
     {
+        /// <summary>
+        /// Occurs before the settings are sent to the drone
+        /// </summary>
+        public event EventHandler ChangeDroneSettingsBegin;
+        /// <summary>
+        /// Occurs after the settings have been sent to the drone
+        /// </summary>
+        public event EventHandler ChangeDroneSettingsEnd;
+
+        protected void OnChangeDroneSettingsBegin()
+        {
+            if (ChangeDroneSettingsBegin != null)
+                ChangeDroneSettingsBegin(this, EventArgs.Empty);
+        }
+        protected void OnChangeDroneSettingsEnd()
+        {
+            if (ChangeDroneSettingsEnd != null)
+                ChangeDroneSettingsEnd(this, EventArgs.Empty);
+        }
+
         private DroneClient droneClient;
         private Settings settings;
 
@@ -60,6 +80,7 @@ namespace MyoPilot.UserSettings
             controlSectionBindingSource.Add(settings.Control);
             groupBoxControl.Enabled = true;
             groupBoxOutdoor.Enabled = true;
+            groupBoxVideo.Enabled = true;
 
             // Update Controlls which are not bound
             numericUpDownRotationMax.Value = (int)convertRadToDeg(settings.Control.ControlYaw);
@@ -67,10 +88,15 @@ namespace MyoPilot.UserSettings
             numericUpDownTiltAngleMax.Value = (int)convertRadToDeg(settings.Control.EulerAngleMax);
             trackBarTiltAngleMax.Value = (int)convertRadToDeg(settings.Control.EulerAngleMax);
 
+            // The other radioButtons are initialized with databinding
             if (!settings.Control.Outdoor)
                 radioButtonIndoors.Checked = true;
             if (!settings.Control.FlightWithoutShell)
                 radioButtonIndoorHull.Checked = true;
+            if (settings.Video.Codec == VideoCodecType.H264_360P)
+                radioButtonVideo360p.Checked = true;
+            else if (settings.Video.Codec == VideoCodecType.H264_720P)
+                radioButtonVideo720p.Checked = true;
         }
 
         /// <summary>
@@ -80,6 +106,7 @@ namespace MyoPilot.UserSettings
         {
             if (droneClient.IsConnected)
             {
+                OnChangeDroneSettingsBegin();
                 var sendConfigTask = new Task(() =>
                 {
                     if (settings == null) 
@@ -111,8 +138,8 @@ namespace MyoPilot.UserSettings
                     settings.General.NavdataOptions = NavdataOptions.All;
 
                     settings.Video.BitrateCtrlMode = VideoBitrateControlMode.Dynamic;
-                    settings.Video.Bitrate = 1000;
-                    settings.Video.MaxBitrate = 2000;
+                    settings.Video.Bitrate = 2000;
+                    settings.Video.MaxBitrate = 4000;
 
                     //settings.Leds.LedAnimation = new LedAnimation(LedAnimationType.BlinkGreenRed, 2.0f, 2);
                     //settings.Control.FlightAnimation = new FlightAnimation(FlightAnimationType.Wave);
@@ -130,7 +157,9 @@ namespace MyoPilot.UserSettings
                     //send all changes in one pice
                     droneClient.Send(settings);
                 });
-                sendConfigTask.Start();
+                sendConfigTask.Start(); 
+                sendConfigTask.Wait();
+                OnChangeDroneSettingsEnd();
             }
         }
 
@@ -204,6 +233,18 @@ namespace MyoPilot.UserSettings
             result = result * 360f;
             return result;
         }
+
+        private void radioButtonVideo360p_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonVideo360p.Checked)
+                settings.Video.Codec = VideoCodecType.H264_360P;
+        }
+
+        private void radioButtonVideo720p_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonVideo720p.Checked)
+                settings.Video.Codec = VideoCodecType.H264_720P;
+        }
         #endregion
         
         private void buttonLoadConfig_Click(object sender, EventArgs e)
@@ -215,6 +256,5 @@ namespace MyoPilot.UserSettings
         {
             SendDroneConfig();
         }
-
     }
 }

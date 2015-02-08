@@ -17,7 +17,7 @@ namespace MyoPilot
     public partial class MainForm : Form
     {
         private readonly DroneClient droneClient;
-        private readonly VideoPacketDecoderWorker videoPacketDecoderWorker;
+        private VideoPacketDecoderWorker videoPacketDecoderWorker;
         private VideoFrame frame;
         private Bitmap frameBitmap;
         private uint frameNumber;
@@ -29,19 +29,16 @@ namespace MyoPilot
         {
             InitializeComponent();
 
-            videoPacketDecoderWorker = new VideoPacketDecoderWorker(PixelFormat.BGR24, true, OnVideoPacketDecoded);
-            videoPacketDecoderWorker.Start();
-            videoPacketDecoderWorker.UnhandledException += UnhandledException;
-
             droneClient = new DroneClient();
-            droneClient.VideoPacketAcquired += OnVideoPacketAcquired;
             droneClient.NavigationDataAcquired += data => navigationData = data;
+            droneClient.VideoPacketAcquired += OnVideoPacketAcquired;
             droneClient.Start();
+
+            InitializeVideo();
 
             LoadFontAwesome();
             InitInput();
 
-            timerVideoUpdate.Enabled = true;
             timerInput.Enabled = true;
             timerStatusUpdate.Enabled = true;
         }
@@ -86,6 +83,31 @@ namespace MyoPilot
             labelRight.Font = fontAwesome;
             labelUp.Font = fontAwesome;
             labelDown.Font = fontAwesome;
+        }
+
+        /// <summary>
+        /// Initialize video processing
+        /// </summary>
+        private void InitializeVideo()
+        {
+            videoPacketDecoderWorker = new VideoPacketDecoderWorker(PixelFormat.BGR24, true, OnVideoPacketDecoded);
+            videoPacketDecoderWorker.Start();
+            videoPacketDecoderWorker.UnhandledException += UnhandledException;
+
+            timerVideoUpdate.Enabled = true;
+        }
+
+        /// <summary>
+        /// Stop video processing
+        /// </summary>
+        private void StopVideo()
+        {
+            timerVideoUpdate.Enabled = false;
+
+            videoPacketDecoderWorker.Stop();
+            videoPacketDecoderWorker.Join();
+            frame = null;
+            frameBitmap = null;
         }
 
         /// <summary>
@@ -242,7 +264,15 @@ namespace MyoPilot
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new SettingsForm(droneClient).ShowDialog();
+            SettingsForm dialog = new SettingsForm(droneClient);
+            
+            // We need to restart the video processor in case the user changed 
+            // the resolution of the stream. Otherwise VideoHelper will run into
+            // Memory Access Violations (very bad!) because of changed memory requirements
+            dialog.ChangeDroneSettingsBegin += (s, args) => StopVideo();
+            dialog.ChangeDroneSettingsEnd += (s, args) => InitializeVideo();
+
+            dialog.ShowDialog();
         }
 
         /// <summary>
@@ -250,11 +280,12 @@ namespace MyoPilot
         /// </summary>
         private void timerStatusUpdate_Tick(object sender, EventArgs e)
         {
-            string status = string.Format("{0}\nBattery: {1}%\nWifi: {2}\nDronestate: {3}",
+            string status = string.Format("{0}\nBattery: {1}%\nWifi: {2}\nDronestate: {3}\nResolution: {4}",
                 droneClient.IsConnected ? "Connected\n" : "Disconnected\n",
                 navigationData != null ? navigationData.Battery.Percentage.ToString() : "",
                 navigationData != null ? navigationData.Wifi.LinkQuality : 0f,
-                navigationData != null ? navigationData.State.ToString() : "");
+                navigationData != null ? navigationData.State.ToString() : "",
+                frameBitmap != null ? frameBitmap.Size.ToString() : "");
 
             labelDroneStatus.Text = status;
         }

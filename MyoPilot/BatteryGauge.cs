@@ -10,6 +10,7 @@ using System.Drawing.Drawing2D;
 
 namespace MyoPilot
 {
+    [DefaultBindingProperty("ChargePercentage")]
     class BatteryGauge : Control
     {
         private int chargePercentage = 100;
@@ -18,8 +19,10 @@ namespace MyoPilot
 
         public BatteryGauge() : base()
         {
-            SetStyle(ControlStyles.ResizeRedraw, true);
-            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+            SetStyle(ControlStyles.Selectable, false);
+
+            SetStyle(ControlStyles.ResizeRedraw | 
+                ControlStyles.OptimizedDoubleBuffer, true);            
         }
 
 

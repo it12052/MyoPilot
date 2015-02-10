@@ -30,7 +30,7 @@ namespace MyoPilot
 
         [
         Category("Appearance"),
-        Description("The carge of the battery in percent."),
+        Description("The charge of the battery in percent."),
         DefaultValue((int)100),
         Bindable(BindableSupport.Yes, BindingDirection.OneWay)
         ]

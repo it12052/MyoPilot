@@ -50,6 +50,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BatteryGauge.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Input\Input.cs" />
     <Compile Include="Input\InputManager.cs" />
     <Compile Include="Input\XBoxInput.cs" />

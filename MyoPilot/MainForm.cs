@@ -280,6 +280,8 @@ namespace MyoPilot
         /// </summary>
         private void timerStatusUpdate_Tick(object sender, EventArgs e)
         {
+            batteryGauge.ChargePercentage = navigationData != null ? (int)navigationData.Battery.Percentage * 100 : 0;
+
             string status = string.Format("{0}\nBattery: {1}%\nWifi: {2}\nDronestate: {3}\nResolution: {4}",
                 droneClient.IsConnected ? "Connected\n" : "Disconnected\n",
                 navigationData != null ? navigationData.Battery.Percentage.ToString() : "",

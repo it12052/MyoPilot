@@ -46,6 +46,7 @@
             this.labelForward = new System.Windows.Forms.Label();
             this.timerStatusUpdate = new System.Windows.Forms.Timer(this.components);
             this.labelDroneStatus = new System.Windows.Forms.Label();
+            this.batteryGauge = new MyoPilot.BatteryGauge();
             ((System.ComponentModel.ISupportInitialize)(this.videoFrame)).BeginInit();
             this.menuStrip.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -225,11 +226,22 @@
             this.labelDroneStatus.TabIndex = 3;
             this.labelDroneStatus.Text = "Disconnected";
             // 
+            // batteryGauge
+            // 
+            this.batteryGauge.ChargePercentage = 50;
+            this.batteryGauge.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.batteryGauge.Location = new System.Drawing.Point(203, 450);
+            this.batteryGauge.Name = "batteryGauge";
+            this.batteryGauge.Size = new System.Drawing.Size(84, 28);
+            this.batteryGauge.TabIndex = 4;
+            this.batteryGauge.Text = "batteryGauge";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(640, 484);
+            this.Controls.Add(this.batteryGauge);
             this.Controls.Add(this.labelDroneStatus);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.videoFrame);
@@ -266,6 +278,7 @@
         private System.Windows.Forms.Label labelForward;
         private System.Windows.Forms.Timer timerStatusUpdate;
         private System.Windows.Forms.Label labelDroneStatus;
+        private BatteryGauge batteryGauge;
     }
 }
 

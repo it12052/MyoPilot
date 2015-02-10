@@ -22,7 +22,9 @@ namespace MyoPilot
             SetStyle(ControlStyles.Selectable, false);
 
             SetStyle(ControlStyles.ResizeRedraw | 
-                ControlStyles.OptimizedDoubleBuffer, true);            
+                ControlStyles.OptimizedDoubleBuffer, true);
+
+            TabStop = false;
         }
 
 

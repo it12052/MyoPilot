@@ -118,8 +118,8 @@ namespace MyoPilot
         {
             KeyboardInput keyboardInput = new KeyboardInput();
             // Prevents input through keyboard when the app is not focused
-            this.GotFocus += (sender, e) => keyboardInput.Active = true;
-            this.LostFocus += (sender, e) => keyboardInput.Active = false;
+            this.Activated += (sender, e) => keyboardInput.Active = true;
+            this.Deactivate += (sender, e) => keyboardInput.Active = false;
 
             XBoxInput xBoxInput = new XBoxInput();
 

@@ -16,6 +16,9 @@ namespace MyoPilot
 {
     public partial class MainForm : Form
     {
+        // The following Windows message value is defined in Winuser.h. 
+        private const int WM_KEYDOWN = 0x100;
+
         private readonly DroneClient droneClient;
         private VideoPacketDecoderWorker videoPacketDecoderWorker;
         private VideoFrame frame;
@@ -291,6 +294,20 @@ namespace MyoPilot
 
             labelDroneStatus.Text = status;
         }
-                
+
+        /// <summary>
+        /// Disable defalt Windows Forms keyboard input processing
+        /// Prevent conflicts between UI commands and drone commands
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <param name="keyData"></param>
+        /// <returns></returns>
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (msg.Msg == WM_KEYDOWN)
+                return true;
+            else
+                return base.ProcessCmdKey(ref msg, keyData);
+        }
     }
 }

@@ -17,7 +17,6 @@ namespace MyoPilot.UserSettings
         private Key _value;
         private KeyConverter keyConverter;
         private bool waitingForNewKey = false;
-        private bool wasClickKeyUp;
 
         public KeyBox()
         {
@@ -62,7 +61,6 @@ namespace MyoPilot.UserSettings
             {
                 this.Text = "(Press a key)";
                 waitingForNewKey = true;
-                wasClickKeyUp = false;
             }
         }
 
@@ -101,29 +99,12 @@ namespace MyoPilot.UserSettings
         /// </summary>
         private void extractPressedKey()
         {
-            // It is possible to click a button witch Space or Return
-            // If this happened, the key might still be down
-            if (!wasClickKeyUp)
-            {
-                if (Keyboard.IsKeyUp(Key.Return) && Keyboard.IsKeyUp(Key.Space))
-                {
-                    wasClickKeyUp = true;
-                }
-            }
-
             Array keyValues = Enum.GetValues(typeof(Key));
             foreach (Key k in keyValues)
             {
                 // Handling special Keys
                 if (k == Key.None)
                     continue; // Calling Keyboard.IsKeyDown(Key.None) would trigger an exception
-                else if (k == Key.Return || k == Key.Space)
-                {
-                    if (!wasClickKeyUp)
-                    {
-                        continue;
-                    }
-                }
 
                 if (Keyboard.IsKeyDown(k))
                 {

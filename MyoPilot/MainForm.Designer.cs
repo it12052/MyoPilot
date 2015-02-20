@@ -47,6 +47,7 @@
             this.timerStatusUpdate = new System.Windows.Forms.Timer(this.components);
             this.labelDroneStatus = new System.Windows.Forms.Label();
             this.batteryGauge = new MyoPilot.BatteryGauge();
+            this.buttonResetEmergency = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.videoFrame)).BeginInit();
             this.menuStrip.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -238,11 +239,23 @@
             this.batteryGauge.TabStop = false;
             this.batteryGauge.Text = "batteryGauge";
             // 
+            // buttonResetEmergency
+            // 
+            this.buttonResetEmergency.Location = new System.Drawing.Point(293, 450);
+            this.buttonResetEmergency.Name = "buttonResetEmergency";
+            this.buttonResetEmergency.Size = new System.Drawing.Size(107, 23);
+            this.buttonResetEmergency.TabIndex = 5;
+            this.buttonResetEmergency.Text = "Reset Emergency";
+            this.buttonResetEmergency.UseVisualStyleBackColor = true;
+            this.buttonResetEmergency.Visible = false;
+            this.buttonResetEmergency.Click += new System.EventHandler(this.buttonResetEmergency_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(640, 484);
+            this.Controls.Add(this.buttonResetEmergency);
             this.Controls.Add(this.batteryGauge);
             this.Controls.Add(this.labelDroneStatus);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -281,6 +294,7 @@
         private System.Windows.Forms.Timer timerStatusUpdate;
         private System.Windows.Forms.Label labelDroneStatus;
         private BatteryGauge batteryGauge;
+        private System.Windows.Forms.Button buttonResetEmergency;
     }
 }
 

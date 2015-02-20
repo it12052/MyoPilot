@@ -128,7 +128,7 @@ namespace MyoPilot
 
             inputManager = new InputManager();
             // Add UI Listeners
-            inputManager.Emergency += inputManager_Emergency;
+            //inputManager.Emergency += inputManager_Emergency;
             //inputManager.FlatTrim += inputManager_FlatTrim;
             inputManager.Hover += inputManager_Hover;
             //inputManager.Land += inputManager_Land;
@@ -184,18 +184,6 @@ namespace MyoPilot
             labelDown.ForeColor = UISettings.Default.IconDefaultColor;
         }
 
-        /// <summary>
-        /// TODO: Use the dronestate to reset the emergency
-        /// </summary>
-        void inputManager_Emergency()
-        {
-            DialogResult res = MessageBox.Show("Press OK to reset emergency", "Emergency", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            if (res == DialogResult.OK)
-            {
-                droneClient.ResetEmergency();
-            }
-        }
-        
         /// <summary>
         /// Trigger input processing
         /// </summary>
@@ -283,16 +271,28 @@ namespace MyoPilot
         /// </summary>
         private void timerStatusUpdate_Tick(object sender, EventArgs e)
         {
-            batteryGauge.ChargePercentage = navigationData != null ? (int)navigationData.Battery.Percentage * 100 : 0;
+            string status = droneClient.IsConnected ? "Connected\n" : "Disconnected\n";
 
-            string status = string.Format("{0}\nBattery: {1}%\nWifi: {2}\nDronestate: {3}\nResolution: {4}",
-                droneClient.IsConnected ? "Connected\n" : "Disconnected\n",
-                navigationData != null ? navigationData.Battery.Percentage.ToString() : "",
-                navigationData != null ? navigationData.Wifi.LinkQuality : 0f,
-                navigationData != null ? navigationData.State.ToString() : "",
-                frameBitmap != null ? frameBitmap.Size.ToString() : "");
+            if (navigationData != null)
+            {
+                batteryGauge.ChargePercentage = (int)(navigationData.Battery.Percentage * 100);
+
+                buttonResetEmergency.Visible = navigationData.State.HasFlag(NavigationState.Emergency);
+
+                status += string.Format("Battery: {0}%\nWifi: {1}\nDronestate: {2}\n",
+                navigationData.Battery.Percentage.ToString(),
+                navigationData.Wifi.LinkQuality,
+                navigationData.State.ToString());
+            }
+
+            if (frameBitmap != null)
+            {
+                status += "Resolution: " + frameBitmap.Size.ToString() + "\n";
+            }
 
             labelDroneStatus.Text = status;
+
+
         }
 
         /// <summary>
@@ -308,6 +308,11 @@ namespace MyoPilot
                 return true;
             else
                 return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void buttonResetEmergency_Click(object sender, EventArgs e)
+        {
+            droneClient.ResetEmergency();
         }
     }
 }

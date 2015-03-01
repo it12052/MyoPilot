@@ -275,7 +275,7 @@ namespace MyoPilot
 
             if (navigationData != null)
             {
-                batteryGauge.ChargePercentage = (int)(navigationData.Battery.Percentage * 100);
+                batteryGauge.ChargePercentage = (int)(navigationData.Battery.Percentage);
 
                 buttonResetEmergency.Visible = navigationData.State.HasFlag(NavigationState.Emergency);
 

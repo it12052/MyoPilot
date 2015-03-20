@@ -119,13 +119,6 @@ namespace MyoPilot
         /// </summary>
         private void InitInput()
         {
-            KeyboardInput keyboardInput = new KeyboardInput();
-            // Prevents input through keyboard when the app is not focused
-            this.Activated += (sender, e) => keyboardInput.Active = true;
-            this.Deactivate += (sender, e) => keyboardInput.Active = false;
-
-            XBoxInput xBoxInput = new XBoxInput();
-
             inputManager = new InputManager();
             // Add UI Listeners
             //inputManager.Emergency += inputManager_Emergency;
@@ -142,8 +135,31 @@ namespace MyoPilot
             inputManager.Progress += droneClient.Progress;
             inputManager.Takeoff += droneClient.Takeoff;
 
+            KeyboardInput keyboardInput = new KeyboardInput();
+            // Prevents input through keyboard when the app is not focused
+            this.Activated += (sender, e) => keyboardInput.Active = true;
+            this.Deactivate += (sender, e) => keyboardInput.Active = false;
             inputManager.addControl(keyboardInput);
-            inputManager.addControl(xBoxInput);
+
+            try
+            {
+                XBoxInput xBoxInput = new XBoxInput();
+                inputManager.addControl(xBoxInput);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Xbox module not loaded:\n" + e.Message, "Xbox error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            try
+            {
+                MyoInput myoInput = new MyoInput();
+                inputManager.addControl(myoInput);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Myo module not loaded:\n" + e.Message, "Myo error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         #region Input handling

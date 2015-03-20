@@ -59,6 +59,7 @@
     </Compile>
     <Compile Include="Input\Input.cs" />
     <Compile Include="Input\InputManager.cs" />
+    <Compile Include="Input\MyoInput.cs" />
     <Compile Include="Input\XBoxInput.cs" />
     <Compile Include="Input\KeyboardInput.cs" />
     <Compile Include="MainForm.cs">
@@ -76,6 +77,11 @@
     </Compile>
     <Compile Include="UserSettings\KeyBox.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserSettings\MyoSettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>MyoSettings.settings</DependentUpon>
     </Compile>
     <Compile Include="UserSettings\SettingsForm.cs">
       <SubType>Form</SubType>
@@ -130,6 +136,10 @@
     <None Include="UserSettings\KeyboardSettings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>KeyboardSettings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="UserSettings\MyoSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>MyoSettings.Designer.cs</LastGenOutput>
     </None>
     <None Include="UserSettings\UISettings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

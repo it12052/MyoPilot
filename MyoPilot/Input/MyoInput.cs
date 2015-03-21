@@ -8,6 +8,12 @@ namespace MyoPilot.Input
 {
     public class MyoInput : Input
     {
+        /// <summary>
+        /// Set to false to disable processing of the KeyboardState. 
+        /// Useful when the application is minimized/not focused
+        /// </summary>
+        public bool Active { get; set; }
+
         private Object myLock = new Object();
 
         private Hub hub;
@@ -17,6 +23,7 @@ namespace MyoPilot.Input
         private Quaternion referenceOrientation;
         private Pose currentPose;
         private bool onArm = false;
+        private bool takeoffLand = false;
         
 
         public MyoInput()
@@ -42,7 +49,7 @@ namespace MyoPilot.Input
         {
             lock (myLock)
             {
-                if (myo != null && onArm)
+                if (Active && myo != null && onArm)
                 {
                     double myoRoll, myoPitch, myoYaw;
                     float droneRoll, dronePitch, droneYaw, droneGaz;
@@ -50,10 +57,11 @@ namespace MyoPilot.Input
                     CalculateRelativeEulerAngles(out myoRoll, out myoPitch, out myoYaw);
                     RerangeEulerAngles(ref myoRoll, ref myoPitch, ref myoYaw);
 
-                    if (currentPose == Pose.DoubleTap)
+                    if (takeoffLand)
                     {
                         OnTakeoff();
                         OnLand();
+                        takeoffLand = false;
                     }
                     else if (currentPose == Pose.FingersSpread)
                     {
@@ -191,8 +199,7 @@ namespace MyoPilot.Input
         {
             lock (myLock)
             {
-                if ((currentPose == Pose.Fist || currentPose == Pose.FingersSpread)
-                    && (e.Pose != Pose.Fist || e.Pose != Pose.FingersSpread))
+                if (currentPose == Pose.Fist || currentPose == Pose.FingersSpread)
                 {
                     e.Myo.Vibrate(VibrationType.Short);
                 }
@@ -203,6 +210,11 @@ namespace MyoPilot.Input
                 {
                     referenceOrientation = currentOrientation;
                     e.Myo.Vibrate(VibrationType.Short);
+                }
+                else if (e.Pose == Pose.DoubleTap)
+                {
+                    e.Myo.Vibrate(VibrationType.Medium);
+                    takeoffLand = true;
                 }
             }
         }

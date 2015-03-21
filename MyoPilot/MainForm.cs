@@ -154,6 +154,8 @@ namespace MyoPilot
             try
             {
                 MyoInput myoInput = new MyoInput();
+                this.Activated += (sender, e) => myoInput.Active = true;
+                this.Deactivate += (sender, e) => myoInput.Active = false;
                 inputManager.addControl(myoInput);
             }
             catch (Exception e)

@@ -41,6 +41,7 @@ namespace MyoPilot.UserSettings
             ReadDroneConfig();
 
             keyboardSettingsBindingSource.Add(KeyboardSettings.Default);
+            myoSettingsBindingSource.Add(MyoSettings.Default);
         }
 
         /// <summary>

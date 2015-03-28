@@ -32,6 +32,8 @@ namespace MyoPilot
         {
             InitializeComponent();
 
+            uISettingsBindingSource.Add(UISettings.Default);
+
             droneClient = new DroneClient();
             droneClient.NavigationDataAcquired += data => navigationData = data;
             droneClient.VideoPacketAcquired += OnVideoPacketAcquired;
@@ -171,6 +173,8 @@ namespace MyoPilot
         /// </summary>
         void inputManager_Progress(FlightMode mode, float roll = 0, float pitch = 0, float yaw = 0, float gaz = 0)
         {
+            labelAngles.Text = string.Format("Roll: {0:0.00}\nPitch: {1:0.00}\nYaw: {2:0.00}\nGaz: {3:0.00}\n", roll, pitch, yaw, gaz);
+
             if (mode == FlightMode.Hover)
             {
                 inputManager_Hover();
@@ -192,6 +196,8 @@ namespace MyoPilot
         /// </summary>
         void inputManager_Hover()
         {
+            labelAngles.Text = string.Format("Roll: {0:0.00}\nPitch: {1:0.00}\nYaw: {2:0.00}\nGaz: {3:0.00}\n", 0, 0, 0, 0);
+
             labelRotateLeft.ForeColor = UISettings.Default.IconDefaultColor;
             labelRotateRight.ForeColor = UISettings.Default.IconDefaultColor;
             labelForward.ForeColor = UISettings.Default.IconDefaultColor;
@@ -309,8 +315,6 @@ namespace MyoPilot
             }
 
             labelDroneStatus.Text = status;
-
-
         }
 
         /// <summary>

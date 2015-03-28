@@ -46,11 +46,14 @@
             this.labelForward = new System.Windows.Forms.Label();
             this.timerStatusUpdate = new System.Windows.Forms.Timer(this.components);
             this.labelDroneStatus = new System.Windows.Forms.Label();
-            this.batteryGauge = new MyoPilot.BatteryGauge();
             this.buttonResetEmergency = new System.Windows.Forms.Button();
+            this.uISettingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.batteryGauge = new MyoPilot.BatteryGauge();
+            this.labelAngles = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.videoFrame)).BeginInit();
             this.menuStrip.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.uISettingsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // timerVideoUpdate
@@ -221,11 +224,27 @@
             // 
             this.labelDroneStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelDroneStatus.AutoSize = true;
-            this.labelDroneStatus.Location = new System.Drawing.Point(206, 387);
+            this.labelDroneStatus.DataBindings.Add(new System.Windows.Forms.Binding("Visible", this.uISettingsBindingSource, "DebugInfo", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.labelDroneStatus.Location = new System.Drawing.Point(410, 387);
             this.labelDroneStatus.Name = "labelDroneStatus";
             this.labelDroneStatus.Size = new System.Drawing.Size(73, 13);
             this.labelDroneStatus.TabIndex = 3;
             this.labelDroneStatus.Text = "Disconnected";
+            // 
+            // buttonResetEmergency
+            // 
+            this.buttonResetEmergency.Location = new System.Drawing.Point(293, 450);
+            this.buttonResetEmergency.Name = "buttonResetEmergency";
+            this.buttonResetEmergency.Size = new System.Drawing.Size(107, 23);
+            this.buttonResetEmergency.TabIndex = 5;
+            this.buttonResetEmergency.Text = "Reset Emergency";
+            this.buttonResetEmergency.UseVisualStyleBackColor = true;
+            this.buttonResetEmergency.Visible = false;
+            this.buttonResetEmergency.Click += new System.EventHandler(this.buttonResetEmergency_Click);
+            // 
+            // uISettingsBindingSource
+            // 
+            this.uISettingsBindingSource.DataSource = typeof(MyoPilot.UserSettings.UISettings);
             // 
             // batteryGauge
             // 
@@ -239,22 +258,21 @@
             this.batteryGauge.TabStop = false;
             this.batteryGauge.Text = "batteryGauge";
             // 
-            // buttonResetEmergency
+            // labelAngles
             // 
-            this.buttonResetEmergency.Location = new System.Drawing.Point(293, 450);
-            this.buttonResetEmergency.Name = "buttonResetEmergency";
-            this.buttonResetEmergency.Size = new System.Drawing.Size(107, 23);
-            this.buttonResetEmergency.TabIndex = 5;
-            this.buttonResetEmergency.Text = "Reset Emergency";
-            this.buttonResetEmergency.UseVisualStyleBackColor = true;
-            this.buttonResetEmergency.Visible = false;
-            this.buttonResetEmergency.Click += new System.EventHandler(this.buttonResetEmergency_Click);
+            this.labelAngles.AutoSize = true;
+            this.labelAngles.Location = new System.Drawing.Point(526, 387);
+            this.labelAngles.Name = "labelAngles";
+            this.labelAngles.Size = new System.Drawing.Size(34, 52);
+            this.labelAngles.TabIndex = 6;
+            this.labelAngles.Text = "Roll:\r\nPitch:\r\nYaw:\r\nGaz:";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(640, 484);
+            this.Controls.Add(this.labelAngles);
             this.Controls.Add(this.buttonResetEmergency);
             this.Controls.Add(this.batteryGauge);
             this.Controls.Add(this.labelDroneStatus);
@@ -270,6 +288,7 @@
             this.menuStrip.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.uISettingsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,6 +314,8 @@
         private System.Windows.Forms.Label labelDroneStatus;
         private BatteryGauge batteryGauge;
         private System.Windows.Forms.Button buttonResetEmergency;
+        private System.Windows.Forms.BindingSource uISettingsBindingSource;
+        private System.Windows.Forms.Label labelAngles;
     }
 }
 

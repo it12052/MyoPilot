@@ -61,7 +61,7 @@ namespace MyoPilot.UserSettings {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.5")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.2")]
         public double rollMax {
             get {
                 return ((double)(this["rollMax"]));
@@ -73,7 +73,7 @@ namespace MyoPilot.UserSettings {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.5")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.35")]
         public double pitchMax {
             get {
                 return ((double)(this["pitchMax"]));
@@ -85,7 +85,7 @@ namespace MyoPilot.UserSettings {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.5")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.35")]
         public double yawMax {
             get {
                 return ((double)(this["yawMax"]));

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageDrone = new System.Windows.Forms.TabPage();
             this.groupBoxVideo = new System.Windows.Forms.GroupBox();
@@ -75,7 +76,22 @@
             this.tabPageController = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPageMyo = new System.Windows.Forms.TabPage();
+            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.buttonOk = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.keyboardSettingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.myoSettingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.keyBoxFlatTrim = new MyoPilot.UserSettings.KeyBox();
             this.keyBoxEmergency = new MyoPilot.UserSettings.KeyBox();
             this.keyBoxLand = new MyoPilot.UserSettings.KeyBox();
@@ -88,21 +104,8 @@
             this.keyBoxLeft = new MyoPilot.UserSettings.KeyBox();
             this.keyBoxBackward = new MyoPilot.UserSettings.KeyBox();
             this.keyBoxForward = new MyoPilot.UserSettings.KeyBox();
-            this.keyboardSettingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.myoSettingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPageDrone.SuspendLayout();
             this.groupBoxVideo.SuspendLayout();
@@ -122,13 +125,13 @@
             this.tabPageController.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPageMyo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.keyboardSettingsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.keyboardSettingsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myoSettingsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -716,6 +719,8 @@
             // 
             // tabPageMyo
             // 
+            this.tabPageMyo.Controls.Add(this.label27);
+            this.tabPageMyo.Controls.Add(this.label26);
             this.tabPageMyo.Controls.Add(this.numericUpDown6);
             this.tabPageMyo.Controls.Add(this.numericUpDown5);
             this.tabPageMyo.Controls.Add(this.numericUpDown4);
@@ -736,6 +741,182 @@
             this.tabPageMyo.Text = "Myo";
             this.tabPageMyo.UseVisualStyleBackColor = true;
             // 
+            // numericUpDown6
+            // 
+            this.numericUpDown6.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.myoSettingsBindingSource, "yawMax", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown6.DataBindings.Add(new System.Windows.Forms.Binding("Minimum", this.myoSettingsBindingSource, "yawDeathzone", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown6.DecimalPlaces = 3;
+            this.numericUpDown6.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericUpDown6.Location = new System.Drawing.Point(131, 95);
+            this.numericUpDown6.Maximum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.numericUpDown6.Name = "numericUpDown6";
+            this.numericUpDown6.Size = new System.Drawing.Size(71, 20);
+            this.numericUpDown6.TabIndex = 11;
+            // 
+            // numericUpDown5
+            // 
+            this.numericUpDown5.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.myoSettingsBindingSource, "yawDeathzone", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown5.DataBindings.Add(new System.Windows.Forms.Binding("Maximum", this.myoSettingsBindingSource, "yawMax", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown5.DecimalPlaces = 3;
+            this.numericUpDown5.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericUpDown5.Location = new System.Drawing.Point(54, 95);
+            this.numericUpDown5.Maximum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.numericUpDown5.Name = "numericUpDown5";
+            this.numericUpDown5.Size = new System.Drawing.Size(71, 20);
+            this.numericUpDown5.TabIndex = 10;
+            // 
+            // numericUpDown4
+            // 
+            this.numericUpDown4.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.myoSettingsBindingSource, "pitchMax", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown4.DataBindings.Add(new System.Windows.Forms.Binding("Minimum", this.myoSettingsBindingSource, "pitchDeathzone", true));
+            this.numericUpDown4.DecimalPlaces = 3;
+            this.numericUpDown4.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericUpDown4.Location = new System.Drawing.Point(131, 69);
+            this.numericUpDown4.Maximum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(71, 20);
+            this.numericUpDown4.TabIndex = 9;
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.myoSettingsBindingSource, "pitchDeathzone", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown3.DataBindings.Add(new System.Windows.Forms.Binding("Maximum", this.myoSettingsBindingSource, "pitchMax", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown3.DecimalPlaces = 3;
+            this.numericUpDown3.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericUpDown3.Location = new System.Drawing.Point(54, 69);
+            this.numericUpDown3.Maximum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(71, 20);
+            this.numericUpDown3.TabIndex = 8;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.myoSettingsBindingSource, "rollMax", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown2.DataBindings.Add(new System.Windows.Forms.Binding("Minimum", this.myoSettingsBindingSource, "rollDeathzone", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown2.DecimalPlaces = 3;
+            this.numericUpDown2.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericUpDown2.Location = new System.Drawing.Point(131, 43);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(71, 20);
+            this.numericUpDown2.TabIndex = 7;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.myoSettingsBindingSource, "rollDeathzone", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Maximum", this.myoSettingsBindingSource, "rollMax", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown1.DecimalPlaces = 3;
+            this.numericUpDown1.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericUpDown1.Location = new System.Drawing.Point(54, 43);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(71, 20);
+            this.numericUpDown1.TabIndex = 6;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(14, 27);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(34, 13);
+            this.label25.TabIndex = 5;
+            this.label25.Text = "Angle";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(128, 27);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(51, 13);
+            this.label24.TabIndex = 4;
+            this.label24.Text = "Maximum";
+            this.toolTip1.SetToolTip(this.label24, "Reaching the maximum angle will cause maximum effect of the drone");
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(51, 27);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(59, 13);
+            this.label23.TabIndex = 3;
+            this.label23.Text = "Deathzone";
+            this.toolTip1.SetToolTip(this.label23, "Define the zone, where no user input is processed");
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(20, 97);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(28, 13);
+            this.label22.TabIndex = 2;
+            this.label22.Text = "Yaw";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(17, 71);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(31, 13);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "Pitch";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(23, 45);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(25, 13);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Roll";
+            // 
             // buttonOk
             // 
             this.buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -746,6 +927,14 @@
             this.buttonOk.TabIndex = 1;
             this.buttonOk.Text = "OK";
             this.buttonOk.UseVisualStyleBackColor = true;
+            // 
+            // keyboardSettingsBindingSource
+            // 
+            this.keyboardSettingsBindingSource.DataSource = typeof(MyoPilot.UserSettings.KeyboardSettings);
+            // 
+            // myoSettingsBindingSource
+            // 
+            this.myoSettingsBindingSource.DataSource = typeof(MyoPilot.UserSettings.MyoSettings);
             // 
             // keyBoxFlatTrim
             // 
@@ -855,189 +1044,24 @@
             this.keyBoxForward.TabIndex = 0;
             this.keyBoxForward.Value = 0;
             // 
-            // keyboardSettingsBindingSource
+            // label26
             // 
-            this.keyboardSettingsBindingSource.DataSource = typeof(MyoPilot.UserSettings.KeyboardSettings);
+            this.label26.AutoEllipsis = true;
+            this.label26.Location = new System.Drawing.Point(209, 43);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(397, 72);
+            this.label26.TabIndex = 12;
+            this.label26.Text = "Deathzone and Maximum defines, how sensitive the Myo reacts to movement and how h" +
+    "ard you need to move your arm to reach maximum amplitude";
             // 
-            // label20
+            // label27
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(23, 45);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(25, 13);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "Roll";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(17, 71);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(31, 13);
-            this.label21.TabIndex = 1;
-            this.label21.Text = "Pitch";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(20, 97);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(28, 13);
-            this.label22.TabIndex = 2;
-            this.label22.Text = "Yaw";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(51, 27);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(59, 13);
-            this.label23.TabIndex = 3;
-            this.label23.Text = "Deathzone";
-            this.toolTip1.SetToolTip(this.label23, "Define the zone, where no user input is processed");
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(128, 27);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(51, 13);
-            this.label24.TabIndex = 4;
-            this.label24.Text = "Maximum";
-            this.toolTip1.SetToolTip(this.label24, "Reaching the maximum angle will cause maximum effect of the drone");
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(14, 27);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(34, 13);
-            this.label25.TabIndex = 5;
-            this.label25.Text = "Angle";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.myoSettingsBindingSource, "rollDeathzone", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Maximum", this.myoSettingsBindingSource, "rollMax", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown1.DecimalPlaces = 3;
-            this.numericUpDown1.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.numericUpDown1.Location = new System.Drawing.Point(54, 43);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(71, 20);
-            this.numericUpDown1.TabIndex = 6;
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.myoSettingsBindingSource, "rollMax", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown2.DataBindings.Add(new System.Windows.Forms.Binding("Minimum", this.myoSettingsBindingSource, "rollDeathzone", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown2.DecimalPlaces = 3;
-            this.numericUpDown2.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.numericUpDown2.Location = new System.Drawing.Point(131, 43);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(71, 20);
-            this.numericUpDown2.TabIndex = 7;
-            // 
-            // numericUpDown3
-            // 
-            this.numericUpDown3.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.myoSettingsBindingSource, "pitchDeathzone", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown3.DataBindings.Add(new System.Windows.Forms.Binding("Maximum", this.myoSettingsBindingSource, "pitchMax", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown3.DecimalPlaces = 3;
-            this.numericUpDown3.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.numericUpDown3.Location = new System.Drawing.Point(54, 69);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(71, 20);
-            this.numericUpDown3.TabIndex = 8;
-            // 
-            // numericUpDown4
-            // 
-            this.numericUpDown4.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.myoSettingsBindingSource, "pitchMax", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown4.DataBindings.Add(new System.Windows.Forms.Binding("Minimum", this.myoSettingsBindingSource, "pitchDeathzone", true));
-            this.numericUpDown4.DecimalPlaces = 3;
-            this.numericUpDown4.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.numericUpDown4.Location = new System.Drawing.Point(131, 69);
-            this.numericUpDown4.Maximum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(71, 20);
-            this.numericUpDown4.TabIndex = 9;
-            // 
-            // numericUpDown5
-            // 
-            this.numericUpDown5.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.myoSettingsBindingSource, "yawDeathzone", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown5.DataBindings.Add(new System.Windows.Forms.Binding("Maximum", this.myoSettingsBindingSource, "yawMax", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown5.DecimalPlaces = 3;
-            this.numericUpDown5.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.numericUpDown5.Location = new System.Drawing.Point(54, 95);
-            this.numericUpDown5.Maximum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(71, 20);
-            this.numericUpDown5.TabIndex = 10;
-            // 
-            // numericUpDown6
-            // 
-            this.numericUpDown6.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.myoSettingsBindingSource, "yawMax", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown6.DataBindings.Add(new System.Windows.Forms.Binding("Minimum", this.myoSettingsBindingSource, "yawDeathzone", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown6.DecimalPlaces = 3;
-            this.numericUpDown6.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.numericUpDown6.Location = new System.Drawing.Point(131, 95);
-            this.numericUpDown6.Maximum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(71, 20);
-            this.numericUpDown6.TabIndex = 11;
-            // 
-            // myoSettingsBindingSource
-            // 
-            this.myoSettingsBindingSource.DataSource = typeof(MyoPilot.UserSettings.MyoSettings);
+            this.label27.AutoEllipsis = true;
+            this.label27.Location = new System.Drawing.Point(6, 136);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(600, 223);
+            this.label27.TabIndex = 13;
+            this.label27.Text = resources.GetString("label27.Text");
             // 
             // SettingsForm
             // 
@@ -1075,13 +1099,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPageMyo.ResumeLayout(false);
             this.tabPageMyo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.keyboardSettingsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.keyboardSettingsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myoSettingsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -1163,5 +1187,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.BindingSource myoSettingsBindingSource;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
     }
 }

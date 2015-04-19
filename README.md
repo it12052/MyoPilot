@@ -9,6 +9,12 @@ Requirements:
 * Windows Vista or newer because of the Xbox controller. Under Windows XP, you'll need special drivers for your Xbox 360 Controller. You can find them at this address : [XBox 360 Controller for Windows Software](http://www.microsoft.com/en-us/download/details.aspx?id=34001) (cited from XInputDotNet Project page)
 * [Myo Connect](https://www.thalmic.com/start/) installed (if you want to use myo)
 
+Installation with git:
+Execute "git submodule update --init --recursive" after "git clone"
+
+Installation with manual zip downloads:
+Download submodules (folders with @ behind the name in github) manually and place it in the folder of the submodule. Currently this is AR.Drone and FFmpeg.AutoGen. If you can navigate throught your folders like you can in github, you've done it correctly. 
+
 Known bugs:
 * Reading the drone config may return zeroes which causes the app to crash. 
 * Changing the video stream resolution may cause a MemoryAccessViolation because of a race condition.

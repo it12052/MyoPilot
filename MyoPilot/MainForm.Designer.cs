@@ -46,8 +46,8 @@
             this.labelForward = new System.Windows.Forms.Label();
             this.timerStatusUpdate = new System.Windows.Forms.Timer(this.components);
             this.labelDroneStatus = new System.Windows.Forms.Label();
-            this.buttonResetEmergency = new System.Windows.Forms.Button();
             this.uISettingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonResetEmergency = new System.Windows.Forms.Button();
             this.batteryGauge = new MyoPilot.BatteryGauge();
             this.labelAngles = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.videoFrame)).BeginInit();
@@ -90,8 +90,8 @@
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
+            this.settingsToolStripMenuItem.Text = "Settings/Controls";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // tableLayoutPanel1
@@ -231,6 +231,10 @@
             this.labelDroneStatus.TabIndex = 3;
             this.labelDroneStatus.Text = "Disconnected";
             // 
+            // uISettingsBindingSource
+            // 
+            this.uISettingsBindingSource.DataSource = typeof(MyoPilot.UserSettings.UISettings);
+            // 
             // buttonResetEmergency
             // 
             this.buttonResetEmergency.Location = new System.Drawing.Point(293, 450);
@@ -241,10 +245,6 @@
             this.buttonResetEmergency.UseVisualStyleBackColor = true;
             this.buttonResetEmergency.Visible = false;
             this.buttonResetEmergency.Click += new System.EventHandler(this.buttonResetEmergency_Click);
-            // 
-            // uISettingsBindingSource
-            // 
-            this.uISettingsBindingSource.DataSource = typeof(MyoPilot.UserSettings.UISettings);
             // 
             // batteryGauge
             // 

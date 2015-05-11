@@ -1,7 +1,7 @@
 MyoPilot
 ========
 
-C# Application for controlling the Parrot AR.Drone 2.0 with the Myo armband by Thalmic Labs
+C# Application for controlling the Parrot AR.Drone 2.0 with the Myo armband by Thalmic Labs. 
 
 Current state: The application is able to controll the drone via keyboard, Xbox360 controller or Myo.
 
@@ -10,10 +10,10 @@ Requirements:
 * [Myo Connect](https://www.thalmic.com/start/) installed (if you want to use myo)
 
 Installation with git:
-Execute "git submodule update --init --recursive" after "git clone"
+Execute "git submodule update --init --recursive" after "git clone". Compile with Visual Studio.
 
 Installation with manual zip downloads:
-Download submodules (folders with @ behind the name in github) manually and place it in the folder of the submodule. Currently this is AR.Drone and FFmpeg.AutoGen. If you can navigate throught your folders like you can in github, you've done it correctly. 
+Download submodules (folders with @ behind the name in github) manually and place it in the folder of the submodule. Currently this is AR.Drone and FFmpeg.AutoGen. If you can navigate throught your folders like you can in github, you've done it correctly. Compile with Visual Studio.
 
 Known bugs:
 * Reading the drone config may return zeroes which causes the app to crash. 

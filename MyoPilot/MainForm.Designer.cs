@@ -225,7 +225,7 @@
             this.labelDroneStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelDroneStatus.AutoSize = true;
             this.labelDroneStatus.DataBindings.Add(new System.Windows.Forms.Binding("Visible", this.uISettingsBindingSource, "DebugInfo", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.labelDroneStatus.Location = new System.Drawing.Point(410, 387);
+            this.labelDroneStatus.Location = new System.Drawing.Point(411, 387);
             this.labelDroneStatus.Name = "labelDroneStatus";
             this.labelDroneStatus.Size = new System.Drawing.Size(73, 13);
             this.labelDroneStatus.TabIndex = 3;
@@ -237,7 +237,7 @@
             // 
             // buttonResetEmergency
             // 
-            this.buttonResetEmergency.Location = new System.Drawing.Point(293, 450);
+            this.buttonResetEmergency.Location = new System.Drawing.Point(209, 450);
             this.buttonResetEmergency.Name = "buttonResetEmergency";
             this.buttonResetEmergency.Size = new System.Drawing.Size(107, 23);
             this.buttonResetEmergency.TabIndex = 5;
@@ -251,7 +251,7 @@
             this.batteryGauge.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.batteryGauge.Enabled = false;
             this.batteryGauge.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.batteryGauge.Location = new System.Drawing.Point(203, 450);
+            this.batteryGauge.Location = new System.Drawing.Point(322, 450);
             this.batteryGauge.Name = "batteryGauge";
             this.batteryGauge.Size = new System.Drawing.Size(84, 28);
             this.batteryGauge.TabIndex = 4;
@@ -261,7 +261,7 @@
             // labelAngles
             // 
             this.labelAngles.AutoSize = true;
-            this.labelAngles.Location = new System.Drawing.Point(526, 387);
+            this.labelAngles.Location = new System.Drawing.Point(206, 387);
             this.labelAngles.Name = "labelAngles";
             this.labelAngles.Size = new System.Drawing.Size(34, 52);
             this.labelAngles.TabIndex = 6;

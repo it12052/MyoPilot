@@ -48,8 +48,8 @@
             this.labelDroneStatus = new System.Windows.Forms.Label();
             this.uISettingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonResetEmergency = new System.Windows.Forms.Button();
-            this.batteryGauge = new MyoPilot.BatteryGauge();
             this.labelAngles = new System.Windows.Forms.Label();
+            this.batteryGauge = new MyoPilot.BatteryGauge();
             ((System.ComponentModel.ISupportInitialize)(this.videoFrame)).BeginInit();
             this.menuStrip.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -58,7 +58,7 @@
             // 
             // timerVideoUpdate
             // 
-            this.timerVideoUpdate.Interval = 20;
+            this.timerVideoUpdate.Interval = 30;
             this.timerVideoUpdate.Tick += new System.EventHandler(this.timerVideoUpdate_Tick);
             // 
             // videoFrame
@@ -246,6 +246,15 @@
             this.buttonResetEmergency.Visible = false;
             this.buttonResetEmergency.Click += new System.EventHandler(this.buttonResetEmergency_Click);
             // 
+            // labelAngles
+            // 
+            this.labelAngles.AutoSize = true;
+            this.labelAngles.Location = new System.Drawing.Point(206, 387);
+            this.labelAngles.Name = "labelAngles";
+            this.labelAngles.Size = new System.Drawing.Size(34, 52);
+            this.labelAngles.TabIndex = 6;
+            this.labelAngles.Text = "Roll:\r\nPitch:\r\nYaw:\r\nGaz:";
+            // 
             // batteryGauge
             // 
             this.batteryGauge.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -257,15 +266,6 @@
             this.batteryGauge.TabIndex = 4;
             this.batteryGauge.TabStop = false;
             this.batteryGauge.Text = "batteryGauge";
-            // 
-            // labelAngles
-            // 
-            this.labelAngles.AutoSize = true;
-            this.labelAngles.Location = new System.Drawing.Point(206, 387);
-            this.labelAngles.Name = "labelAngles";
-            this.labelAngles.Size = new System.Drawing.Size(34, 52);
-            this.labelAngles.TabIndex = 6;
-            this.labelAngles.Text = "Roll:\r\nPitch:\r\nYaw:\r\nGaz:";
             // 
             // MainForm
             // 

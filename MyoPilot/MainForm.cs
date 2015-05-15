@@ -150,7 +150,7 @@ namespace MyoPilot
             }
             catch (Exception e)
             {
-                MessageBox.Show("Xbox module not loaded:\n" + e.Message, "Xbox error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Xbox module not loaded:\n" + e.Message, "Xbox error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             try
@@ -162,7 +162,7 @@ namespace MyoPilot
             }
             catch (Exception e)
             {
-                MessageBox.Show("Myo module not loaded:\n" + e.Message, "Myo error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Myo module not loaded:\n" + e.Message, "Myo error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

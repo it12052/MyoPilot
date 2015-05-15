@@ -69,6 +69,7 @@ namespace MyoPilot.UserSettings
             if (waitingForNewKey == true)
             {
                 waitingForNewKey = false;
+                this.Text = keyConverter.ConvertToString(_value); // Force resetting the text property
             }
         }
 
@@ -84,18 +85,22 @@ namespace MyoPilot.UserSettings
 
         protected override bool ProcessDialogKey(Keys keyData)
         {
-            // This would capture the ALT-key, but it conflicts with the menu-bar,
-            // so we don't capture it
-            /*if (waitingForNewKey)
+            
+            if (waitingForNewKey)
             {
-                extractPressedKey();
+                // This would capture the ALT-key, but it conflicts with the menu-bar,
+                // so we don't capture it
+                //extractPressedKey();
+                MessageBox.Show("The ALT-key is not allowed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                EndEdit();
                 return true;
-            }*/
+            }
             return base.ProcessDialogKey(keyData);
         }
 
         /// <summary>
         /// Check which key is currently down. Save the pressed key to Value
+        /// Pressing Escape cancels input
         /// </summary>
         private void extractPressedKey()
         {
@@ -111,6 +116,7 @@ namespace MyoPilot.UserSettings
                     if (k != Key.Escape)
                         Value = (int)k;
                     EndEdit();
+                    return;
                 }
             }
         }

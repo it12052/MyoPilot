@@ -744,7 +744,7 @@
             // numericUpDown6
             // 
             this.numericUpDown6.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.myoSettingsBindingSource, "yawMax", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown6.DataBindings.Add(new System.Windows.Forms.Binding("Minimum", this.myoSettingsBindingSource, "yawDeathzone", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown6.DataBindings.Add(new System.Windows.Forms.Binding("Minimum", this.myoSettingsBindingSource, "yawDeadzone", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.numericUpDown6.DecimalPlaces = 3;
             this.numericUpDown6.Increment = new decimal(new int[] {
             1,
@@ -763,7 +763,7 @@
             // 
             // numericUpDown5
             // 
-            this.numericUpDown5.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.myoSettingsBindingSource, "yawDeathzone", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown5.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.myoSettingsBindingSource, "yawDeadzone", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.numericUpDown5.DataBindings.Add(new System.Windows.Forms.Binding("Maximum", this.myoSettingsBindingSource, "yawMax", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.numericUpDown5.DecimalPlaces = 3;
             this.numericUpDown5.Increment = new decimal(new int[] {
@@ -784,7 +784,7 @@
             // numericUpDown4
             // 
             this.numericUpDown4.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.myoSettingsBindingSource, "pitchMax", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown4.DataBindings.Add(new System.Windows.Forms.Binding("Minimum", this.myoSettingsBindingSource, "pitchDeathzone", true));
+            this.numericUpDown4.DataBindings.Add(new System.Windows.Forms.Binding("Minimum", this.myoSettingsBindingSource, "pitchDeadzone", true));
             this.numericUpDown4.DecimalPlaces = 3;
             this.numericUpDown4.Increment = new decimal(new int[] {
             1,
@@ -803,7 +803,7 @@
             // 
             // numericUpDown3
             // 
-            this.numericUpDown3.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.myoSettingsBindingSource, "pitchDeathzone", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown3.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.myoSettingsBindingSource, "pitchDeadzone", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.numericUpDown3.DataBindings.Add(new System.Windows.Forms.Binding("Maximum", this.myoSettingsBindingSource, "pitchMax", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.numericUpDown3.DecimalPlaces = 3;
             this.numericUpDown3.Increment = new decimal(new int[] {
@@ -824,7 +824,7 @@
             // numericUpDown2
             // 
             this.numericUpDown2.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.myoSettingsBindingSource, "rollMax", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown2.DataBindings.Add(new System.Windows.Forms.Binding("Minimum", this.myoSettingsBindingSource, "rollDeathzone", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown2.DataBindings.Add(new System.Windows.Forms.Binding("Minimum", this.myoSettingsBindingSource, "rollDeadzone", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.numericUpDown2.DecimalPlaces = 3;
             this.numericUpDown2.Increment = new decimal(new int[] {
             1,
@@ -843,7 +843,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.myoSettingsBindingSource, "rollDeathzone", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.myoSettingsBindingSource, "rollDeadzone", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Maximum", this.myoSettingsBindingSource, "rollMax", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.numericUpDown1.DecimalPlaces = 3;
             this.numericUpDown1.Increment = new decimal(new int[] {
@@ -887,7 +887,7 @@
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(59, 13);
             this.label23.TabIndex = 3;
-            this.label23.Text = "Deathzone";
+            this.label23.Text = "Deadzone";
             this.toolTip1.SetToolTip(this.label23, "Define the zone, where no user input is processed");
             // 
             // label22
@@ -1051,7 +1051,7 @@
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(397, 72);
             this.label26.TabIndex = 12;
-            this.label26.Text = "Deathzone and Maximum defines, how sensitive the Myo reacts to movement and how h" +
+            this.label26.Text = "Deadzone and Maximum defines, how sensitive the Myo reacts to movement and how h" +
     "ard you need to move your arm to reach maximum amplitude";
             // 
             // label27

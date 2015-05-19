@@ -130,46 +130,46 @@ namespace MyoPilot.Input
 
         /// <summary>
         /// Rerange the angles to [-1 - +1]
-        /// If one angle is in the deathzone it is set to 0
+        /// If one angle is in the deadzone it is set to 0
         /// Angles are squared (with preserved sign) for better control
-        /// Deathzone and max is configurable in MyoSettings.settings
+        /// Deadzone and max is configurable in MyoSettings.settings
         /// </summary>
         /// <param name="roll">roll</param>
         /// <param name="pitch">pitch</param>
         /// <param name="yaw">yaw</param>
         private void RerangeEulerAngles(ref double roll, ref double pitch, ref double yaw)
         {
-            RerangeEulerAngle(ref roll, MyoSettings.Default.rollDeathzone, MyoSettings.Default.rollMax);
-            RerangeEulerAngle(ref pitch, MyoSettings.Default.pitchDeathzone, MyoSettings.Default.pitchMax);
-            RerangeEulerAngle(ref yaw, MyoSettings.Default.yawDeathzone, MyoSettings.Default.yawMax);
+            RerangeEulerAngle(ref roll, MyoSettings.Default.rollDeadzone, MyoSettings.Default.rollMax);
+            RerangeEulerAngle(ref pitch, MyoSettings.Default.pitchDeadzone, MyoSettings.Default.pitchMax);
+            RerangeEulerAngle(ref yaw, MyoSettings.Default.yawDeadzone, MyoSettings.Default.yawMax);
         }
 
         /// <summary>
         /// Rerange the angles to [-1 - +1]
-        /// If one angle is in the deathzone it is set to 0
+        /// If one angle is in the deadzone it is set to 0
         /// Angles are squared (with preserved sign) for better control
         /// </summary>
         /// <param name="angle">angle to rerange</param>
-        /// <param name="deathzone">Must be positive</param>
-        /// <param name="max">Must be greater than deathzone</param>
-        private void RerangeEulerAngle(ref double angle, double deathzone, double max)
+        /// <param name="deadzone">Must be positive</param>
+        /// <param name="max">Must be greater than deadzone</param>
+        private void RerangeEulerAngle(ref double angle, double deadzone, double max)
         {
             int sign = Math.Sign(angle);
             double value = Math.Abs(angle);
 
-            if (Math.Abs(angle) < deathzone)
+            if (Math.Abs(angle) < deadzone)
             {
                 angle = 0;
                 return;
             }
             else
             {
-                // current range of value: [deathzone - inifinite]
+                // current range of value: [deadzone - inifinite]
                 value = Math.Min(value, max);
-                // current range of value: [deathzone - max]
-                value -= deathzone;
-                // current range of value: [0 - (max - deathzone)]
-                value /= (max - deathzone);
+                // current range of value: [deadzone - max]
+                value -= deadzone;
+                // current range of value: [0 - (max - deadzone)]
+                value /= (max - deadzone);
                 // current range of value: [0 - 1]
 
                 angle = sign * value * value;

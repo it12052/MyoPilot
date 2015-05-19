@@ -26,36 +26,36 @@ namespace MyoPilot.UserSettings {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0.1")]
-        public double rollDeathzone {
+        public double rollDeadzone {
             get {
-                return ((double)(this["rollDeathzone"]));
+                return ((double)(this["rollDeadzone"]));
             }
             set {
-                this["rollDeathzone"] = value;
+                this["rollDeadzone"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0.1")]
-        public double pitchDeathzone {
+        public double pitchDeadzone {
             get {
-                return ((double)(this["pitchDeathzone"]));
+                return ((double)(this["pitchDeadzone"]));
             }
             set {
-                this["pitchDeathzone"] = value;
+                this["pitchDeadzone"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0.1")]
-        public double yawDeathzone {
+        public double yawDeadzone {
             get {
-                return ((double)(this["yawDeathzone"]));
+                return ((double)(this["yawDeadzone"]));
             }
             set {
-                this["yawDeathzone"] = value;
+                this["yawDeadzone"] = value;
             }
         }
         

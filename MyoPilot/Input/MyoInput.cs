@@ -164,13 +164,13 @@ namespace MyoPilot.Input
             }
             else
             {
-                // [deathzone - inifinite]
+                // current range of value: [deathzone - inifinite]
                 value = Math.Min(value, max);
-                // [deathzone - max]
+                // current range of value: [deathzone - max]
                 value -= deathzone;
-                // [0 - (max - deathzone)]
+                // current range of value: [0 - (max - deathzone)]
                 value /= (max - deathzone);
-                // [0 - 1]
+                // current range of value: [0 - 1]
 
                 angle = sign * value * value;
                 return;

@@ -23,16 +23,16 @@ namespace MyoPilot.Input
         private void processMovement(GamePadState state)
         {
             float roll = state.ThumbSticks.Left.X;
-            roll = Math.Sign(roll) * roll * roll;
+            roll = (float)Math.Pow(roll, 3);
 
             float pitch = -state.ThumbSticks.Left.Y;
-            pitch = Math.Sign(pitch) * pitch * pitch;
+            pitch = (float)Math.Pow(pitch, 3);
 
             float yaw = state.ThumbSticks.Right.X;
-            yaw = Math.Sign(yaw) * yaw * yaw;
+            yaw = (float)Math.Pow(yaw, 3);
 
             float gaz = state.ThumbSticks.Right.Y;
-            gaz = Math.Sign(gaz) * gaz * gaz;
+            gaz = (float)Math.Pow(gaz, 3);
 
             if (roll != 0.0f || pitch != 0.0f || yaw != 0.0f || gaz != 0.0f)
                 OnProgress(FlightMode.Progressive, roll, pitch, yaw, gaz);

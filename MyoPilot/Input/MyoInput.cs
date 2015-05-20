@@ -172,7 +172,7 @@ namespace MyoPilot.Input
                 value /= (max - deadzone);
                 // current range of value: [0 - 1]
 
-                angle = sign * value * value;
+                angle = sign * Math.Pow(value, 3);
                 return;
             }
         }

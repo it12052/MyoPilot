@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Drawing;
 using System.ComponentModel;
+using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Windows.Forms;
 
 namespace MyoPilot
 {
+    /// <summary>
+    /// Windows Forms Controll to display the charge of a battery
+    /// </summary>
     [DefaultBindingProperty("ChargePercentage")]
     class BatteryGauge : Control
     {
@@ -66,7 +65,7 @@ namespace MyoPilot
 
         [
         Category("Appearance"),
-        Description("The thickness of the border line."),
+        Description("The thickness of the battery pin."),
         DefaultValue((int)10)
         ]
         public int PlusPinThickness

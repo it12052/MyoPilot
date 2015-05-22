@@ -4,6 +4,9 @@ using System.Windows.Input;
 
 namespace MyoPilot.Input
 {
+    /// <summary>
+    /// Input module responsible to process data from the keyboard device
+    /// </summary>
     public class KeyboardInput : Input
     {
         /// <summary>
@@ -24,7 +27,7 @@ namespace MyoPilot.Input
         /// <summary>
         /// Process movement of the drone
         /// </summary>
-        private void processMovement()
+        protected void processMovement()
         {
             float roll = 0.0f;
             float pitch = 0.0f;
@@ -59,7 +62,7 @@ namespace MyoPilot.Input
         /// <summary>
         /// Process every command that is not movement
         /// </summary>
-        private void processActions()
+        protected void processActions()
         {
             if (Keyboard.IsKeyDown((Key)KeyboardSettings.Default.Takeoff))
                 OnTakeoff();

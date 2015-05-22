@@ -55,6 +55,9 @@ namespace MyoPilot.UserSettings
             base.OnClick(e);
         }
 
+        /// <summary>
+        /// Start listening for key events and capture them
+        /// </summary>
         private void StartEdit()
         {
             if (waitingForNewKey == false)
@@ -64,6 +67,9 @@ namespace MyoPilot.UserSettings
             }
         }
 
+        /// <summary>
+        /// Stop listening for key events
+        /// </summary>
         private void EndEdit()
         {
             if (waitingForNewKey == true)
@@ -85,7 +91,6 @@ namespace MyoPilot.UserSettings
 
         protected override bool ProcessDialogKey(Keys keyData)
         {
-            
             if (waitingForNewKey)
             {
                 // This would capture the ALT-key, but it conflicts with the menu-bar,

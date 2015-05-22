@@ -5,11 +5,14 @@ namespace MyoPilot.Input
     public delegate void NoArgs();
     public delegate void FlightCommand(FlightMode mode, float roll = 0, float pitch = 0, float yaw = 0, float gaz = 0);
 
+    /// <summary>
+    /// The Input class defines all possible input events. Generation of these events should occur within 
+    /// the processInput method of classes inheriting Input
+    /// </summary>
     public abstract class Input
     {
         // Events correspond to available actions in AR.Drone.Client.DroneClient
         public event NoArgs Emergency;
-        //public event NoArgs ResetEmergency; // This can be done in the MainForm
         public event NoArgs Land;
         public event NoArgs Takeoff;
         public event NoArgs FlatTrim;

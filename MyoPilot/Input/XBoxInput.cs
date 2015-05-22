@@ -4,11 +4,14 @@ using XInputDotNetPure;
 
 namespace MyoPilot.Input
 {
+    /// <summary>
+    /// Input module responsible to process data from the Xbox controller device
+    /// </summary>
     public class XBoxInput : Input
     {
         public override void processInput()
         {
-            GamePadState state = GamePad.GetState(PlayerIndex.One);
+            GamePadState state = GamePad.GetState(PlayerIndex.One, GamePadDeadZone.IndependentAxes);
             if (state.IsConnected)
             {
                 processMovement(state);
@@ -20,7 +23,7 @@ namespace MyoPilot.Input
         /// Process movement of the drone
         /// </summary>
         /// <param name="state">GamePadState</param>
-        private void processMovement(GamePadState state)
+        protected void processMovement(GamePadState state)
         {
             float roll = state.ThumbSticks.Left.X;
             roll = (float)Math.Pow(roll, 3);
@@ -42,7 +45,7 @@ namespace MyoPilot.Input
         /// Process every command that is not movement
         /// </summary>
         /// <param name="state">GamePadState</param>
-        private void processActions(GamePadState state)
+        protected void processActions(GamePadState state)
         {
             if (state.Buttons.A == ButtonState.Pressed)
                 OnTakeoff();

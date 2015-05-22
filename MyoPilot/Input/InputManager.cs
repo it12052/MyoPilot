@@ -12,6 +12,12 @@ namespace MyoPilot.Input
         private List<Input> inputs = new List<Input>();
         private bool commandWasSent = false;
 
+        /// <summary>
+        /// Add an input module to the input manager. Output from this module is aggregated with 
+        /// all other modules registered to the input manager. The input manager will start to 
+        /// schedule calculation time via calls to processInput()
+        /// </summary>
+        /// <param name="input">input module to manage</param>
         public void addControl(Input input)
         {
             // Redirect the raised events
@@ -33,6 +39,10 @@ namespace MyoPilot.Input
             inputs.Add(input);
         }
 
+        /// <summary>
+        /// Instructs all managed input modules to process their associated input device
+        /// and generate commands. Should be called regularly
+        /// </summary>
         public override void processInput()
         {
             foreach (Input input in inputs)

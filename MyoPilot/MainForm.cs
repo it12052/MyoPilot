@@ -14,6 +14,9 @@ using System.Windows.Forms;
 
 namespace MyoPilot
 {
+    /// <summary>
+    /// Main form of the application. 
+    /// </summary>
     public partial class MainForm : Form
     {
         // The following Windows message value is defined in Winuser.h. 
@@ -123,12 +126,9 @@ namespace MyoPilot
         {
             inputManager = new InputManager();
             // Add UI Listeners
-            //inputManager.Emergency += inputManager_Emergency;
-            //inputManager.FlatTrim += inputManager_FlatTrim;
             inputManager.Hover += inputManager_Hover;
-            //inputManager.Land += inputManager_Land;
             inputManager.Progress += inputManager_Progress;
-            //inputManager.Takeoff += inputManager_Takeoff;
+
             // Add droneClient listeners
             inputManager.Emergency += droneClient.Emergency;
             inputManager.FlatTrim += droneClient.FlatTrim;
@@ -137,12 +137,14 @@ namespace MyoPilot
             inputManager.Progress += droneClient.Progress;
             inputManager.Takeoff += droneClient.Takeoff;
 
+            // Load keyboard module
             KeyboardInput keyboardInput = new KeyboardInput();
             // Prevents input through keyboard when the app is not focused
             this.Activated += (sender, e) => keyboardInput.Active = true;
             this.Deactivate += (sender, e) => keyboardInput.Active = false;
             inputManager.addControl(keyboardInput);
 
+            // Load Xbox module
             try
             {
                 XBoxInput xBoxInput = new XBoxInput();
@@ -153,6 +155,7 @@ namespace MyoPilot
                 MessageBox.Show("Xbox module not loaded:\n" + e.Message, "Xbox error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
+            // Load Myo module
             try
             {
                 MyoInput myoInput = new MyoInput();
@@ -166,10 +169,10 @@ namespace MyoPilot
             }
         }
 
-        #region Input handling
+        #region .Input handling.
 
         /// <summary>
-        /// Highlight the direction in which the drone move
+        /// Highlight the directional arrows on the GUI to display where the drone moves
         /// </summary>
         void inputManager_Progress(FlightMode mode, float roll = 0, float pitch = 0, float yaw = 0, float gaz = 0)
         {
@@ -181,14 +184,14 @@ namespace MyoPilot
                 return;
             }
 
-            labelRotateLeft.ForeColor = yaw < 0 ? UISettings.Default.IconHighlightColor : UISettings.Default.IconDefaultColor;
-            labelRotateRight.ForeColor = yaw > 0 ? UISettings.Default.IconHighlightColor : UISettings.Default.IconDefaultColor;
-            labelForward.ForeColor = pitch < 0 ? UISettings.Default.IconHighlightColor : UISettings.Default.IconDefaultColor;
-            labelBackward.ForeColor = pitch > 0 ? UISettings.Default.IconHighlightColor : UISettings.Default.IconDefaultColor;
-            labelLeft.ForeColor = roll < 0 ? UISettings.Default.IconHighlightColor : UISettings.Default.IconDefaultColor;
-            labelRight.ForeColor = roll > 0 ? UISettings.Default.IconHighlightColor : UISettings.Default.IconDefaultColor;
-            labelUp.ForeColor = gaz > 0 ? UISettings.Default.IconHighlightColor : UISettings.Default.IconDefaultColor;
-            labelDown.ForeColor = gaz < 0 ? UISettings.Default.IconHighlightColor : UISettings.Default.IconDefaultColor;
+            labelRotateLeft.ForeColor  = yaw < 0   ? UISettings.Default.IconHighlightColor : UISettings.Default.IconDefaultColor;
+            labelRotateRight.ForeColor = yaw > 0   ? UISettings.Default.IconHighlightColor : UISettings.Default.IconDefaultColor;
+            labelForward.ForeColor     = pitch < 0 ? UISettings.Default.IconHighlightColor : UISettings.Default.IconDefaultColor;
+            labelBackward.ForeColor    = pitch > 0 ? UISettings.Default.IconHighlightColor : UISettings.Default.IconDefaultColor;
+            labelLeft.ForeColor        = roll < 0  ? UISettings.Default.IconHighlightColor : UISettings.Default.IconDefaultColor;
+            labelRight.ForeColor       = roll > 0  ? UISettings.Default.IconHighlightColor : UISettings.Default.IconDefaultColor;
+            labelUp.ForeColor          = gaz > 0   ? UISettings.Default.IconHighlightColor : UISettings.Default.IconDefaultColor;
+            labelDown.ForeColor        = gaz < 0   ? UISettings.Default.IconHighlightColor : UISettings.Default.IconDefaultColor;
         }
 
         /// <summary>
@@ -217,7 +220,7 @@ namespace MyoPilot
         }
         #endregion
 
-        #region Videostreaming
+        #region .Videostreaming.
         /// <summary>
         /// Queue Videopacket for encoding
         /// </summary>
@@ -304,9 +307,9 @@ namespace MyoPilot
                 buttonResetEmergency.Visible = navigationData.State.HasFlag(NavigationState.Emergency);
 
                 status += string.Format("Battery: {0}%\nWifi: {1}\nDronestate: {2}\n",
-                navigationData.Battery.Percentage.ToString(),
-                navigationData.Wifi.LinkQuality,
-                navigationData.State.ToString());
+                    navigationData.Battery.Percentage.ToString(),
+                    navigationData.Wifi.LinkQuality,
+                    navigationData.State.ToString());
             }
 
             if (frameBitmap != null)

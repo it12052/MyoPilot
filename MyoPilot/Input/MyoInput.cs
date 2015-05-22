@@ -1,11 +1,14 @@
-﻿using MyoNet.Myo;
+﻿using AR.Drone.Client.Command;
+using MyoNet.Myo;
+using MyoPilot.UserSettings;
 using System;
 using System.Threading;
-using AR.Drone.Client.Command;
-using MyoPilot.UserSettings;
 
 namespace MyoPilot.Input
 {
+    /// <summary>
+    /// Input module responsible to process data from the Myo device
+    /// </summary>
     public class MyoInput : Input
     {
         /// <summary>
@@ -14,18 +17,23 @@ namespace MyoPilot.Input
         /// </summary>
         public bool Active { get; set; }
 
-        private Object myLock = new Object();
+        /// <summary>
+        /// Lock to coordinate concurrent access
+        /// </summary>
+        protected Object myLock = new Object();
 
-        private Hub hub;
-        private IMyo myo = null;
+        protected Hub hub;
+        protected IMyo myo = null;
 
-        private Quaternion currentOrientation;
-        private Quaternion referenceOrientation;
-        private Pose currentPose;
-        private bool onArm = false;
-        private bool takeoffLand = false;
+        protected Quaternion currentOrientation;
+        protected Quaternion referenceOrientation;
+        protected Pose currentPose;
+        protected bool onArm = false;
+        protected bool takeoffLand = false;
         
-
+        /// <summary>
+        /// Initialize the Myo input module. Will throw an exception if no Myo is available
+        /// </summary>
         public MyoInput()
         {
             hub = new Hub("de.dhbw.MyoPilot");
@@ -41,6 +49,7 @@ namespace MyoPilot.Input
             myo.LostArm += OnLostArm;
             myo.Unlock(UnlockType.Hold);
 
+            // hub.Run() needs to run permanently in order to receive events from the Myo
             Thread worker = new Thread(hub.Run) { IsBackground = true, Name = "MyoBackgroundWorker" };
             worker.Start();
         }
@@ -59,17 +68,20 @@ namespace MyoPilot.Input
 
                     if (takeoffLand)
                     {
+                        // take-off or land
                         OnTakeoff();
                         OnLand();
                         takeoffLand = false;
                     }
                     else if (currentPose == Pose.FingersSpread)
                     {
+                        // Vertical movement
                         droneGaz = (float)myoPitch;
                         OnProgress(FlightMode.Progressive, gaz: droneGaz);
                     }
                     else if (currentPose == Pose.Fist)
                     {
+                        // Horizontal movement
                         droneRoll = (float)-myoYaw;
                         dronePitch = (float)myoPitch;
                         droneYaw = (float)-myoRoll;
@@ -80,12 +92,12 @@ namespace MyoPilot.Input
         }
 
         /// <summary>
-        /// Calculate the relative angles between the current orientation and the reference orientation
+        /// Calculate all relative angles between the current orientation and the reference orientation
         /// </summary>
         /// <param name="roll"></param>
         /// <param name="pitch"></param>
         /// <param name="yaw"></param>
-        private void CalculateRelativeEulerAngles(out double roll, out double pitch, out double yaw)
+        protected void CalculateRelativeEulerAngles(out double roll, out double pitch, out double yaw)
         {
             lock (myLock)
             {
@@ -104,12 +116,12 @@ namespace MyoPilot.Input
         }
 
         /// <summary>
-        /// Calculate the relative angle between the current angle and the reference angle
+        /// Calculate one relative angle between the current angle and the reference angle
         /// </summary>
         /// <param name="current">Current angle</param>
         /// <param name="reference">Reference for the relative angle</param>
         /// <returns></returns>
-        private double CalculateRelativeAngle(double current, double reference)
+        protected double CalculateRelativeAngle(double current, double reference)
         {
             // Because our domain is circular (-PI and +PI are the same) we calculate
             // the smallest difference and return that
@@ -131,13 +143,13 @@ namespace MyoPilot.Input
         /// <summary>
         /// Rerange the angles to [-1 - +1]
         /// If one angle is in the deadzone it is set to 0
-        /// Angles are squared (with preserved sign) for better control
+        /// Angles are cubed for better control
         /// Deadzone and max is configurable in MyoSettings.settings
         /// </summary>
         /// <param name="roll">roll</param>
         /// <param name="pitch">pitch</param>
         /// <param name="yaw">yaw</param>
-        private void RerangeEulerAngles(ref double roll, ref double pitch, ref double yaw)
+        protected void RerangeEulerAngles(ref double roll, ref double pitch, ref double yaw)
         {
             RerangeEulerAngle(ref roll, MyoSettings.Default.rollDeadzone, MyoSettings.Default.rollMax);
             RerangeEulerAngle(ref pitch, MyoSettings.Default.pitchDeadzone, MyoSettings.Default.pitchMax);
@@ -147,12 +159,12 @@ namespace MyoPilot.Input
         /// <summary>
         /// Rerange the angles to [-1 - +1]
         /// If one angle is in the deadzone it is set to 0
-        /// Angles are squared (with preserved sign) for better control
+        /// Angles are cubed for better control
         /// </summary>
         /// <param name="angle">angle to rerange</param>
         /// <param name="deadzone">Must be positive</param>
         /// <param name="max">Must be greater than deadzone</param>
-        private void RerangeEulerAngle(ref double angle, double deadzone, double max)
+        protected void RerangeEulerAngle(ref double angle, double deadzone, double max)
         {
             int sign = Math.Sign(angle);
             double value = Math.Abs(angle);
@@ -178,7 +190,7 @@ namespace MyoPilot.Input
         }
 
         // OnUnpair() is called whenever the Myo is disconnected from Myo Connect by the user.    
-        private void OnUnpair(object sender, MyoEventArgs e)
+        protected void OnUnpair(object sender, MyoEventArgs e)
         {
             lock (myLock)
             {
@@ -187,7 +199,7 @@ namespace MyoPilot.Input
             }
         }
 
-        private void OnOrientationData(object sender, OrientationDataEventArgs e)
+        protected void OnOrientationData(object sender, OrientationDataEventArgs e)
         {
             lock (myLock)
                 currentOrientation = e.Orientation;
@@ -195,7 +207,7 @@ namespace MyoPilot.Input
 
         // OnPose() is called whenever the Myo detects that the person wearing it has changed their pose, for example,
         // making a fist, or not making a fist anymore.
-        private void OnPoseChanged(object sender, PoseChangedEventArgs e)
+        protected void OnPoseChanged(object sender, PoseChangedEventArgs e)
         {
             lock (myLock)
             {
@@ -219,13 +231,13 @@ namespace MyoPilot.Input
             }
         }
 
-        private void OnRecognizedArm(object sender, RecognizedArmEventArgs e)
+        protected void OnRecognizedArm(object sender, RecognizedArmEventArgs e)
         {
             lock (myLock)
                 onArm = true;
         }
 
-        private void OnLostArm(object sender, MyoEventArgs e)
+        protected void OnLostArm(object sender, MyoEventArgs e)
         {
             lock (myLock)
                 onArm = false;

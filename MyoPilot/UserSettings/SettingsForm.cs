@@ -7,8 +7,13 @@ using System.Windows.Forms;
 
 namespace MyoPilot.UserSettings
 {
+    /// <summary>
+    /// SettingsForm is the dialog which allows the user to edit the drone configuration
+    /// and application configuration.
+    /// </summary>
     public partial class SettingsForm : Form
     {
+        #region .Events.
         /// <summary>
         /// Occurs before the settings are sent to the drone
         /// </summary>
@@ -28,6 +33,7 @@ namespace MyoPilot.UserSettings
             if (ChangeDroneSettingsEnd != null)
                 ChangeDroneSettingsEnd(this, EventArgs.Empty);
         }
+        #endregion 
 
         private DroneClient droneClient;
         private Settings settings;
@@ -83,21 +89,25 @@ namespace MyoPilot.UserSettings
             groupBoxOutdoor.Enabled = true;
             groupBoxVideo.Enabled = true;
 
-            // Update Controlls which are not bound
+            // Update Controlls which do not have databinding
             numericUpDownRotationMax.Value = (int)convertRadToDeg(settings.Control.ControlYaw);
             trackBarRotationMax.Value = (int)convertRadToDeg(settings.Control.ControlYaw);
             numericUpDownTiltAngleMax.Value = (int)convertRadToDeg(settings.Control.EulerAngleMax);
             trackBarTiltAngleMax.Value = (int)convertRadToDeg(settings.Control.EulerAngleMax);
-
-            // The other radioButtons are initialized with databinding
-            if (!settings.Control.Outdoor)
-                radioButtonIndoors.Checked = true;
-            if (!settings.Control.FlightWithoutShell)
-                radioButtonIndoorHull.Checked = true;
+            
             if (settings.Video.Codec == VideoCodecType.H264_360P)
                 radioButtonVideo360p.Checked = true;
             else if (settings.Video.Codec == VideoCodecType.H264_720P)
                 radioButtonVideo720p.Checked = true;
+
+            // In each pair of radioButtons, one is initialized with databinding and the other
+            // is false by default. If the one with databinding is set to unchecked, the 
+            // unbound needs to be set to checked manually
+            if (!settings.Control.Outdoor)
+                radioButtonIndoors.Checked = true;
+            if (!settings.Control.FlightWithoutShell)
+                radioButtonIndoorHull.Checked = true;
+            
         }
 
         /// <summary>
@@ -164,10 +174,15 @@ namespace MyoPilot.UserSettings
             }
         }
 
+        /// <summary>
+        /// Save settings before closing the form
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnClosed(EventArgs e)
         {
             KeyboardSettings.Default.Save();
-            
+            MyoSettings.Default.Save();
+
             base.OnClosed(e);
         }
 

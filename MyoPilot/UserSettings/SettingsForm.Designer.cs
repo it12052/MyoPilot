@@ -37,9 +37,6 @@
             this.radioButtonVideo360p = new System.Windows.Forms.RadioButton();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBoxOutdoor = new System.Windows.Forms.GroupBox();
-            this.radioButtonIndoorHull = new System.Windows.Forms.RadioButton();
-            this.radioButtonOutdoorHull = new System.Windows.Forms.RadioButton();
-            this.controlSectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.radioButtonIndoors = new System.Windows.Forms.RadioButton();
@@ -74,8 +71,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPageController = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPageMyo = new System.Windows.Forms.TabPage();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
@@ -90,7 +88,12 @@
             this.label20 = new System.Windows.Forms.Label();
             this.buttonOk = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.radioButtonIndoorHull = new System.Windows.Forms.RadioButton();
+            this.radioButtonOutdoorHull = new System.Windows.Forms.RadioButton();
+            this.controlSectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.keyboardSettingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.myoSettingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.keyBoxFlatTrim = new MyoPilot.UserSettings.KeyBox();
             this.keyBoxEmergency = new MyoPilot.UserSettings.KeyBox();
@@ -104,13 +107,10 @@
             this.keyBoxLeft = new MyoPilot.UserSettings.KeyBox();
             this.keyBoxBackward = new MyoPilot.UserSettings.KeyBox();
             this.keyBoxForward = new MyoPilot.UserSettings.KeyBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPageDrone.SuspendLayout();
             this.groupBoxVideo.SuspendLayout();
             this.groupBoxOutdoor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.controlSectionBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBoxControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTiltAngleMax)).BeginInit();
@@ -123,7 +123,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarAltitudeMax)).BeginInit();
             this.tabPageKeyboard.SuspendLayout();
             this.tabPageController.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPageMyo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
@@ -131,7 +130,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.controlSectionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.keyboardSettingsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myoSettingsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -225,37 +227,6 @@
             this.groupBoxOutdoor.TabIndex = 4;
             this.groupBoxOutdoor.TabStop = false;
             this.groupBoxOutdoor.Text = "Outdoor";
-            // 
-            // radioButtonIndoorHull
-            // 
-            this.radioButtonIndoorHull.AutoSize = true;
-            this.radioButtonIndoorHull.Image = global::MyoPilot.Properties.Resources.drone_32x32_;
-            this.radioButtonIndoorHull.Location = new System.Drawing.Point(199, 53);
-            this.radioButtonIndoorHull.Name = "radioButtonIndoorHull";
-            this.radioButtonIndoorHull.Size = new System.Drawing.Size(55, 49);
-            this.radioButtonIndoorHull.TabIndex = 4;
-            this.radioButtonIndoorHull.TabStop = true;
-            this.radioButtonIndoorHull.Text = "Indoor";
-            this.radioButtonIndoorHull.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.radioButtonIndoorHull.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonOutdoorHull
-            // 
-            this.radioButtonOutdoorHull.AutoSize = true;
-            this.radioButtonOutdoorHull.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.controlSectionBindingSource, "FlightWithoutShell", true));
-            this.radioButtonOutdoorHull.Image = global::MyoPilot.Properties.Resources.drone_wo_hull_32x32_;
-            this.radioButtonOutdoorHull.Location = new System.Drawing.Point(101, 53);
-            this.radioButtonOutdoorHull.Name = "radioButtonOutdoorHull";
-            this.radioButtonOutdoorHull.Size = new System.Drawing.Size(63, 49);
-            this.radioButtonOutdoorHull.TabIndex = 3;
-            this.radioButtonOutdoorHull.TabStop = true;
-            this.radioButtonOutdoorHull.Text = "Outdoor";
-            this.radioButtonOutdoorHull.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.radioButtonOutdoorHull.UseVisualStyleBackColor = true;
-            // 
-            // controlSectionBindingSource
-            // 
-            this.controlSectionBindingSource.DataSource = typeof(AR.Drone.Client.Configuration.ControlSection);
             // 
             // label6
             // 
@@ -706,19 +677,10 @@
             this.tabPageController.Text = "Controller";
             this.tabPageController.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::MyoPilot.Properties.Resources.xbox360_controller;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(606, 356);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // tabPageMyo
             // 
+            this.tabPageMyo.AutoScroll = true;
+            this.tabPageMyo.Controls.Add(this.pictureBox2);
             this.tabPageMyo.Controls.Add(this.label27);
             this.tabPageMyo.Controls.Add(this.label26);
             this.tabPageMyo.Controls.Add(this.numericUpDown6);
@@ -741,6 +703,25 @@
             this.tabPageMyo.Text = "Myo";
             this.tabPageMyo.UseVisualStyleBackColor = true;
             // 
+            // label27
+            // 
+            this.label27.AutoEllipsis = true;
+            this.label27.Location = new System.Drawing.Point(3, 113);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(585, 111);
+            this.label27.TabIndex = 13;
+            this.label27.Text = resources.GetString("label27.Text");
+            // 
+            // label26
+            // 
+            this.label26.AutoEllipsis = true;
+            this.label26.Location = new System.Drawing.Point(206, 20);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(382, 72);
+            this.label26.TabIndex = 12;
+            this.label26.Text = "Deadzone and Maximum defines, how sensitive the Myo reacts to movement and how ha" +
+    "rd you need to move your arm to reach maximum amplitude";
+            // 
             // numericUpDown6
             // 
             this.numericUpDown6.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.myoSettingsBindingSource, "yawMax", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
@@ -751,7 +732,7 @@
             0,
             0,
             131072});
-            this.numericUpDown6.Location = new System.Drawing.Point(131, 95);
+            this.numericUpDown6.Location = new System.Drawing.Point(128, 72);
             this.numericUpDown6.Maximum = new decimal(new int[] {
             2,
             0,
@@ -771,7 +752,7 @@
             0,
             0,
             131072});
-            this.numericUpDown5.Location = new System.Drawing.Point(54, 95);
+            this.numericUpDown5.Location = new System.Drawing.Point(51, 72);
             this.numericUpDown5.Maximum = new decimal(new int[] {
             2,
             0,
@@ -791,7 +772,7 @@
             0,
             0,
             131072});
-            this.numericUpDown4.Location = new System.Drawing.Point(131, 69);
+            this.numericUpDown4.Location = new System.Drawing.Point(128, 46);
             this.numericUpDown4.Maximum = new decimal(new int[] {
             2,
             0,
@@ -811,7 +792,7 @@
             0,
             0,
             131072});
-            this.numericUpDown3.Location = new System.Drawing.Point(54, 69);
+            this.numericUpDown3.Location = new System.Drawing.Point(51, 46);
             this.numericUpDown3.Maximum = new decimal(new int[] {
             2,
             0,
@@ -831,7 +812,7 @@
             0,
             0,
             131072});
-            this.numericUpDown2.Location = new System.Drawing.Point(131, 43);
+            this.numericUpDown2.Location = new System.Drawing.Point(128, 20);
             this.numericUpDown2.Maximum = new decimal(new int[] {
             2,
             0,
@@ -851,7 +832,7 @@
             0,
             0,
             131072});
-            this.numericUpDown1.Location = new System.Drawing.Point(54, 43);
+            this.numericUpDown1.Location = new System.Drawing.Point(51, 20);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             2,
             0,
@@ -864,7 +845,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(14, 27);
+            this.label25.Location = new System.Drawing.Point(11, 4);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(34, 13);
             this.label25.TabIndex = 5;
@@ -873,7 +854,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(128, 27);
+            this.label24.Location = new System.Drawing.Point(125, 4);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(51, 13);
             this.label24.TabIndex = 4;
@@ -883,9 +864,9 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(51, 27);
+            this.label23.Location = new System.Drawing.Point(48, 4);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(59, 13);
+            this.label23.Size = new System.Drawing.Size(56, 13);
             this.label23.TabIndex = 3;
             this.label23.Text = "Deadzone";
             this.toolTip1.SetToolTip(this.label23, "Define the zone, where no user input is processed");
@@ -893,7 +874,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(20, 97);
+            this.label22.Location = new System.Drawing.Point(17, 74);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(28, 13);
             this.label22.TabIndex = 2;
@@ -902,7 +883,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(17, 71);
+            this.label21.Location = new System.Drawing.Point(14, 48);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(31, 13);
             this.label21.TabIndex = 1;
@@ -911,7 +892,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(23, 45);
+            this.label20.Location = new System.Drawing.Point(20, 22);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(25, 13);
             this.label20.TabIndex = 0;
@@ -928,9 +909,61 @@
             this.buttonOk.Text = "OK";
             this.buttonOk.UseVisualStyleBackColor = true;
             // 
+            // radioButtonIndoorHull
+            // 
+            this.radioButtonIndoorHull.AutoSize = true;
+            this.radioButtonIndoorHull.Image = global::MyoPilot.Properties.Resources.drone_32x32_;
+            this.radioButtonIndoorHull.Location = new System.Drawing.Point(199, 53);
+            this.radioButtonIndoorHull.Name = "radioButtonIndoorHull";
+            this.radioButtonIndoorHull.Size = new System.Drawing.Size(55, 49);
+            this.radioButtonIndoorHull.TabIndex = 4;
+            this.radioButtonIndoorHull.TabStop = true;
+            this.radioButtonIndoorHull.Text = "Indoor";
+            this.radioButtonIndoorHull.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.radioButtonIndoorHull.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonOutdoorHull
+            // 
+            this.radioButtonOutdoorHull.AutoSize = true;
+            this.radioButtonOutdoorHull.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.controlSectionBindingSource, "FlightWithoutShell", true));
+            this.radioButtonOutdoorHull.Image = global::MyoPilot.Properties.Resources.drone_wo_hull_32x32_;
+            this.radioButtonOutdoorHull.Location = new System.Drawing.Point(101, 53);
+            this.radioButtonOutdoorHull.Name = "radioButtonOutdoorHull";
+            this.radioButtonOutdoorHull.Size = new System.Drawing.Size(63, 49);
+            this.radioButtonOutdoorHull.TabIndex = 3;
+            this.radioButtonOutdoorHull.TabStop = true;
+            this.radioButtonOutdoorHull.Text = "Outdoor";
+            this.radioButtonOutdoorHull.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.radioButtonOutdoorHull.UseVisualStyleBackColor = true;
+            // 
+            // controlSectionBindingSource
+            // 
+            this.controlSectionBindingSource.DataSource = typeof(AR.Drone.Client.Configuration.ControlSection);
+            // 
             // keyboardSettingsBindingSource
             // 
             this.keyboardSettingsBindingSource.DataSource = typeof(MyoPilot.UserSettings.KeyboardSettings);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::MyoPilot.Properties.Resources.xbox360_controller;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(606, 356);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::MyoPilot.Properties.Resources.MyoControl;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 224);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(585, 428);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
             // 
             // myoSettingsBindingSource
             // 
@@ -1044,25 +1077,6 @@
             this.keyBoxForward.TabIndex = 0;
             this.keyBoxForward.Value = 0;
             // 
-            // label26
-            // 
-            this.label26.AutoEllipsis = true;
-            this.label26.Location = new System.Drawing.Point(209, 43);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(397, 72);
-            this.label26.TabIndex = 12;
-            this.label26.Text = "Deadzone and Maximum defines, how sensitive the Myo reacts to movement and how h" +
-    "ard you need to move your arm to reach maximum amplitude";
-            // 
-            // label27
-            // 
-            this.label27.AutoEllipsis = true;
-            this.label27.Location = new System.Drawing.Point(6, 136);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(600, 223);
-            this.label27.TabIndex = 13;
-            this.label27.Text = resources.GetString("label27.Text");
-            // 
             // SettingsForm
             // 
             this.AcceptButton = this.buttonOk;
@@ -1080,7 +1094,6 @@
             this.groupBoxVideo.PerformLayout();
             this.groupBoxOutdoor.ResumeLayout(false);
             this.groupBoxOutdoor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.controlSectionBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBoxControl.ResumeLayout(false);
@@ -1096,7 +1109,6 @@
             this.tabPageKeyboard.ResumeLayout(false);
             this.tabPageKeyboard.PerformLayout();
             this.tabPageController.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPageMyo.ResumeLayout(false);
             this.tabPageMyo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
@@ -1105,7 +1117,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.controlSectionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.keyboardSettingsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myoSettingsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -1189,5 +1204,6 @@
         private System.Windows.Forms.BindingSource myoSettingsBindingSource;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

@@ -83,6 +83,16 @@ namespace MyoPilot.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MyoControl {
+            get {
+                object obj = ResourceManager.GetObject("MyoControl", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap xbox360_controller {
             get {
                 object obj = ResourceManager.GetObject("xbox360-controller", resourceCulture);

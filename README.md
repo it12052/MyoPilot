@@ -5,6 +5,8 @@ C# Application for controlling the Parrot AR.Drone 2.0 with the Myo armband by T
 
 Current state: The application is able to controll the drone via keyboard, Xbox360 controller or Myo.
 
+Documentation can be found at [Implementing Gesture Control for a Quadcopter.pdf](https://github.com/it12052/MyoPilot/blob/master/Implementing%20Gesture%20Control%20for%20a%20Quadcopter.pdf)
+
 Requirements:
 * Windows Vista or newer because of the Xbox controller. Under Windows XP, you'll need special drivers for your Xbox 360 Controller. You can find them at this address : [XBox 360 Controller for Windows Software](http://www.microsoft.com/en-us/download/details.aspx?id=34001) (cited from XInputDotNet Project page)
 * [Myo Connect](https://www.thalmic.com/start/) installed (if you want to use myo)

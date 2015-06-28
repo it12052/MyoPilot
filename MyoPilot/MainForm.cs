@@ -305,16 +305,22 @@ namespace MyoPilot
                 batteryGauge.ChargePercentage = (int)(navigationData.Battery.Percentage);
 
                 buttonResetEmergency.Visible = navigationData.State.HasFlag(NavigationState.Emergency);
-
-                status += string.Format("Battery: {0}%\nWifi: {1}\nDronestate: {2}\n",
-                    navigationData.Battery.Percentage.ToString(),
-                    navigationData.Wifi.LinkQuality,
-                    navigationData.State.ToString());
             }
 
-            if (frameBitmap != null)
+            if (UISettings.Default.DebugInfo)
             {
-                status += "Resolution: " + frameBitmap.Size.ToString() + "\n";
+                if (navigationData != null)
+                {
+                    status += string.Format("Battery: {0}%\nWifi: {1}\nDronestate: {2}\n",
+                        navigationData.Battery.Percentage.ToString(),
+                        navigationData.Wifi.LinkQuality,
+                        navigationData.State.ToString());
+                }
+
+                if (frameBitmap != null)
+                {
+                    status += "Resolution: " + frameBitmap.Size.ToString() + "\n";
+                }
             }
 
             labelDroneStatus.Text = status;

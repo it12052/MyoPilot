@@ -224,7 +224,6 @@
             // 
             this.labelDroneStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelDroneStatus.AutoSize = true;
-            this.labelDroneStatus.DataBindings.Add(new System.Windows.Forms.Binding("Visible", this.uISettingsBindingSource, "DebugInfo", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.labelDroneStatus.Location = new System.Drawing.Point(411, 387);
             this.labelDroneStatus.Name = "labelDroneStatus";
             this.labelDroneStatus.Size = new System.Drawing.Size(73, 13);
@@ -248,6 +247,7 @@
             // 
             // labelAngles
             // 
+            this.labelAngles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelAngles.AutoSize = true;
             this.labelAngles.Location = new System.Drawing.Point(206, 387);
             this.labelAngles.Name = "labelAngles";

@@ -21,7 +21,7 @@ namespace MyoPilot
                 case PlatformID.Win32NT:
                 case PlatformID.Win32S:
                 case PlatformID.Win32Windows:
-                    string ffmpegPath = string.Format(@"../../../AR.Drone/FFmpeg.AutoGen/FFmpeg/bin/windows/{0}", Environment.Is64BitProcess ? "x64" : "x86");
+                    string ffmpegPath = string.Format(@"FFmpeg/{0}", Environment.Is64BitProcess ? "x64" : "x86");
                     InteropHelper.RegisterLibrariesSearchPath(ffmpegPath);
                     break;
                 case PlatformID.Unix:

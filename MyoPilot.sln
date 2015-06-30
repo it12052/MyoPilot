@@ -42,6 +42,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Myo.Net", "Myo.Net", "{FC24
 		Myo.Net\Myo.Net.dll = Myo.Net\Myo.Net.dll
 	EndProjectSection
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MyoPilotInstaller", "MyoPilotInstaller\MyoPilotInstaller.vdproj", "{593A869C-7EAC-46AB-B5F4-28ED6A4BAF2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -182,6 +184,16 @@ Global
 		{19B1D7B1-C46F-4A87-A674-3350BF372A74}.Release|Win32.ActiveCfg = Release|Any CPU
 		{19B1D7B1-C46F-4A87-A674-3350BF372A74}.Release|x64.ActiveCfg = Release|Any CPU
 		{19B1D7B1-C46F-4A87-A674-3350BF372A74}.Release|x86.ActiveCfg = Release|Any CPU
+		{593A869C-7EAC-46AB-B5F4-28ED6A4BAF2D}.Debug|Any CPU.ActiveCfg = Debug
+		{593A869C-7EAC-46AB-B5F4-28ED6A4BAF2D}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{593A869C-7EAC-46AB-B5F4-28ED6A4BAF2D}.Debug|Win32.ActiveCfg = Debug
+		{593A869C-7EAC-46AB-B5F4-28ED6A4BAF2D}.Debug|x64.ActiveCfg = Debug
+		{593A869C-7EAC-46AB-B5F4-28ED6A4BAF2D}.Debug|x86.ActiveCfg = Debug
+		{593A869C-7EAC-46AB-B5F4-28ED6A4BAF2D}.Release|Any CPU.ActiveCfg = Release
+		{593A869C-7EAC-46AB-B5F4-28ED6A4BAF2D}.Release|Mixed Platforms.ActiveCfg = Release
+		{593A869C-7EAC-46AB-B5F4-28ED6A4BAF2D}.Release|Win32.ActiveCfg = Release
+		{593A869C-7EAC-46AB-B5F4-28ED6A4BAF2D}.Release|x64.ActiveCfg = Release
+		{593A869C-7EAC-46AB-B5F4-28ED6A4BAF2D}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -36,6 +36,8 @@ namespace MyoPilot.Input
         /// </summary>
         public MyoInput()
         {
+            Active = true;
+
             hub = new Hub("de.dhbw.MyoPilot");
             myo = hub.WaitForMyo(TimeSpan.FromSeconds(5));
             if (myo == null)

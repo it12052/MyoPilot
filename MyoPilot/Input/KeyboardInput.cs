@@ -15,6 +15,11 @@ namespace MyoPilot.Input
         /// </summary>
         public bool Active { get; set; }
 
+        public KeyboardInput()
+        {
+            Active = true;            
+        }
+
         public override void processInput()
         {
             if (Active)

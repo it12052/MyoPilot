@@ -17,6 +17,11 @@ namespace MyoPilot.Input
         /// </summary>
         public bool Active { get; set; }
 
+        public MyoInput()
+        {
+            Active = true;
+        }
+
         /// <summary>
         /// Lock to coordinate concurrent access
         /// </summary>

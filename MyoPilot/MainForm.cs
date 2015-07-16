@@ -124,6 +124,9 @@ namespace MyoPilot
         /// </summary>
         private void InitInput()
         {
+            this.Activated += MainForm_Activated;
+            this.Deactivate += MainForm_Deactivate;
+
             inputManager = new InputManager();
             // Add UI Listeners
             inputManager.Hover += inputManager_Hover;
@@ -268,7 +271,23 @@ namespace MyoPilot
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            Text += Environment.Is64BitProcess ? " [64-bit]" : " [32-bit]";
+            updateText("active");
+        }
+
+        void MainForm_Deactivate(object sender, EventArgs e)
+        {
+            updateText("inactive");
+        }
+
+        void MainForm_Activated(object sender, EventArgs e)
+        {
+            updateText("active");
+        }
+
+        void updateText(string active)
+        {
+            string env = Environment.Is64BitProcess ? "64-bit" : "32-bit";
+            Text = string.Format("MyoPilot [{0}] ({1})", env, active);
         }
 
         protected override void OnClosed(EventArgs e)

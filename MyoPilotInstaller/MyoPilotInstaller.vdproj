@@ -15,25 +15,25 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_0AFB26A581E74685874656CD72EC944C"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_10D9B7803487B0F146A3742ECC108C7C"
-        "OwnerKey" = "8:_A29C68E84E59C4CCA2F36DF0BF6B4D7B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_10D9B7803487B0F146A3742ECC108C7C"
+        "MsmKey" = "8:_06FC55CA5C4A25907F4DE1C1281E0BA1"
         "OwnerKey" = "8:_B890A33FD92F4239AD7F437E5487A729"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_11EE45E07F614494BBAB6D331168D545"
+        "MsmKey" = "8:_06FC55CA5C4A25907F4DE1C1281E0BA1"
+        "OwnerKey" = "8:_8EB7FB35710FB1744AC74964637869B4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_06FC55CA5C4A25907F4DE1C1281E0BA1"
+        "OwnerKey" = "8:_15820658B3F9CEE5DF4BB1AA3E131CE0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0AFB26A581E74685874656CD72EC944C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -45,44 +45,20 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_1AA703C5F1BB4948AB20E74313E8D7DA"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2B2F14DD9517CFCA206BB1F1378DB787"
-        "OwnerKey" = "8:_A29C68E84E59C4CCA2F36DF0BF6B4D7B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2B2F14DD9517CFCA206BB1F1378DB787"
-        "OwnerKey" = "8:_5B896FAAE3317C1A3BBA9535063C6DC6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2B2F14DD9517CFCA206BB1F1378DB787"
+        "MsmKey" = "8:_15820658B3F9CEE5DF4BB1AA3E131CE0"
         "OwnerKey" = "8:_B890A33FD92F4239AD7F437E5487A729"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_2B2F14DD9517CFCA206BB1F1378DB787"
-        "OwnerKey" = "8:_10D9B7803487B0F146A3742ECC108C7C"
+        "MsmKey" = "8:_15820658B3F9CEE5DF4BB1AA3E131CE0"
+        "OwnerKey" = "8:_8EB7FB35710FB1744AC74964637869B4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_2B2F14DD9517CFCA206BB1F1378DB787"
-        "OwnerKey" = "8:_FB7B073235BFBFF8B6AED8A068D64B24"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2B2F14DD9517CFCA206BB1F1378DB787"
-        "OwnerKey" = "8:_BB47980AAB97EC9BDD335C177538FC02"
+        "MsmKey" = "8:_1AA703C5F1BB4948AB20E74313E8D7DA"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -93,20 +69,20 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_3D55729D8B1D33120259EE2B9BA3CB96"
+        "OwnerKey" = "8:_938990AF170AFD62564EF75C4F73BA9E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3D55729D8B1D33120259EE2B9BA3CB96"
+        "OwnerKey" = "8:_B890A33FD92F4239AD7F437E5487A729"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_41D297AFFF764CD8841CB740B19D5FA9"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_4485E684E9BF52DF92815791F2B125E2"
-        "OwnerKey" = "8:_10D9B7803487B0F146A3742ECC108C7C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_4485E684E9BF52DF92815791F2B125E2"
-        "OwnerKey" = "8:_B890A33FD92F4239AD7F437E5487A729"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -123,20 +99,56 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_52D37318C5BF44E8A7A7E0828F5C88C8"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_5B896FAAE3317C1A3BBA9535063C6DC6"
+        "MsmKey" = "8:_4DE099A1B1B482003CA9FF51E4F6E3E6"
         "OwnerKey" = "8:_B890A33FD92F4239AD7F437E5487A729"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_5B896FAAE3317C1A3BBA9535063C6DC6"
-        "OwnerKey" = "8:_A29C68E84E59C4CCA2F36DF0BF6B4D7B"
+        "MsmKey" = "8:_4DE099A1B1B482003CA9FF51E4F6E3E6"
+        "OwnerKey" = "8:_8EB7FB35710FB1744AC74964637869B4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4FB2A2CEA2DBC8E83068F09A148EA6BA"
+        "OwnerKey" = "8:_06FC55CA5C4A25907F4DE1C1281E0BA1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4FB2A2CEA2DBC8E83068F09A148EA6BA"
+        "OwnerKey" = "8:_8EB7FB35710FB1744AC74964637869B4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4FB2A2CEA2DBC8E83068F09A148EA6BA"
+        "OwnerKey" = "8:_15820658B3F9CEE5DF4BB1AA3E131CE0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4FB2A2CEA2DBC8E83068F09A148EA6BA"
+        "OwnerKey" = "8:_938990AF170AFD62564EF75C4F73BA9E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4FB2A2CEA2DBC8E83068F09A148EA6BA"
+        "OwnerKey" = "8:_4DE099A1B1B482003CA9FF51E4F6E3E6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4FB2A2CEA2DBC8E83068F09A148EA6BA"
+        "OwnerKey" = "8:_B890A33FD92F4239AD7F437E5487A729"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_52D37318C5BF44E8A7A7E0828F5C88C8"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -153,14 +165,26 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_8AB53C578FDDB1A1751B62E594989490"
+        "MsmKey" = "8:_8CE5CA21C0814758B10053531AF2CA04"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8EB7FB35710FB1744AC74964637869B4"
         "OwnerKey" = "8:_B890A33FD92F4239AD7F437E5487A729"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_8CE5CA21C0814758B10053531AF2CA04"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_938990AF170AFD62564EF75C4F73BA9E"
+        "OwnerKey" = "8:_B890A33FD92F4239AD7F437E5487A729"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_938990AF170AFD62564EF75C4F73BA9E"
+        "OwnerKey" = "8:_8EB7FB35710FB1744AC74964637869B4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -171,7 +195,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_A29C68E84E59C4CCA2F36DF0BF6B4D7B"
+        "MsmKey" = "8:_9972F665AFA5D443C83DBF78B608B4F8"
         "OwnerKey" = "8:_B890A33FD92F4239AD7F437E5487A729"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -179,42 +203,6 @@
         {
         "MsmKey" = "8:_A4C4F3C398FF4522A84C84A24450CE0B"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_AE4AEA43F165718DF0AD671D31DAA55F"
-        "OwnerKey" = "8:_A29C68E84E59C4CCA2F36DF0BF6B4D7B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_AE4AEA43F165718DF0AD671D31DAA55F"
-        "OwnerKey" = "8:_5B896FAAE3317C1A3BBA9535063C6DC6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_AE4AEA43F165718DF0AD671D31DAA55F"
-        "OwnerKey" = "8:_B890A33FD92F4239AD7F437E5487A729"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_AE4AEA43F165718DF0AD671D31DAA55F"
-        "OwnerKey" = "8:_10D9B7803487B0F146A3742ECC108C7C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_AE4AEA43F165718DF0AD671D31DAA55F"
-        "OwnerKey" = "8:_FB7B073235BFBFF8B6AED8A068D64B24"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_AE4AEA43F165718DF0AD671D31DAA55F"
-        "OwnerKey" = "8:_BB47980AAB97EC9BDD335C177538FC02"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -237,19 +225,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_BB47980AAB97EC9BDD335C177538FC02"
-        "OwnerKey" = "8:_A29C68E84E59C4CCA2F36DF0BF6B4D7B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_BB47980AAB97EC9BDD335C177538FC02"
-        "OwnerKey" = "8:_5B896FAAE3317C1A3BBA9535063C6DC6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_BB47980AAB97EC9BDD335C177538FC02"
+        "MsmKey" = "8:_C048C979452120A4729C40199EF999D2"
         "OwnerKey" = "8:_B890A33FD92F4239AD7F437E5487A729"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -263,6 +239,42 @@
         {
         "MsmKey" = "8:_C816FD3C5EAF4A82ADEABEEE7DCEB04E"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C8B0F161C098808DDDA7D2B896ECEDFF"
+        "OwnerKey" = "8:_06FC55CA5C4A25907F4DE1C1281E0BA1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C8B0F161C098808DDDA7D2B896ECEDFF"
+        "OwnerKey" = "8:_8EB7FB35710FB1744AC74964637869B4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C8B0F161C098808DDDA7D2B896ECEDFF"
+        "OwnerKey" = "8:_15820658B3F9CEE5DF4BB1AA3E131CE0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C8B0F161C098808DDDA7D2B896ECEDFF"
+        "OwnerKey" = "8:_938990AF170AFD62564EF75C4F73BA9E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C8B0F161C098808DDDA7D2B896ECEDFF"
+        "OwnerKey" = "8:_4DE099A1B1B482003CA9FF51E4F6E3E6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C8B0F161C098808DDDA7D2B896ECEDFF"
+        "OwnerKey" = "8:_B890A33FD92F4239AD7F437E5487A729"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -297,24 +309,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_FB7B073235BFBFF8B6AED8A068D64B24"
-        "OwnerKey" = "8:_A29C68E84E59C4CCA2F36DF0BF6B4D7B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_FB7B073235BFBFF8B6AED8A068D64B24"
-        "OwnerKey" = "8:_B890A33FD92F4239AD7F437E5487A729"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_FBC6866E301088322387E135C61C822B"
-        "OwnerKey" = "8:_B890A33FD92F4239AD7F437E5487A729"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_B890A33FD92F4239AD7F437E5487A729"
         "MsmSig" = "8:_UNDEFINED"
@@ -322,61 +316,61 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_FBC6866E301088322387E135C61C822B"
+        "OwnerKey" = "8:_9972F665AFA5D443C83DBF78B608B4F8"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8AB53C578FDDB1A1751B62E594989490"
+        "OwnerKey" = "8:_C048C979452120A4729C40199EF999D2"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A29C68E84E59C4CCA2F36DF0BF6B4D7B"
+        "OwnerKey" = "8:_8EB7FB35710FB1744AC74964637869B4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5B896FAAE3317C1A3BBA9535063C6DC6"
+        "OwnerKey" = "8:_15820658B3F9CEE5DF4BB1AA3E131CE0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_10D9B7803487B0F146A3742ECC108C7C"
+        "OwnerKey" = "8:_938990AF170AFD62564EF75C4F73BA9E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4485E684E9BF52DF92815791F2B125E2"
+        "OwnerKey" = "8:_3D55729D8B1D33120259EE2B9BA3CB96"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_FB7B073235BFBFF8B6AED8A068D64B24"
+        "OwnerKey" = "8:_4DE099A1B1B482003CA9FF51E4F6E3E6"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_BB47980AAB97EC9BDD335C177538FC02"
+        "OwnerKey" = "8:_06FC55CA5C4A25907F4DE1C1281E0BA1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2B2F14DD9517CFCA206BB1F1378DB787"
+        "OwnerKey" = "8:_C8B0F161C098808DDDA7D2B896ECEDFF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AE4AEA43F165718DF0AD671D31DAA55F"
+        "OwnerKey" = "8:_4FB2A2CEA2DBC8E83068F09A148EA6BA"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -436,6 +430,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
             }
         }
     }
@@ -466,40 +468,20 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0AFB26A581E74685874656CD72EC944C"
-            {
-            "SourcePath" = "8:..\\AR.Drone\\FFmpeg.AutoGen\\FFmpeg\\bin\\windows\\x86\\swscale-2.dll"
-            "TargetName" = "8:swscale-2.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_9372951835EC4EDFACB57A3FAD226596"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_10D9B7803487B0F146A3742ECC108C7C"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_06FC55CA5C4A25907F4DE1C1281E0BA1"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:AR.Drone.Video, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:AR.Drone.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_10D9B7803487B0F146A3742ECC108C7C"
+                    "_06FC55CA5C4A25907F4DE1C1281E0BA1"
                     {
-                    "Name" = "8:AR.Drone.Video.dll"
+                    "Name" = "8:AR.Drone.Client.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:AR.Drone.Video.dll"
+            "SourcePath" = "8:AR.Drone.Client.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_785634D1E5704AE5A6949552A2D751A1"
@@ -517,12 +499,12 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_11EE45E07F614494BBAB6D331168D545"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0AFB26A581E74685874656CD72EC944C"
             {
-            "SourcePath" = "8:..\\graphics\\drone [32x32].ico"
-            "TargetName" = "8:drone.ico"
+            "SourcePath" = "8:..\\AR.Drone\\FFmpeg.AutoGen\\FFmpeg\\bin\\windows\\x86\\swscale-2.dll"
+            "TargetName" = "8:swscale-2.dll"
             "Tag" = "8:"
-            "Folder" = "8:_785634D1E5704AE5A6949552A2D751A1"
+            "Folder" = "8:_9372951835EC4EDFACB57A3FAD226596"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -557,6 +539,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_15820658B3F9CEE5DF4BB1AA3E131CE0"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:AR.Drone.Avionics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_15820658B3F9CEE5DF4BB1AA3E131CE0"
+                    {
+                    "Name" = "8:AR.Drone.Avionics.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:AR.Drone.Avionics.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_785634D1E5704AE5A6949552A2D751A1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1AA703C5F1BB4948AB20E74313E8D7DA"
             {
             "SourcePath" = "8:..\\AR.Drone\\FFmpeg.AutoGen\\FFmpeg\\bin\\windows\\x86\\postproc-52.dll"
@@ -575,37 +588,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2B2F14DD9517CFCA206BB1F1378DB787"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:AR.Drone.Infrastructure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_2B2F14DD9517CFCA206BB1F1378DB787"
-                    {
-                    "Name" = "8:AR.Drone.Infrastructure.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:AR.Drone.Infrastructure.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_785634D1E5704AE5A6949552A2D751A1"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_36E709BC8B2B41E6BB9BBC98DDE97B60"
@@ -628,34 +610,14 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_41D297AFFF764CD8841CB740B19D5FA9"
-            {
-            "SourcePath" = "8:..\\AR.Drone\\FFmpeg.AutoGen\\FFmpeg\\bin\\windows\\x64\\postproc-52.dll"
-            "TargetName" = "8:postproc-52.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_356B0873D6254F8AA6828985C792D2F1"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4485E684E9BF52DF92815791F2B125E2"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3D55729D8B1D33120259EE2B9BA3CB96"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:FFmpeg.AutoGen, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_4485E684E9BF52DF92815791F2B125E2"
+                    "_3D55729D8B1D33120259EE2B9BA3CB96"
                     {
                     "Name" = "8:FFmpeg.AutoGen.dll"
                     "Attributes" = "3:512"
@@ -677,6 +639,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_41D297AFFF764CD8841CB740B19D5FA9"
+            {
+            "SourcePath" = "8:..\\AR.Drone\\FFmpeg.AutoGen\\FFmpeg\\bin\\windows\\x64\\postproc-52.dll"
+            "TargetName" = "8:postproc-52.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_356B0873D6254F8AA6828985C792D2F1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4651D89692424055BF599ECE55F4C1DF"
@@ -719,6 +701,68 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4DE099A1B1B482003CA9FF51E4F6E3E6"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:AR.Drone.Media, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_4DE099A1B1B482003CA9FF51E4F6E3E6"
+                    {
+                    "Name" = "8:AR.Drone.Media.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:AR.Drone.Media.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_785634D1E5704AE5A6949552A2D751A1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4FB2A2CEA2DBC8E83068F09A148EA6BA"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:AR.Drone.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_4FB2A2CEA2DBC8E83068F09A148EA6BA"
+                    {
+                    "Name" = "8:AR.Drone.Data.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:AR.Drone.Data.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_785634D1E5704AE5A6949552A2D751A1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_52D37318C5BF44E8A7A7E0828F5C88C8"
             {
             "SourcePath" = "8:..\\AR.Drone\\FFmpeg.AutoGen\\FFmpeg\\bin\\windows\\x64\\avcodec-55.dll"
@@ -737,37 +781,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5B896FAAE3317C1A3BBA9535063C6DC6"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:AR.Drone.Avionics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_5B896FAAE3317C1A3BBA9535063C6DC6"
-                    {
-                    "Name" = "8:AR.Drone.Avionics.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:AR.Drone.Avionics.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_785634D1E5704AE5A6949552A2D751A1"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_63D2374BB67044F1B4A4C6C3A5E64D58"
@@ -810,37 +823,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8AB53C578FDDB1A1751B62E594989490"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Myo.Net, Version=1.0.5554.30031, Culture=neutral, processorArchitecture=x86"
-                "ScatterAssemblies"
-                {
-                    "_8AB53C578FDDB1A1751B62E594989490"
-                    {
-                    "Name" = "8:Myo.Net.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Myo.Net.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_785634D1E5704AE5A6949552A2D751A1"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8CE5CA21C0814758B10053531AF2CA04"
             {
             "SourcePath" = "8:..\\AR.Drone\\FFmpeg.AutoGen\\FFmpeg\\bin\\windows\\x86\\swscale-2.dll"
@@ -859,6 +841,68 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8EB7FB35710FB1744AC74964637869B4"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:AR.Drone.WinApp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_8EB7FB35710FB1744AC74964637869B4"
+                    {
+                    "Name" = "8:AR.Drone.WinApp.exe"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:AR.Drone.WinApp.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_785634D1E5704AE5A6949552A2D751A1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_938990AF170AFD62564EF75C4F73BA9E"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:AR.Drone.Video, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_938990AF170AFD62564EF75C4F73BA9E"
+                    {
+                    "Name" = "8:AR.Drone.Video.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:AR.Drone.Video.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_785634D1E5704AE5A6949552A2D751A1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_98E667D7DC70455D8C74258A99D9DA3A"
@@ -881,20 +925,20 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A29C68E84E59C4CCA2F36DF0BF6B4D7B"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9972F665AFA5D443C83DBF78B608B4F8"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:AR.Drone.WinApp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:XInputDotNetPure, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
-                    "_A29C68E84E59C4CCA2F36DF0BF6B4D7B"
+                    "_9972F665AFA5D443C83DBF78B608B4F8"
                     {
-                    "Name" = "8:AR.Drone.WinApp.exe"
+                    "Name" = "8:XInputDotNetPure.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:AR.Drone.WinApp.exe"
+            "SourcePath" = "8:XInputDotNetPure.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_785634D1E5704AE5A6949552A2D751A1"
@@ -930,37 +974,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_AE4AEA43F165718DF0AD671D31DAA55F"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:AR.Drone.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_AE4AEA43F165718DF0AD671D31DAA55F"
-                    {
-                    "Name" = "8:AR.Drone.Data.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:AR.Drone.Data.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_785634D1E5704AE5A6949552A2D751A1"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B2969AAA6D754243B1F50D84A6FBD5FA"
@@ -1003,20 +1016,20 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BB47980AAB97EC9BDD335C177538FC02"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C048C979452120A4729C40199EF999D2"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:AR.Drone.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Myo.Net, Version=1.0.5554.30031, Culture=neutral, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
-                    "_BB47980AAB97EC9BDD335C177538FC02"
+                    "_C048C979452120A4729C40199EF999D2"
                     {
-                    "Name" = "8:AR.Drone.Client.dll"
+                    "Name" = "8:Myo.Net.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:AR.Drone.Client.dll"
+            "SourcePath" = "8:Myo.Net.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_785634D1E5704AE5A6949552A2D751A1"
@@ -1072,6 +1085,37 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C8B0F161C098808DDDA7D2B896ECEDFF"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:AR.Drone.Infrastructure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_C8B0F161C098808DDDA7D2B896ECEDFF"
+                    {
+                    "Name" = "8:AR.Drone.Infrastructure.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:AR.Drone.Infrastructure.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_785634D1E5704AE5A6949552A2D751A1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CAE65520BFFE4A7AB43DA43A79B5F270"
@@ -1174,68 +1218,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FB7B073235BFBFF8B6AED8A068D64B24"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:AR.Drone.Media, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_FB7B073235BFBFF8B6AED8A068D64B24"
-                    {
-                    "Name" = "8:AR.Drone.Media.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:AR.Drone.Media.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_785634D1E5704AE5A6949552A2D751A1"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FBC6866E301088322387E135C61C822B"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:XInputDotNetPure, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86"
-                "ScatterAssemblies"
-                {
-                    "_FBC6866E301088322387E135C61C822B"
-                    {
-                    "Name" = "8:XInputDotNetPure.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:XInputDotNetPure.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_785634D1E5704AE5A6949552A2D751A1"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
         }
         "FileType"
         {
@@ -1326,7 +1308,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:MyoPilot"
         "ProductCode" = "8:{1EA8A8A8-118A-46C7-B123-A70DF5A0717A}"
-        "PackageCode" = "8:{855E8746-B1C2-4158-9A5E-8FADE066CAE8}"
+        "PackageCode" = "8:{702BE51B-7753-4113-8F6E-B1697DAD5F98}"
         "UpgradeCode" = "8:{07C94B4A-4A1B-403B-87BD-2B819B4203E0}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -1338,13 +1320,13 @@
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:MyoPilot"
-        "Subject" = "8:"
+        "Subject" = "8:Flying AR.Drone 2.0 with Myo Armband"
         "ARPCONTACT" = "8:Andreas Degele"
         "Keywords" = "8:AR.Drone 2.0 Myo"
         "ARPCOMMENTS" = "8:Fly your AR.Drone 2.0 with Myo armband"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:"
-        "ARPIconIndex" = "3:0"
+        "ARPPRODUCTICON" = "8:_B890A33FD92F4239AD7F437E5487A729"
+        "ARPIconIndex" = "3:32512"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
         "TargetPlatform" = "3:0"
@@ -1452,12 +1434,12 @@
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
+            "IconIndex" = "3:32512"
             "Transitive" = "11:FALSE"
             "Target" = "8:_B890A33FD92F4239AD7F437E5487A729"
             "Folder" = "8:_86E1D75BAB054B42BD20BF1774A8FEEE"
             "WorkingFolder" = "8:_785634D1E5704AE5A6949552A2D751A1"
-            "Icon" = "8:_11EE45E07F614494BBAB6D331168D545"
+            "Icon" = "8:_B890A33FD92F4239AD7F437E5487A729"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_F02EE783A3A84104A9B3295583D116EE"
@@ -1466,12 +1448,12 @@
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
+            "IconIndex" = "3:32512"
             "Transitive" = "11:FALSE"
             "Target" = "8:_B890A33FD92F4239AD7F437E5487A729"
             "Folder" = "8:_A16BC2B30996422BA2E9B90595133515"
             "WorkingFolder" = "8:_785634D1E5704AE5A6949552A2D751A1"
-            "Icon" = "8:_11EE45E07F614494BBAB6D331168D545"
+            "Icon" = "8:_B890A33FD92F4239AD7F437E5487A729"
             "Feature" = "8:"
             }
         }

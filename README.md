@@ -31,4 +31,4 @@ Thanks to:
 * Reegan Layzell for Myo language bindings [Myo.Net](https://github.com/rtlayzell/Myo.Net)
 * Dave Gandy for iconic font: [Font Awesome](https://fortawesome.github.io/Font-Awesome/)
 * Shannon Moore for Xbox Controller clip art [clker.com](http://www.clker.com/clipart-285099.html)
-* My predecessors Willi Wolff & Tunahan Pece for drone icon: [LeapPilot](https://github.com/LeapPilot/NUI)
+* Jutta for drone icon: [DeviantArt](http://playingarts.deviantart.com/)

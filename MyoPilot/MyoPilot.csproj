@@ -11,6 +11,7 @@
     <AssemblyName>MyoPilot</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -23,12 +24,11 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -45,6 +45,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>drone128.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Myo.Net, Version=1.0.5554.30674, Culture=neutral, processorArchitecture=x86">
@@ -111,13 +114,14 @@
     </Compile>
     <None Include="Properties\DataSources\MyoPilot.UserSettings.MyoSettings.datasource" />
     <None Include="Properties\DataSources\MyoPilot.UserSettings.UISettings.datasource" />
-    <None Include="Resources\drone[32x32].png" />
-    <None Include="Resources\drone-wo-hull[32x32].png" />
     <None Include="Resources\xbox360-controller.png" />
+    <Content Include="drone128.ico" />
     <Content Include="myo32.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\MyoControl.png" />
+    <None Include="Resources\DroneSymbolWoHull32.png" />
+    <None Include="Resources\DroneSymbol32.png" />
     <Content Include="XInputInterface.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

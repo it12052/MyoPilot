@@ -70,6 +70,18 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.keyBoxFlatTrim = new MyoPilot.UserSettings.KeyBox();
+            this.keyBoxEmergency = new MyoPilot.UserSettings.KeyBox();
+            this.keyBoxLand = new MyoPilot.UserSettings.KeyBox();
+            this.keyBoxTakeoff = new MyoPilot.UserSettings.KeyBox();
+            this.keyBoxTurnRight = new MyoPilot.UserSettings.KeyBox();
+            this.keyBoxTurnLeft = new MyoPilot.UserSettings.KeyBox();
+            this.keyBoxDown = new MyoPilot.UserSettings.KeyBox();
+            this.keyBoxUp = new MyoPilot.UserSettings.KeyBox();
+            this.keyBoxRight = new MyoPilot.UserSettings.KeyBox();
+            this.keyBoxLeft = new MyoPilot.UserSettings.KeyBox();
+            this.keyBoxBackward = new MyoPilot.UserSettings.KeyBox();
+            this.keyBoxForward = new MyoPilot.UserSettings.KeyBox();
             this.tabPageController = new System.Windows.Forms.TabPage();
             this.tabPageMyo = new System.Windows.Forms.TabPage();
             this.label27 = new System.Windows.Forms.Label();
@@ -95,18 +107,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.myoSettingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.keyBoxFlatTrim = new MyoPilot.UserSettings.KeyBox();
-            this.keyBoxEmergency = new MyoPilot.UserSettings.KeyBox();
-            this.keyBoxLand = new MyoPilot.UserSettings.KeyBox();
-            this.keyBoxTakeoff = new MyoPilot.UserSettings.KeyBox();
-            this.keyBoxTurnRight = new MyoPilot.UserSettings.KeyBox();
-            this.keyBoxTurnLeft = new MyoPilot.UserSettings.KeyBox();
-            this.keyBoxDown = new MyoPilot.UserSettings.KeyBox();
-            this.keyBoxUp = new MyoPilot.UserSettings.KeyBox();
-            this.keyBoxRight = new MyoPilot.UserSettings.KeyBox();
-            this.keyBoxLeft = new MyoPilot.UserSettings.KeyBox();
-            this.keyBoxBackward = new MyoPilot.UserSettings.KeyBox();
-            this.keyBoxForward = new MyoPilot.UserSettings.KeyBox();
             this.tabControl.SuspendLayout();
             this.tabPageDrone.SuspendLayout();
             this.groupBoxVideo.SuspendLayout();
@@ -666,6 +666,114 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Forward";
             // 
+            // keyBoxFlatTrim
+            // 
+            this.keyBoxFlatTrim.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "FlatTrim", true));
+            this.keyBoxFlatTrim.Location = new System.Drawing.Point(374, 93);
+            this.keyBoxFlatTrim.Name = "keyBoxFlatTrim";
+            this.keyBoxFlatTrim.Size = new System.Drawing.Size(117, 23);
+            this.keyBoxFlatTrim.TabIndex = 11;
+            this.keyBoxFlatTrim.Value = 0;
+            // 
+            // keyBoxEmergency
+            // 
+            this.keyBoxEmergency.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "Emergency", true));
+            this.keyBoxEmergency.Location = new System.Drawing.Point(374, 64);
+            this.keyBoxEmergency.Name = "keyBoxEmergency";
+            this.keyBoxEmergency.Size = new System.Drawing.Size(117, 23);
+            this.keyBoxEmergency.TabIndex = 10;
+            this.keyBoxEmergency.Value = 0;
+            // 
+            // keyBoxLand
+            // 
+            this.keyBoxLand.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "Land", true));
+            this.keyBoxLand.Location = new System.Drawing.Point(374, 35);
+            this.keyBoxLand.Name = "keyBoxLand";
+            this.keyBoxLand.Size = new System.Drawing.Size(117, 23);
+            this.keyBoxLand.TabIndex = 9;
+            this.keyBoxLand.Value = 0;
+            // 
+            // keyBoxTakeoff
+            // 
+            this.keyBoxTakeoff.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "Takeoff", true));
+            this.keyBoxTakeoff.Location = new System.Drawing.Point(374, 6);
+            this.keyBoxTakeoff.Name = "keyBoxTakeoff";
+            this.keyBoxTakeoff.Size = new System.Drawing.Size(117, 23);
+            this.keyBoxTakeoff.TabIndex = 8;
+            this.keyBoxTakeoff.Value = 0;
+            // 
+            // keyBoxTurnRight
+            // 
+            this.keyBoxTurnRight.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "Clockwise", true));
+            this.keyBoxTurnRight.Location = new System.Drawing.Point(122, 209);
+            this.keyBoxTurnRight.Name = "keyBoxTurnRight";
+            this.keyBoxTurnRight.Size = new System.Drawing.Size(117, 23);
+            this.keyBoxTurnRight.TabIndex = 7;
+            this.keyBoxTurnRight.Value = 0;
+            // 
+            // keyBoxTurnLeft
+            // 
+            this.keyBoxTurnLeft.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "CounterClockwise", true));
+            this.keyBoxTurnLeft.Location = new System.Drawing.Point(122, 180);
+            this.keyBoxTurnLeft.Name = "keyBoxTurnLeft";
+            this.keyBoxTurnLeft.Size = new System.Drawing.Size(117, 23);
+            this.keyBoxTurnLeft.TabIndex = 6;
+            this.keyBoxTurnLeft.Value = 0;
+            // 
+            // keyBoxDown
+            // 
+            this.keyBoxDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "Down", true));
+            this.keyBoxDown.Location = new System.Drawing.Point(122, 151);
+            this.keyBoxDown.Name = "keyBoxDown";
+            this.keyBoxDown.Size = new System.Drawing.Size(117, 23);
+            this.keyBoxDown.TabIndex = 5;
+            this.keyBoxDown.Value = 0;
+            // 
+            // keyBoxUp
+            // 
+            this.keyBoxUp.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "Up", true));
+            this.keyBoxUp.Location = new System.Drawing.Point(122, 122);
+            this.keyBoxUp.Name = "keyBoxUp";
+            this.keyBoxUp.Size = new System.Drawing.Size(117, 23);
+            this.keyBoxUp.TabIndex = 4;
+            this.keyBoxUp.Value = 0;
+            // 
+            // keyBoxRight
+            // 
+            this.keyBoxRight.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "Right", true));
+            this.keyBoxRight.Location = new System.Drawing.Point(122, 93);
+            this.keyBoxRight.Name = "keyBoxRight";
+            this.keyBoxRight.Size = new System.Drawing.Size(117, 23);
+            this.keyBoxRight.TabIndex = 3;
+            this.keyBoxRight.Value = 0;
+            // 
+            // keyBoxLeft
+            // 
+            this.keyBoxLeft.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "Left", true));
+            this.keyBoxLeft.Location = new System.Drawing.Point(122, 64);
+            this.keyBoxLeft.Name = "keyBoxLeft";
+            this.keyBoxLeft.Size = new System.Drawing.Size(117, 23);
+            this.keyBoxLeft.TabIndex = 2;
+            this.keyBoxLeft.Value = 0;
+            // 
+            // keyBoxBackward
+            // 
+            this.keyBoxBackward.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "Backward", true));
+            this.keyBoxBackward.Location = new System.Drawing.Point(122, 35);
+            this.keyBoxBackward.Name = "keyBoxBackward";
+            this.keyBoxBackward.Size = new System.Drawing.Size(117, 23);
+            this.keyBoxBackward.TabIndex = 1;
+            this.keyBoxBackward.Value = 0;
+            // 
+            // keyBoxForward
+            // 
+            this.keyBoxForward.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "Forward", true));
+            this.keyBoxForward.Location = new System.Drawing.Point(122, 6);
+            this.keyBoxForward.Name = "keyBoxForward";
+            this.keyBoxForward.Size = new System.Drawing.Size(117, 23);
+            this.keyBoxForward.TabIndex = 0;
+            this.keyBoxForward.Value = 0;
+            // 
             // tabPageController
             // 
             this.tabPageController.Controls.Add(this.pictureBox1);
@@ -912,7 +1020,7 @@
             // radioButtonIndoorHull
             // 
             this.radioButtonIndoorHull.AutoSize = true;
-            this.radioButtonIndoorHull.Image = global::MyoPilot.Properties.Resources.drone_32x32_;
+            this.radioButtonIndoorHull.Image = global::MyoPilot.Properties.Resources.DroneSymbol32;
             this.radioButtonIndoorHull.Location = new System.Drawing.Point(199, 53);
             this.radioButtonIndoorHull.Name = "radioButtonIndoorHull";
             this.radioButtonIndoorHull.Size = new System.Drawing.Size(55, 49);
@@ -926,7 +1034,7 @@
             // 
             this.radioButtonOutdoorHull.AutoSize = true;
             this.radioButtonOutdoorHull.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.controlSectionBindingSource, "FlightWithoutShell", true));
-            this.radioButtonOutdoorHull.Image = global::MyoPilot.Properties.Resources.drone_wo_hull_32x32_;
+            this.radioButtonOutdoorHull.Image = global::MyoPilot.Properties.Resources.DroneSymbolWoHull32;
             this.radioButtonOutdoorHull.Location = new System.Drawing.Point(101, 53);
             this.radioButtonOutdoorHull.Name = "radioButtonOutdoorHull";
             this.radioButtonOutdoorHull.Size = new System.Drawing.Size(63, 49);
@@ -947,7 +1055,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::MyoPilot.Properties.Resources.xbox360_controller;
+            this.pictureBox1.Image = global::MyoPilot.Properties.Resources.xbox360controller;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(606, 356);
@@ -968,114 +1076,6 @@
             // myoSettingsBindingSource
             // 
             this.myoSettingsBindingSource.DataSource = typeof(MyoPilot.UserSettings.MyoSettings);
-            // 
-            // keyBoxFlatTrim
-            // 
-            this.keyBoxFlatTrim.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "FlatTrim", true));
-            this.keyBoxFlatTrim.Location = new System.Drawing.Point(374, 93);
-            this.keyBoxFlatTrim.Name = "keyBoxFlatTrim";
-            this.keyBoxFlatTrim.Size = new System.Drawing.Size(117, 23);
-            this.keyBoxFlatTrim.TabIndex = 11;
-            this.keyBoxFlatTrim.Value = 0;
-            // 
-            // keyBoxEmergency
-            // 
-            this.keyBoxEmergency.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "Emergency", true));
-            this.keyBoxEmergency.Location = new System.Drawing.Point(374, 64);
-            this.keyBoxEmergency.Name = "keyBoxEmergency";
-            this.keyBoxEmergency.Size = new System.Drawing.Size(117, 23);
-            this.keyBoxEmergency.TabIndex = 10;
-            this.keyBoxEmergency.Value = 0;
-            // 
-            // keyBoxLand
-            // 
-            this.keyBoxLand.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "Land", true));
-            this.keyBoxLand.Location = new System.Drawing.Point(374, 35);
-            this.keyBoxLand.Name = "keyBoxLand";
-            this.keyBoxLand.Size = new System.Drawing.Size(117, 23);
-            this.keyBoxLand.TabIndex = 9;
-            this.keyBoxLand.Value = 0;
-            // 
-            // keyBoxTakeoff
-            // 
-            this.keyBoxTakeoff.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "Takeoff", true));
-            this.keyBoxTakeoff.Location = new System.Drawing.Point(374, 6);
-            this.keyBoxTakeoff.Name = "keyBoxTakeoff";
-            this.keyBoxTakeoff.Size = new System.Drawing.Size(117, 23);
-            this.keyBoxTakeoff.TabIndex = 8;
-            this.keyBoxTakeoff.Value = 0;
-            // 
-            // keyBoxTurnRight
-            // 
-            this.keyBoxTurnRight.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "Clockwise", true));
-            this.keyBoxTurnRight.Location = new System.Drawing.Point(122, 209);
-            this.keyBoxTurnRight.Name = "keyBoxTurnRight";
-            this.keyBoxTurnRight.Size = new System.Drawing.Size(117, 23);
-            this.keyBoxTurnRight.TabIndex = 7;
-            this.keyBoxTurnRight.Value = 0;
-            // 
-            // keyBoxTurnLeft
-            // 
-            this.keyBoxTurnLeft.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "CounterClockwise", true));
-            this.keyBoxTurnLeft.Location = new System.Drawing.Point(122, 180);
-            this.keyBoxTurnLeft.Name = "keyBoxTurnLeft";
-            this.keyBoxTurnLeft.Size = new System.Drawing.Size(117, 23);
-            this.keyBoxTurnLeft.TabIndex = 6;
-            this.keyBoxTurnLeft.Value = 0;
-            // 
-            // keyBoxDown
-            // 
-            this.keyBoxDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "Down", true));
-            this.keyBoxDown.Location = new System.Drawing.Point(122, 151);
-            this.keyBoxDown.Name = "keyBoxDown";
-            this.keyBoxDown.Size = new System.Drawing.Size(117, 23);
-            this.keyBoxDown.TabIndex = 5;
-            this.keyBoxDown.Value = 0;
-            // 
-            // keyBoxUp
-            // 
-            this.keyBoxUp.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "Up", true));
-            this.keyBoxUp.Location = new System.Drawing.Point(122, 122);
-            this.keyBoxUp.Name = "keyBoxUp";
-            this.keyBoxUp.Size = new System.Drawing.Size(117, 23);
-            this.keyBoxUp.TabIndex = 4;
-            this.keyBoxUp.Value = 0;
-            // 
-            // keyBoxRight
-            // 
-            this.keyBoxRight.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "Right", true));
-            this.keyBoxRight.Location = new System.Drawing.Point(122, 93);
-            this.keyBoxRight.Name = "keyBoxRight";
-            this.keyBoxRight.Size = new System.Drawing.Size(117, 23);
-            this.keyBoxRight.TabIndex = 3;
-            this.keyBoxRight.Value = 0;
-            // 
-            // keyBoxLeft
-            // 
-            this.keyBoxLeft.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "Left", true));
-            this.keyBoxLeft.Location = new System.Drawing.Point(122, 64);
-            this.keyBoxLeft.Name = "keyBoxLeft";
-            this.keyBoxLeft.Size = new System.Drawing.Size(117, 23);
-            this.keyBoxLeft.TabIndex = 2;
-            this.keyBoxLeft.Value = 0;
-            // 
-            // keyBoxBackward
-            // 
-            this.keyBoxBackward.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "Backward", true));
-            this.keyBoxBackward.Location = new System.Drawing.Point(122, 35);
-            this.keyBoxBackward.Name = "keyBoxBackward";
-            this.keyBoxBackward.Size = new System.Drawing.Size(117, 23);
-            this.keyBoxBackward.TabIndex = 1;
-            this.keyBoxBackward.Value = 0;
-            // 
-            // keyBoxForward
-            // 
-            this.keyBoxForward.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.keyboardSettingsBindingSource, "Forward", true));
-            this.keyBoxForward.Location = new System.Drawing.Point(122, 6);
-            this.keyBoxForward.Name = "keyBoxForward";
-            this.keyBoxForward.Size = new System.Drawing.Size(117, 23);
-            this.keyBoxForward.TabIndex = 0;
-            this.keyBoxForward.Value = 0;
             // 
             // SettingsForm
             // 
